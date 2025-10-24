@@ -1,320 +1,295 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Meiko R&D — ODM & IoT Solutions</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="assets/meiko-logo.png" type="image/png">
-  <meta name="description" content="Meiko R&D - Giải pháp ODM & IoT: Thiết kế mạch, Firmware, JIG, Sản xuất hàng loạt.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meiko R&D Center | ODM & IoT Innovation</title>
+
+  <!-- ✅ SEO Meta -->
+  <meta name="description" content="Trung tâm R&D của Meiko chuyên thiết kế mạch, firmware, ODM, IoT và phát triển JIG sản xuất hàng loạt. Sáng tạo - Trẻ trung - Năng động." />
+  <meta name="keywords" content="Meiko, R&D, ODM, IoT, TingBox, Sensor, JIG, Firmware, Hardware Design, Việt Nam, Electronics Manufacturing" />
+  <meta name="author" content="Meiko R&D Center" />
+
+  <!-- ✅ OpenGraph for social share -->
+  <meta property="og:title" content="Meiko R&D Center - ODM & IoT Innovation" />
+  <meta property="og:description" content="Giới thiệu sản phẩm và năng lực ODM, IoT của Meiko R&D Việt Nam." />
+  <meta property="og:image" content="https://meiko-rnd.github.io/assets/meiko-logo.png" />
+  <meta property="og:url" content="https://meiko-rnd.github.io/" />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" href="assets/meiko-logo.png" />
+
+  <!-- ✅ CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // ⚠️ Thay bằng public key EmailJS của bạn
+    })();
+  </script>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="assets/meiko-logo.png" alt="Meiko R&D logo" class="logo">
-        <div>
-          <h1 class="brand-name">Meiko R&D</h1>
-          <p class="brand-tagline" data-lang="vi">Giải pháp ODM & IoT — Từ ý tưởng đến sản xuất hàng loạt</p>
-          <p class="brand-tagline" data-lang="en" hidden>ODM & IoT Solutions — From concept to mass production</p>
-        </div>
-      </div>
+  <!-- 🌐 Language Toggle -->
+  <div class="lang-toggle">
+    <button id="lang-vi" class="active">🇻🇳 VI</button>
+    <button id="lang-en">🇬🇧 EN</button>
+  </div>
 
-      <div class="controls">
-        <button id="langToggle" class="btn-toggle" aria-label="Toggle language">EN</button>
-        <label class="switch" title="Toggle dark mode">
-          <input id="themeToggle" type="checkbox" aria-label="Toggle theme">
-          <span class="slider"></span>
-        </label>
-        <nav class="nav">
-          <a href="#about" data-lang="vi">Giới thiệu</a>
-          <a href="#projects" data-lang="vi">Dự án</a>
-          <a href="#capability" data-lang="vi">Năng lực</a>
-          <a href="#contact" data-lang="vi">Liên hệ</a>
-
-          <a href="#about" data-lang="en" hidden>About</a>
-          <a href="#projects" data-lang="en" hidden>Projects</a>
-          <a href="#capability" data-lang="en" hidden>Capabilities</a>
-          <a href="#contact" data-lang="en" hidden>Contact</a>
-        </nav>
-      </div>
+  <!-- 🧭 Header -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/meiko-logo.png" alt="Meiko R&D Logo" />
+      <span>Meiko R&D Center</span>
     </div>
+    <nav>
+      <a href="#about" data-lang-key="nav_about">Giới thiệu</a>
+      <a href="#projects" data-lang-key="nav_projects">Dự án</a>
+      <a href="#odm" data-lang-key="nav_odm">Năng lực ODM</a>
+      <a href="#contact" data-lang-key="nav_contact">Liên hệ</a>
+    </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- 🦾 Hero -->
   <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-left">
-        <h2 class="hero-title" data-lang="vi">Kiến tạo giải pháp IoT & ODM sáng tạo</h2>
-        <h2 class="hero-title" data-lang="en" hidden>Engineering creative IoT & ODM solutions</h2>
-        <p class="hero-sub" data-lang="vi">
-          Meiko R&D chuyên thiết kế phần cứng, firmware, hệ thống IoT và giải pháp sản xuất
-          mười hóa để đưa sản phẩm từ prototype đến sản xuất hàng loạt.
-        </p>
-        <p class="hero-sub" data-lang="en" hidden>
-          Meiko R&D specializes in hardware design, firmware, IoT systems and manufacturing-ready
-          solutions that take products from prototype to mass production.
-        </p>
-
-        <div class="hero-cta">
-          <a href="#projects" class="btn-primary" data-lang="vi">Xem Dự Án</a>
-          <a href="#projects" class="btn-primary" data-lang="en" hidden>See Projects</a>
-          <a href="#contact" class="btn-ghost" data-lang="vi">Liên hệ hợp tác</a>
-          <a href="#contact" class="btn-ghost" data-lang="en" hidden>Contact Us</a>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="card-visual">
-          <img src="assets/tingboxpro_1.jpg" alt="TingBox" />
-          <div class="card-badge" data-lang="vi">Loa Thông Báo Thanh Toán</div>
-          <div class="card-badge" data-lang="en" hidden>Payment Announcement Speaker</div>
-        </div>
-      </div>
+    <div class="hero-content">
+      <h1 data-lang-key="hero_title">Phát triển Giải pháp <span>IoT & ODM</span> Toàn diện</h1>
+      <p data-lang-key="hero_subtitle">Từ ý tưởng ➜ thiết kế ➜ sản xuất ➜ vận hành</p>
+      <a href="#projects" class="btn-primary" data-lang-key="hero_cta">Khám phá Dự án</a>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- 🧠 About -->
   <section id="about" class="section">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <h3 data-lang="vi">Về Meiko R&D</h3>
-          <h3 data-lang="en" hidden>About Meiko R&D</h3>
-          <p data-lang="vi">
-            Meiko R&D là trung tâm phát triển sản phẩm công nghệ cao, cung cấp dịch vụ ODM
-            trọn gói: thiết kế mạch, phát triển firmware, tích hợp IoT và giải pháp sản xuất.
-            Chúng tôi tối ưu giữa hiệu năng, bảo mật và chi phí để giúp khách hàng thương mại hóa sản phẩm nhanh chóng.
-          </p>
-          <p data-lang="en" hidden>
-            Meiko R&D is a high-tech product development center offering end-to-end ODM services:
-            circuit design, firmware development, IoT integration and manufacturing solutions.
-            We balance performance, security and cost to help customers commercialize products quickly.
-          </p>
-        </div>
+    <h2 data-lang-key="about_title">Về Meiko R&D</h2>
+    <p data-lang-key="about_desc">
+      Meiko R&D là trung tâm nghiên cứu và phát triển công nghệ cao trực thuộc Meiko Electronics Việt Nam.
+      Chúng tôi tập trung vào thiết kế phần cứng, phát triển firmware, giải pháp IoT, ODM và JIG kiểm thử sản xuất hàng loạt,
+      hướng tới sự đổi mới và tối ưu trong từng sản phẩm.
+    </p>
+  </section>
 
-        <div class="card-features">
-          <div class="feature" >
-            <strong>Thiết kế mạch</strong>
-            <span data-lang="vi">Schematic, PCB layout, EMC</span>
-            <span data-lang="en" hidden> Schematic, PCB layout, EMC</span>
-          </div>
-          <div class="feature">
-            <strong>Firmware</strong>
-            <span data-lang="vi">ESP32, STM32, nRF, OTA, CI/CD</span>
-            <span data-lang="en" hidden>ESP32, STM32, nRF, OTA, CI/CD</span>
-          </div>
-          <div class="feature">
-            <strong>ODM & Production</strong>
-            <span data-lang="vi">DFM, jig & test, sản xuất hàng loạt</span>
-            <span data-lang="en" hidden>DFM, jig & test, mass production</span>
-          </div>
-          <div class="feature">
-            <strong>IoT & Connectivity</strong>
-            <span data-lang="vi">MQTT, LoRaWAN, LTE, Cloud</span>
-            <span data-lang="en" hidden>MQTT, LoRaWAN, LTE, Cloud</span>
-          </div>
+  <!-- 🚀 Projects -->
+  <section id="projects" class="section projects">
+    <h2 data-lang-key="projects_title">Dự án Tiêu Biểu</h2>
+    <div class="project-grid">
+      <!-- TingBox -->
+      <div class="project-card">
+        <picture>
+          <source srcset="assets/tingboxpro_1.webp" type="image/webp">
+          <img src="assets/tingboxpro_1.jpg" alt="Loa Thông Báo Thanh Toán (TingBox)" loading="lazy">
+        </picture>
+        <div class="card-content">
+          <h3 data-lang-key="project1_title">Loa Thông Báo Thanh Toán (TingBox)</h3>
+          <p data-lang-key="project1_desc">Sản phẩm ODM cho NextTech – thiết bị thông báo thanh toán tự động qua MQTT, LTE Quectel EC800K, OTA update, sử dụng ESP32-S3. Thiết kế tối ưu cho bán lẻ và FinTech.</p>
+        </div>
+      </div>
+
+      <!-- Sensor IoT -->
+      <div class="project-card">
+        <picture>
+          <source srcset="assets/Iot_1.webp" type="image/webp">
+          <img src="assets/Iot_1.jpg" alt="Hệ thống Sensor IoT" loading="lazy">
+        </picture>
+        <div class="card-content">
+          <h3 data-lang-key="project2_title">Hệ thống Giám sát Sensor IoT</h3>
+          <p data-lang-key="project2_desc">Hệ thống đo nhiệt độ, độ ẩm và cảnh báo cháy nổ truyền thông không dây qua LoRa/LoRaWAN. Giải pháp IoT toàn diện cho nhà xưởng và khu công nghiệp.</p>
+        </div>
+      </div>
+
+      <!-- BiPAP -->
+      <div class="project-card">
+        <picture>
+          <source srcset="assets/BiPAP_01.webp" type="image/webp">
+          <img src="assets/BiPAP_01.jpg" alt="Máy thở BiPAP" loading="lazy">
+        </picture>
+        <div class="card-content">
+          <h3 data-lang-key="project3_title">Máy Thở Không Xâm Nhập BiPAP</h3>
+          <p data-lang-key="project3_desc">Thiết bị hỗ trợ hô hấp cho bệnh nhân, được phát triển với độ tin cậy cao, tích hợp cảm biến và thuật toán điều khiển chính xác.</p>
+        </div>
+      </div>
+
+      <!-- Tool JIG -->
+      <div class="project-card">
+        <picture>
+          <source srcset="assets/tool_jig.webp" type="image/webp">
+          <img src="assets/tool_jig.jpg" alt="Tool JIG ICT/FCT" loading="lazy">
+        </picture>
+        <div class="card-content">
+          <h3 data-lang-key="project4_title">Tool / JIG ICT & FCT</h3>
+          <p data-lang-key="project4_desc">Giải pháp kiểm tra chất lượng sản phẩm điện tử trong sản xuất hàng loạt – hỗ trợ test firmware, chức năng, và hiệu suất linh kiện.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section section-alt">
-    <div class="container">
-      <h3 class="section-title" data-lang="vi">Dự án tiêu biểu</h3>
-      <h3 class="section-title" data-lang="en" hidden>Featured Projects</h3>
+  <!-- ⚙️ ODM -->
+  <section id="odm" class="section">
+    <h2 data-lang-key="odm_title">Năng lực ODM & Phát triển</h2>
+    <ul class="odm-list">
+      <li data-lang-key="odm_item1">Thiết kế phần cứng, layout, EMC</li>
+      <li data-lang-key="odm_item2">Phát triển firmware (ESP32, STM32, Quectel LTE...)</li>
+      <li data-lang-key="odm_item3">Tích hợp Wi-Fi, BLE, MQTT, OTA update</li>
+      <li data-lang-key="odm_item4">Thiết kế JIG ICT/FCT cho sản xuất</li>
+      <li data-lang-key="odm_item5">Đạt chuẩn ISO 9001:2015, CE, RoHS</li>
+    </ul>
+  </section>
 
-      <div class="projects-grid">
-        <!-- TingBox -->
-        <article class="project-card">
-          <div class="project-media">
-            <img src="assets/tingboxpro_2.JPG" alt="TingBox product">
-          </div>
-          <div class="project-body">
-            <h4 data-lang="vi">Loa Thông Báo Thanh Toán (TingBox)</h4>
-            <h4 data-lang="en" hidden>TingBox — Payment Announcement Speaker</h4>
-            <p data-lang="vi">
-              TingBox là giải pháp loa thông báo cho hệ thống thanh toán điện tử, tích hợp ESP32-S3,
-              modem LTE, giao tiếp MQTT, hỗ trợ OTA và dashboard quản trị. Tối ưu cho môi trường bán lẻ.
-            </p>
-            <p data-lang="en" hidden>
-              TingBox is a payment announcement speaker for electronic payment systems. Integrated with
-              ESP32-S3, LTE modem, MQTT connectivity, OTA updates and management dashboard—optimized for retail environments.
-            </p>
-          </div>
-        </article>
-
-        <!-- Sensor IoT -->
-        <article class="project-card">
-          <div class="project-media">
-            <img src="assets/Iot_1.jpg" alt="Sensor IoT">
-          </div>
-          <div class="project-body">
-            <h4 data-lang="vi">Hệ thống Giám sát Sensor IoT</h4>
-            <h4 data-lang="en" hidden>Sensor IoT Monitoring System</h4>
-            <p data-lang="vi">
-              Hệ thống giám sát nhiệt độ, độ ẩm và cảnh báo cháy nổ. Truyền thông không dây qua LoRa/LoRaWAN,
-              kèm dashboard web và tích hợp cảnh báo real-time.
-            </p>
-            <p data-lang="en" hidden>
-              Monitoring system for temperature, humidity and fire-risk alerts. Wireless communication via LoRa/LoRaWAN,
-              with web dashboard and real-time alert integration.
-            </p>
-          </div>
-        </article>
-
-        <!-- BiPAP -->
-        <article class="project-card">
-          <div class="project-media">
-            <img src="assets/BiPAP_Full.png" alt="BiPAP Ventilator">
-          </div>
-          <div class="project-body">
-            <h4 data-lang="vi">Máy thở không xâm nhập BiPAP</h4>
-            <h4 data-lang="en" hidden>Non-invasive BiPAP Ventilator</h4>
-            <p data-lang="vi">
-              Thiết bị hỗ trợ hô hấp cho bệnh nhân, thiết kế tuân thủ tiêu chuẩn y tế, tối ưu khả năng vận hành và bảo trì.
-            </p>
-            <p data-lang="en" hidden>
-              A respiratory support device designed to medical standards, optimized for operation and maintenance.
-            </p>
-          </div>
-        </article>
-
-        <!-- Tool / JIG -->
-        <article class="project-card">
-          <div class="project-media">
-            <img src="assets/tool_jig.jpg" alt="Tool JIG">
-          </div>
-          <div class="project-body">
-            <h4 data-lang="vi">Tool / JIG ICT & FCT</h4>
-            <h4 data-lang="en" hidden>ICT & FCT Tooling</h4>
-            <p data-lang="vi">
-              Giải pháp kiểm tra tự động (ICT/FCT) cho dây chuyền SMT, giúp đảm bảo chất lượng trước khi đóng gói.
-            </p>
-            <p data-lang="en" hidden>
-              Automated ICT/FCT testing solutions for SMT production lines, ensuring product quality before packaging.
-            </p>
-          </div>
-        </article>
-      </div>
+  <!-- 📩 Contact -->
+  <section id="contact" class="section contact">
+    <h2 data-lang-key="contact_title">Liên hệ</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Họ và tên" required data-lang-key="form_name_placeholder">
+      <input type="email" name="email" placeholder="Email" required data-lang-key="form_email_placeholder">
+      <textarea name="message" rows="5" placeholder="Nội dung liên hệ..." required data-lang-key="form_message_placeholder"></textarea>
+      <button type="submit" class="btn-primary" data-lang-key="form_submit_button">Gửi liên hệ</button>
+      <p id="form-status"></p>
+    </form>
+    <div class="contact-info">
+      <p><strong>Email:</strong> duc.vuminh@meiko.vn</p>
+      <p><strong data-lang-key="contact_address_label">Địa chỉ:</strong> Tầng 1, Nhà EMS2, Lô CN9, KCN Thạch Thất - Quốc Oai, Hà Nội</p>
+      <p><a href="https://meiko-auto.vn/" target="_blank">🌐 https://meiko-auto.vn/</a></p>
     </div>
   </section>
 
-  <!-- CAPABILITY / SERVICES -->
-  <section id="capability" class="section">
-    <div class="container">
-      <h3 data-lang="vi">Năng lực chính</h3>
-      <h3 data-lang="en" hidden>Main Capabilities</h3>
-
-      <div class="cap-grid">
-        <div class="cap-card">
-          <h5>Thiết kế phần cứng</h5>
-          <p data-lang="vi">Schematic, PCB layout, EMI/EMC, DFM</p>
-          <p data-lang="en" hidden> Schematic, PCB layout, EMI/EMC, DFM</p>
-        </div>
-        <div class="cap-card">
-          <h5>Firmware & CI/CD</h5>
-          <p data-lang="vi">ESP32, STM32, OTA, Unit test, GitHub Actions</p>
-          <p data-lang="en" hidden>ESP32, STM32, OTA, Unit test, GitHub Actions</p>
-        </div>
-        <div class="cap-card">
-          <h5>Connectivity</h5>
-          <p data-lang="vi">MQTT, LoRaWAN, BLE, LTE</p>
-          <p data-lang="en" hidden>MQTT, LoRaWAN, BLE, LTE</p>
-        </div>
-        <div class="cap-card">
-          <h5>Production & Test</h5>
-          <p data-lang="vi">JIG, ICT/FCT, SMT partner, QA</p>
-          <p data-lang="en" hidden>JIG, ICT/FCT, SMT partner, QA</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section section-contact">
-    <div class="container contact-grid">
-      <div>
-        <h3 data-lang="vi">Liên hệ hợp tác</h3>
-        <h3 data-lang="en" hidden>Contact & Partnerships</h3>
-        <p><strong data-lang="vi">Email:</strong> <a href="mailto:duc.vuminh@meiko.vn">duc.vuminh@meiko.vn</a></p>
-        <p><strong data-lang="vi">Địa chỉ:</strong> Tầng 1, nhà EMS2, Lô CN9, KCN Thạch Thất - Quốc Oai, Xã Tây Phương, Hà Nội, Việt Nam</p>
-        <p data-lang="en" hidden><strong>Email:</strong> <a href="mailto:duc.vuminh@meiko.vn">duc.vuminh@meiko.vn</a></p>
-        <p data-lang="en" hidden><strong>Address:</strong> 1st floor, EMS2 building, Lot CN9, Thach That - Quoc Oai Industrial Park, Tay Phuong, Hanoi, Vietnam</p>
-        <p><strong>Website:</strong> <a href="https://meiko-auto.vn/" target="_blank" rel="noopener">meiko-auto.vn</a></p>
-      </div>
-
-      <form class="contact-form" onsubmit="event.preventDefault(); alertMessage();" aria-label="Contact form">
-        <label data-lang="vi">Tên</label>
-        <label data-lang="en" hidden>Name</label>
-        <input type="text" placeholder="Nguyễn Văn A" required>
-
-        <label data-lang="vi">Email</label>
-        <label data-lang="en" hidden>Email</label>
-        <input type="email" placeholder="you@company.com" required>
-
-        <label data-lang="vi">Nội dung</label>
-        <label data-lang="en" hidden>Message</label>
-        <textarea rows="4" placeholder="Mô tả ngắn..." required></textarea>
-
-        <button type="submit" class="btn-primary" data-lang="vi">Gửi</button>
-        <button type="submit" class="btn-primary" data-lang="en" hidden>Send</button>
-      </form>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Meiko R&D — All rights reserved.</p>
-    </div>
+  <!-- 🧾 Footer -->
+  <footer>
+    <p data-lang-key="footer_copyright">© 2024 Meiko R&D Center | All rights reserved</p>
   </footer>
 
-<script>
-/* Simple language toggle (vi/en) */
-const langToggle = document.getElementById('langToggle');
-const langElems = document.querySelectorAll('[data-lang]');
-const headerLang = navigator.language && navigator.language.startsWith('en') ? 'en' : 'vi';
-let lang = localStorage.getItem('meiko_lang') || headerLang;
-function applyLang() {
-  langElems.forEach(el => {
-    if (el.getAttribute('data-lang') === lang) {
-      el.hidden = false;
-    } else {
-      el.hidden = true;
-    }
-  });
-  langToggle.textContent = lang === 'vi' ? 'EN' : 'VI';
-  localStorage.setItem('meiko_lang', lang);
-}
-langToggle.addEventListener('click', () => {
-  lang = (lang === 'vi') ? 'en' : 'vi';
-  applyLang();
-});
-applyLang();
+  <!-- ✅ EmailJS Script -->
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+      .then(() => {
+        const statusEl = document.getElementById('form-status');
+        const currentLang = document.documentElement.lang || 'vi';
+        statusEl.innerText = currentLang === 'vi' 
+          ? "✅ Gửi thành công! Cảm ơn bạn đã liên hệ."
+          : "✅ Sent successfully! Thank you for your contact.";
+        this.reset();
+      }, (err) => {
+        const statusEl = document.getElementById('form-status');
+        const currentLang = document.documentElement.lang || 'vi';
+        statusEl.innerText = currentLang === 'vi'
+          ? "❌ Lỗi gửi mail. Vui lòng thử lại."
+          : "❌ Mail sending failed. Please try again.";
+      });
+    });
+  </script>
 
-/* Theme toggle & auto dark based on system */
-const themeToggle = document.getElementById('themeToggle');
-const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-const storedTheme = localStorage.getItem('meiko_theme');
-let dark = storedTheme ? storedTheme === 'dark' : prefersDark;
-function applyTheme() {
-  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-  themeToggle.checked = dark;
-  localStorage.setItem('meiko_theme', dark ? 'dark' : 'light');
-}
-themeToggle.addEventListener('change', () => {
-  dark = themeToggle.checked;
-  applyTheme();
-});
-applyTheme();
+  <!-- ✅ Language Switcher Script -->
+  <script>
+    const translations = {
+      vi: {
+        nav_about: "Giới thiệu",
+        nav_projects: "Dự án",
+        nav_odm: "Năng lực ODM",
+        nav_contact: "Liên hệ",
+        hero_title: "Phát triển Giải pháp <span>IoT & ODM</span> Toàn diện",
+        hero_subtitle: "Từ ý tưởng ➜ thiết kế ➜ sản xuất ➜ vận hành",
+        hero_cta: "Khám phá Dự án",
+        about_title: "Về Meiko R&D",
+        about_desc: "Meiko R&D là trung tâm nghiên cứu và phát triển công nghệ cao trực thuộc Meiko Electronics Việt Nam. Chúng tôi tập trung vào thiết kế phần cứng, phát triển firmware, giải pháp IoT, ODM và JIG kiểm thử sản xuất hàng loạt, hướng tới sự đổi mới và tối ưu trong từng sản phẩm.",
+        projects_title: "Dự án Tiêu Biểu",
+        project1_title: "Loa Thông Báo Thanh Toán (TingBox)",
+        project1_desc: "Sản phẩm ODM cho NextTech – thiết bị thông báo thanh toán tự động qua MQTT, LTE Quectel EC800K, OTA update, sử dụng ESP32-S3. Thiết kế tối ưu cho bán lẻ và FinTech.",
+        project2_title: "Hệ thống Giám sát Sensor IoT",
+        project2_desc: "Hệ thống đo nhiệt độ, độ ẩm và cảnh báo cháy nổ truyền thông không dây qua LoRa/LoRaWAN. Giải pháp IoT toàn diện cho nhà xưởng và khu công nghiệp.",
+        project3_title: "Máy Thở Không Xâm Nhập BiPAP",
+        project3_desc: "Thiết bị hỗ trợ hô hấp cho bệnh nhân, được phát triển với độ tin cậy cao, tích hợp cảm biến và thuật toán điều khiển chính xác.",
+        project4_title: "Tool / JIG ICT & FCT",
+        project4_desc: "Giải pháp kiểm tra chất lượng sản phẩm điện tử trong sản xuất hàng loạt – hỗ trợ test firmware, chức năng, và hiệu suất linh kiện.",
+        odm_title: "Năng lực ODM & Phát triển",
+        odm_item1: "Thiết kế phần cứng, layout, EMC",
+        odm_item2: "Phát triển firmware (ESP32, STM32, Quectel LTE...)",
+        odm_item3: "Tích hợp Wi-Fi, BLE, MQTT, OTA update",
+        odm_item4: "Thiết kế JIG ICT/FCT cho sản xuất",
+        odm_item5: "Đạt chuẩn ISO 9001:2015, CE, RoHS",
+        contact_title: "Liên hệ",
+        form_name_placeholder: "Họ và tên",
+        form_email_placeholder: "Email",
+        form_message_placeholder: "Nội dung liên hệ...",
+        form_submit_button: "Gửi liên hệ",
+        contact_address_label: "Địa chỉ:",
+        footer_copyright: "© 2024 Meiko R&D Center | Đã đăng ký bản quyền",
+      },
+      en: {
+        nav_about: "About",
+        nav_projects: "Projects",
+        nav_odm: "ODM Capabilities",
+        nav_contact: "Contact",
+        hero_title: "Developing Comprehensive <span>IoT & ODM</span> Solutions",
+        hero_subtitle: "From Idea ➜ Design ➜ Production ➜ Operation",
+        hero_cta: "Explore Projects",
+        about_title: "About Meiko R&D",
+        about_desc: "Meiko R&D is the high-tech research and development center of Meiko Electronics Vietnam. We focus on hardware design, firmware development, IoT solutions, ODM, and mass production testing JIGs, aiming for innovation and optimization in every product.",
+        projects_title: "Featured Projects",
+        project1_title: "Payment Notification Speaker (TingBox)",
+        project1_desc: "An ODM product for NextTech – an automatic payment notification device via MQTT, Quectel EC800K LTE, OTA updates, using ESP32-S3. Optimized design for retail and FinTech.",
+        project2_title: "IoT Sensor Monitoring System",
+        project2_desc: "A system for measuring temperature, humidity, and fire explosion warnings with wireless communication via LoRa/LoRaWAN. A comprehensive IoT solution for factories and industrial parks.",
+        project3_title: "Non-Invasive BiPAP Ventilator",
+        project3_desc: "A respiratory support device for patients, developed with high reliability, integrating sensors and precise control algorithms.",
+        project4_title: "Tool / JIG ICT & FCT",
+        project4_desc: "A quality testing solution for electronic products in mass production – supporting firmware, functional, and component performance tests.",
+        odm_title: "ODM & Development Capabilities",
+        odm_item1: "Hardware design, layout, EMC",
+        odm_item2: "Firmware development (ESP32, STM32, Quectel LTE...)",
+        odm_item3: "Wi-Fi, BLE, MQTT, OTA update integration",
+        odm_item4: "JIG ICT/FCT design for production",
+        odm_item5: "ISO 9001:2015, CE, RoHS compliant",
+        contact_title: "Contact",
+        form_name_placeholder: "Your Name",
+        form_email_placeholder: "Email",
+        form_message_placeholder: "Your Message...",
+        form_submit_button: "Send Message",
+        contact_address_label: "Address:",
+        footer_copyright: "© 2024 Meiko R&D Center | All rights reserved",
+      }
+    };
 
-/* small helpers */
-document.getElementById('year').textContent = new Date().getFullYear();
-function alertMessage(){
-  if (lang === 'vi') alert('Cảm ơn! Chúng tôi sẽ liên hệ lại sớm.');
-  else alert('Thanks! We will contact you soon.');
-}
-</script>
+    const langVI = document.getElementById('lang-vi');
+    const langEN = document.getElementById('lang-en');
+
+    const setLanguage = (lang) => {
+      // Cập nhật thuộc tính lang của thẻ html
+      document.documentElement.lang = lang;
+
+      // Cập nhật nội dung text
+      document.querySelectorAll('[data-lang-key]').forEach(el => {
+        const key = el.getAttribute('data-lang-key');
+        const translation = translations[lang][key];
+        if (translation) {
+          // Kiểm tra xem có cần dịch placeholder không
+          if (key.includes('placeholder')) {
+            el.placeholder = translation;
+          } else {
+            // Dùng innerHTML để giữ lại các thẻ con như <span>
+            el.innerHTML = translation;
+          }
+        }
+      });
+
+      // Cập nhật class 'active' cho nút
+      if (lang === 'vi') {
+        langVI.classList.add('active');
+        langEN.classList.remove('active');
+      } else {
+        langEN.classList.add('active');
+        langVI.classList.remove('active');
+      }
+    };
+
+    langVI.addEventListener('click', () => setLanguage('vi'));
+    langEN.addEventListener('click', () => setLanguage('en'));
+
+    // Thiết lập ngôn ngữ mặc định khi tải trang
+    setLanguage('vi');
+  </script>
 </body>
 </html>
