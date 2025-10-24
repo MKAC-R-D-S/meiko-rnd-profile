@@ -178,6 +178,13 @@ body {
   font-weight: 600;
 }
 
+.section-subtitle {
+  text-align: center;
+  color: #b0b0b0;
+  margin-top: -32px;
+  margin-bottom: 48px;
+}
+
 /* 🚀 Project Cards - Hiệu ứng 3D và viền phát sáng */
 .project-grid {
   display: grid;
@@ -263,6 +270,44 @@ body {
 .odm-list li:hover {
   transform: translateY(-5px);
   background: rgba(40, 40, 40, 0.8);
+}
+
+/* ✨ Process Steps */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  text-align: center;
+}
+
+.step {
+  position: relative;
+  padding: 24px;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8a2be2, #58a6ff);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 auto 16px;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+}
+
+.step h3 {
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  margin-bottom: 8px;
+}
+
+.step p {
+  color: #b0b0b0;
 }
 
 /* 📩 Contact */
@@ -370,6 +415,7 @@ footer {
 
 /* Hiệu ứng trễ cho các card và item trong danh sách để tạo hiệu ứng gợn sóng */
 .project-card.animate-on-scroll,
-.odm-list li.animate-on-scroll {
+.odm-list li.animate-on-scroll,
+.step.animate-on-scroll {
   transition-delay: calc(0.1s * var(--stagger-index, 1));
 }
