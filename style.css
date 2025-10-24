@@ -7,7 +7,7 @@
 --- */
 
 /* 🌐 Google Fonts & Base */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -17,7 +17,7 @@
 
 /* 🎨 Animated Gradient Background & Root Variables */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Be Vietnam Pro', sans-serif;
   /* Nền tối làm chủ đạo */
   background-color: #121212;
   color: #e0e0e0;
@@ -56,6 +56,11 @@ body {
 
 .navbar nav {
   margin-left: auto; /* Đẩy menu điều hướng sang phải */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 
