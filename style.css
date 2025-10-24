@@ -353,3 +353,23 @@ footer {
     font-size: 2rem;
   }
 }
+
+/* ✨ Scroll Animation */
+.animate-on-scroll {
+  /* Trạng thái ẩn ban đầu: mờ và bị đẩy xuống dưới */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  /* Trạng thái hiện: rõ nét và trở về vị trí ban đầu */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hiệu ứng trễ cho các card và item trong danh sách để tạo hiệu ứng gợn sóng */
+.project-card.animate-on-scroll,
+.odm-list li.animate-on-scroll {
+  transition-delay: calc(0.1s * var(--stagger-index, 1));
+}

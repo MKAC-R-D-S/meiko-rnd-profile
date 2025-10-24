@@ -63,8 +63,8 @@
 
   <!-- 🧠 About -->
   <section id="about" class="section">
-    <h2 data-lang-key="about_title">Về Meiko R&D</h2>
-    <p data-lang-key="about_desc">
+    <h2 data-lang-key="about_title" class="animate-on-scroll">Về Meiko R&D</h2>
+    <p data-lang-key="about_desc" class="animate-on-scroll">
       Meiko R&D là trung tâm nghiên cứu và phát triển công nghệ cao trực thuộc Meiko Electronics Việt Nam.
       Chúng tôi tập trung vào thiết kế phần cứng, phát triển firmware, giải pháp IoT, ODM và JIG kiểm thử sản xuất hàng loạt,
       hướng tới sự đổi mới và tối ưu trong từng sản phẩm.
@@ -73,10 +73,10 @@
 
   <!-- 🚀 Projects -->
   <section id="projects" class="section projects">
-    <h2 data-lang-key="projects_title">Dự án Tiêu Biểu</h2>
+    <h2 data-lang-key="projects_title" class="animate-on-scroll">Dự án Tiêu Biểu</h2>
     <div class="project-grid">
       <!-- TingBox -->
-      <div class="project-card">
+      <div class="project-card animate-on-scroll">
         <picture>
           <source srcset="assets/tingboxpro_1.webp" type="image/webp">
           <img src="assets/tingboxpro_1.jpg" alt="Loa Thông Báo Thanh Toán (TingBox)" loading="lazy">
@@ -88,7 +88,7 @@
       </div>
 
       <!-- Sensor IoT -->
-      <div class="project-card">
+      <div class="project-card animate-on-scroll">
         <picture>
           <source srcset="assets/Iot_1.webp" type="image/webp">
           <img src="assets/Iot_1.jpg" alt="Hệ thống Sensor IoT" loading="lazy">
@@ -100,7 +100,7 @@
       </div>
 
       <!-- BiPAP -->
-      <div class="project-card">
+      <div class="project-card animate-on-scroll">
         <picture>
           <source srcset="assets/BiPAP_01.webp" type="image/webp">
           <img src="assets/BiPAP_01.jpg" alt="Máy thở BiPAP" loading="lazy">
@@ -112,7 +112,7 @@
       </div>
 
       <!-- Tool JIG -->
-      <div class="project-card">
+      <div class="project-card animate-on-scroll">
         <picture>
           <source srcset="assets/tool_jig.webp" type="image/webp">
           <img src="assets/tool_jig.jpg" alt="Tool JIG ICT/FCT" loading="lazy">
@@ -127,27 +127,27 @@
 
   <!-- ⚙️ ODM -->
   <section id="odm" class="section">
-    <h2 data-lang-key="odm_title">Năng lực ODM & Phát triển</h2>
+    <h2 data-lang-key="odm_title" class="animate-on-scroll">Năng lực ODM & Phát triển</h2>
     <ul class="odm-list">
-      <li data-lang-key="odm_item1">Thiết kế phần cứng, layout, EMC</li>
-      <li data-lang-key="odm_item2">Phát triển firmware (ESP32, STM32, Quectel LTE...)</li>
-      <li data-lang-key="odm_item3">Tích hợp Wi-Fi, BLE, MQTT, OTA update</li>
-      <li data-lang-key="odm_item4">Thiết kế JIG ICT/FCT cho sản xuất</li>
-      <li data-lang-key="odm_item5">Đạt chuẩn ISO 9001:2015, CE, RoHS</li>
+      <li data-lang-key="odm_item1" class="animate-on-scroll">Thiết kế phần cứng, layout, EMC</li>
+      <li data-lang-key="odm_item2" class="animate-on-scroll">Phát triển firmware (ESP32, STM32, Quectel LTE...)</li>
+      <li data-lang-key="odm_item3" class="animate-on-scroll">Tích hợp Wi-Fi, BLE, MQTT, OTA update</li>
+      <li data-lang-key="odm_item4" class="animate-on-scroll">Thiết kế JIG ICT/FCT cho sản xuất</li>
+      <li data-lang-key="odm_item5" class="animate-on-scroll">Đạt chuẩn ISO 9001:2015, CE, RoHS</li>
     </ul>
   </section>
 
   <!-- 📩 Contact -->
   <section id="contact" class="section contact">
-    <h2 data-lang-key="contact_title">Liên hệ</h2>
-    <form id="contact-form">
+    <h2 data-lang-key="contact_title" class="animate-on-scroll">Liên hệ</h2>
+    <form id="contact-form" class="animate-on-scroll">
       <input type="text" name="name" placeholder="Họ và tên" required data-lang-key="form_name_placeholder">
       <input type="email" name="email" placeholder="Email" required data-lang-key="form_email_placeholder">
       <textarea name="message" rows="5" placeholder="Nội dung liên hệ..." required data-lang-key="form_message_placeholder"></textarea>
       <button type="submit" class="btn-primary" data-lang-key="form_submit_button">Gửi liên hệ</button>
       <p id="form-status"></p>
     </form>
-    <div class="contact-info">
+    <div class="contact-info animate-on-scroll">
       <p><strong>Email:</strong> duc.vuminh@meiko.vn</p>
       <p><strong data-lang-key="contact_address_label">Địa chỉ:</strong> Tầng 1, Nhà EMS2, Lô CN9, KCN Thạch Thất - Quốc Oai, Hà Nội</p>
       <p><a href="https://meiko-auto.vn/" target="_blank">🌐 https://meiko-auto.vn/</a></p>
@@ -289,6 +289,31 @@
 
     // Thiết lập ngôn ngữ mặc định khi tải trang
     setLanguage('vi');
+  </script>
+
+  <!-- ✅ Scroll Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Thêm thuộc tính --stagger-index để tạo hiệu ứng trễ
+            entry.target.style.setProperty('--stagger-index', index);
+            entry.target.classList.add('is-visible');
+            // Ngừng theo dõi sau khi đã hiển thị để tối ưu hiệu năng
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1 // Kích hoạt khi 10% phần tử hiện ra
+      });
+
+      animatedElements.forEach(el => {
+        observer.observe(el);
+      });
+    });
   </script>
 </body>
 </html>
