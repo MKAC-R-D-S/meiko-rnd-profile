@@ -106,28 +106,57 @@ body {
 
 /* 🦾 Hero */
 .hero {
-  /* Bỏ background cũ để thấy nền chuyển động của body */
-  background: transparent;
+  background:
+    radial-gradient(circle at top right, rgba(88, 166, 255, 0.18), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.12), transparent 30%),
+    transparent;
   color: white;
-  text-align: center;
-  padding: 100px 20px;
+  padding: 88px 20px 72px;
+  min-height: 78vh;
+}
+
+.hero-shell {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.9fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.hero-content {
+  text-align: left;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  min-height: 70vh;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.22);
+  color: #8ac4ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 18px;
 }
 
 .hero-content h1 {
-  font-size: 3.2rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  /* Hiệu ứng text gradient */
-  background: linear-gradient(90deg, #c77dff, #58a6ff);
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #f3f7ff, #58a6ff 78%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.hero-content span {
+.hero-content h1 span {
   /* Kế thừa gradient từ h1 */
   background: inherit;
   -webkit-background-clip: text;
@@ -135,9 +164,129 @@ body {
 }
 
 .hero-content p {
-  font-size: 1.3rem;
-  margin-bottom: 32px;
-  color: #b0b0b0;
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+  color: #c2d0e3;
+  max-width: 760px;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: 1px solid rgba(88, 166, 255, 0.28);
+  background: rgba(88, 166, 255, 0.06);
+  color: #cfe6ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(88, 166, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.hero-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.hero-trust-item,
+.hero-panel,
+.feature-block,
+.trust-card,
+.market-card,
+.contact-form-card,
+.contact-note-card,
+.contact-info {
+  background: rgba(18, 25, 38, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 45px rgba(4, 10, 22, 0.22);
+}
+
+.hero-trust-item {
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.hero-trust-item strong {
+  display: block;
+  color: #edf5ff;
+  font-size: 0.98rem;
+  margin-bottom: 6px;
+}
+
+.hero-trust-item span {
+  color: #9fb3cc;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.hero-panel {
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-panel-tag,
+.feature-block-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #7db8ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-panel h3,
+.feature-block h3,
+.trust-card h3,
+.contact-note-card h3 {
+  font-size: 1.35rem;
+  color: #eff4fb;
+  margin-bottom: 14px;
+}
+
+.hero-panel-list,
+.contact-note-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.hero-panel-list li,
+.contact-note-list li {
+  position: relative;
+  padding-left: 18px;
+  color: #adc0d8;
+  line-height: 1.65;
+}
+
+.hero-panel-list li::before,
+.contact-note-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #58a6ff;
 }
 
 /* Nút bấm với hiệu ứng gradient và hover */
@@ -183,6 +332,99 @@ body {
   color: #b0b0b0;
   margin-top: -32px;
   margin-bottom: 48px;
+}
+
+.section-intro {
+  max-width: 920px;
+  margin: -16px auto 0;
+  text-align: center;
+  color: #b8c7d8;
+  line-height: 1.85;
+}
+
+.about-grid,
+.trust-grid,
+.market-grid,
+.contact-layout {
+  display: grid;
+  gap: 24px;
+}
+
+.about-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 36px;
+}
+
+.feature-block,
+.trust-card,
+.market-card,
+.contact-form-card,
+.contact-note-card,
+.contact-info {
+  border-radius: 20px;
+}
+
+.feature-block,
+.trust-card,
+.market-card,
+.contact-note-card,
+.contact-info {
+  padding: 26px;
+}
+
+.feature-block p,
+.trust-card p,
+.market-card,
+.contact-note-card,
+.contact-info {
+  color: #adc0d8;
+  line-height: 1.7;
+}
+
+.trust-section {
+  padding-top: 0;
+}
+
+.trust-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.trust-card {
+  min-height: 100%;
+}
+
+.market-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.market-card {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.cooperation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.cooperation-card {
+  background: linear-gradient(180deg, rgba(21, 31, 48, 0.9), rgba(15, 23, 36, 0.86));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 18px 42px rgba(4, 10, 22, 0.2);
+}
+
+.cooperation-card h3 {
+  color: #eff4fb;
+  font-size: 1.28rem;
+  margin-bottom: 14px;
+}
+
+.cooperation-card p {
+  color: #adc0d8;
+  line-height: 1.72;
 }
 
 /* 🚀 Project Cards - Hiệu ứng 3D và viền phát sáng */
@@ -385,12 +627,26 @@ body {
 }
 
 /* 📩 Contact */
+.contact-layout {
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  align-items: start;
+}
+
 .contact form {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 600px;
-  margin: 0 auto 40px;
+  max-width: none;
+  margin: 0;
+}
+
+.contact-form-card {
+  padding: 28px;
+}
+
+.contact-side {
+  display: grid;
+  gap: 20px;
 }
 
 .contact input, .contact textarea {
@@ -410,7 +666,7 @@ body {
 }
 
 .contact-info {
-  text-align: center;
+  text-align: left;
   line-height: 1.8;
   color: #b0b0b0;
 }
@@ -470,14 +726,42 @@ footer {
   .navbar nav {
     margin-top: 15px;
   }
+  .hero-shell,
+  .about-grid,
+  .trust-grid,
+  .market-grid,
+  .cooperation-grid,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+  .hero-kicker {
+    width: auto;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-trust-grid {
+    grid-template-columns: 1fr;
+  }
   .hero-content h1 {
     font-size: 2.2rem;
+  }
+  .hero-content p,
+  .section-intro {
+    max-width: none;
   }
   .section {
     padding: 60px 20px;
   }
   .section h2 {
     font-size: 2rem;
+  }
+  .contact-info {
+    text-align: center;
   }
 }
 

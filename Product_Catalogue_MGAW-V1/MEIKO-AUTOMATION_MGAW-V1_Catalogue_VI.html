@@ -644,6 +644,22 @@
     .nav-actions {
       display: flex; align-items: center; gap: 12px;
     }
+    .nav-back {
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--gray-300);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+    .nav-back:hover {
+      color: var(--white);
+      border-color: rgba(29,111,245,0.35);
+      background: rgba(29,111,245,0.12);
+    }
     .lang-toggle {
       display: flex; align-items: center; gap: 6px;
     }
@@ -748,6 +764,7 @@
     <li><a href="#lien-he">Liên hệ</a></li>
   </ul>
   <div class="nav-actions">
+    <a href="../index.html#projects" target="_top" class="nav-back">← Trở lại</a>
     <div class="lang-toggle">
       <button id="catalog-lang-vi" class="active">🇻🇳 VI</button>
       <button id="catalog-lang-jp">🇯🇵 JP</button>
@@ -1486,6 +1503,7 @@
     vi: {
       metaTitle: "MGAW-V1 – Thiết Bị Cảnh Báo IoT Công Nghiệp | MEIKO AUTOMATION",
       navLinks: ["Tính năng", "Kết nối", "Ứng dụng", "Thông số", "Liên hệ"],
+      navBack: "← Trở lại",
       navCta: "Liên hệ ngay →",
       hero: {
         badges: ["⚡ Thiết bị mới", "🏭 Industrial Grade"],
@@ -1657,6 +1675,7 @@
     ja: {
       metaTitle: "MGAW-V1 – 産業用IoT警報デバイス | MEIKO AUTOMATION",
       navLinks: ["機能", "接続", "用途", "仕様", "お問い合わせ"],
+      navBack: "← 戻る",
       navCta: "今すぐ相談 →",
       hero: {
         badges: ["⚡ 2026年新製品", "🏭 産業グレード"],
@@ -1828,6 +1847,7 @@
     en: {
       metaTitle: "MGAW-V1 – Industrial IoT Alert Device | MEIKO AUTOMATION",
       navLinks: ["Features", "Connectivity", "Applications", "Specs", "Contact"],
+      navBack: "← Back",
       navCta: "Contact Now →",
       hero: {
         badges: ["⚡ New Product", "🏭 Industrial Grade"],
@@ -2056,6 +2076,7 @@
     document.title = translations.metaTitle;
 
     setNodeList('.nav-links a', translations.navLinks);
+    setText('.nav-back', translations.navBack);
     setText('.nav-cta', translations.navCta);
 
     setText('.badge-blue', translations.hero.badges[0]);
