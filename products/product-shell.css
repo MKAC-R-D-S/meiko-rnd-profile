@@ -53,6 +53,14 @@ body {
   gap: 16px;
 }
 
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .branding {
   display: flex;
   align-items: center;
@@ -90,6 +98,34 @@ body {
   gap: 10px;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.lang-toggle button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-toggle button.active {
+  background: rgba(88, 166, 255, 0.16);
+  color: var(--text);
 }
 
 .topbar-actions a,
@@ -282,6 +318,14 @@ body {
   background: #e5edf7;
 }
 
+.preview-image {
+  width: 100%;
+  display: block;
+  background: #0f1b2e;
+  max-height: 760px;
+  object-fit: cover;
+}
+
 .preview-fallback {
   padding: 28px 22px;
   color: var(--muted);
@@ -316,6 +360,12 @@ body {
     padding: 14px 0;
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .topbar-controls,
+  .topbar-actions {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .hero {
