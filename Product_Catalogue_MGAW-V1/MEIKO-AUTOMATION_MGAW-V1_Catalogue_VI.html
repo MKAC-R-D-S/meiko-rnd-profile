@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MGAW-V1 – Thiết Bị Cảnh Báo IoT Công Nghiệp | MEIKO AUTOMATION</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-dark:   #060b18;
+      --navy:        #0d1526;
+      --navy-light:  #101e38;
+      --navy-card:   #132040;
+      --blue-brand:  #1d6ff5;
+      --blue-light:  #4a90e2;
+      --blue-glow:   rgba(29,111,245,0.18);
+      --red-alert:   #e84242;
+      --amber:       #f59e0b;
+      --green:       #22c55e;
+      --white:       #ffffff;
+      --gray-100:    #f3f4f6;
+      --gray-300:    #c4cdd9;
+      --gray-400:    #8a9ab5;
+      --gray-500:    #607090;
+      --border:      rgba(255,255,255,0.08);
+      --radius-sm:   8px;
+      --radius-md:   14px;
+      --radius-lg:   22px;
+      --radius-xl:   32px;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Be Vietnam Pro', 'Inter', sans-serif;
+      background: var(--navy-dark);
+      color: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Utility ──────────────────────────────────────────────── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+    .text-center { text-align: center; }
+    .text-blue   { color: var(--blue-brand); }
+    .text-red    { color: var(--red-alert); }
+    .text-amber  { color: var(--amber); }
+    .text-green  { color: var(--green); }
+    .text-gray   { color: var(--gray-400); }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px; border-radius: 100px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .badge-blue { background: rgba(29,111,245,0.15); border: 1px solid rgba(29,111,245,0.35); color: #7ab8ff; }
+    .badge-red  { background: rgba(232,66,66,0.15);  border: 1px solid rgba(232,66,66,0.35);  color: #ff9090; }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--blue-brand);
+      margin-bottom: 12px;
+    }
+
+    .h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.12; }
+    .h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; line-height: 1.18; }
+    .h3 { font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
+    .h4 { font-size: 1rem;    font-weight: 600; }
+
+    .lead  { font-size: 1.1rem; color: var(--gray-300); line-height: 1.75; }
+    .small { font-size: 0.875rem; color: var(--gray-400); }
+
+    /* ─── Divider ──────────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0;
+    }
+
+    /* ─── Gradient text ────────────────────────────────────────── */
+    .grad-blue {
+      background: linear-gradient(135deg, #6db3ff 0%, #1d6ff5 60%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .grad-warm {
+      background: linear-gradient(135deg, #ff9a3c 0%, #e84242 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── Card ─────────────────────────────────────────────────── */
+    .card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .card:hover {
+      border-color: rgba(29,111,245,0.4);
+      transform: translateY(-3px);
+    }
+
+    .card-glass {
+      background: rgba(19,32,64,0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+    }
+
+    /* ─── Icon Box ─────────────────────────────────────────────── */
+    .icon-box {
+      width: 52px; height: 52px;
+      border-radius: var(--radius-sm);
+      background: var(--blue-glow);
+      border: 1px solid rgba(29,111,245,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ─── Button ───────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 100px;
+      font-size: 0.9rem; font-weight: 700; cursor: pointer;
+      text-decoration: none; border: none; transition: all 0.25s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #1d6ff5, #4a90e2);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(29,111,245,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(29,111,245,0.55); }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(29,111,245,0.6);
+      color: #7ab8ff;
+    }
+    .btn-outline:hover { background: var(--blue-glow); }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  SECTION 1 – HERO / COVER                                   */
+    /* ─────────────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(29,111,245,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 10% 80%, rgba(232,66,66,0.08) 0%, transparent 60%),
+        linear-gradient(160deg, #060b18 0%, #0d1526 50%, #060b18 100%);
+      display: flex; align-items: center;
+      padding: 100px 0 60px;
+      position: relative; overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.018) 80px),
+        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.018) 80px);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+
+    .hero-left .logo-wrap {
+      margin-bottom: 36px;
+    }
+    .hero-left .logo-wrap img {
+      height: 38px; width: auto;
+    }
+
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title { margin-bottom: 20px; }
+
+    .hero-desc {
+      font-size: 1.05rem; color: var(--gray-300);
+      line-height: 1.8; margin-bottom: 36px;
+    }
+
+    .hero-pills {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 44px;
+    }
+    .pill {
+      padding: 7px 16px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 600;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--gray-300);
+    }
+
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .hero-right {
+      display: flex; justify-content: center; align-items: center;
+      position: relative;
+    }
+
+    .hero-img-wrap {
+      position: relative; border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px var(--border);
+    }
+    .hero-img-wrap img { display: block; width: 100%; max-width: 480px; height: auto; object-fit: cover; }
+
+    .hero-glow {
+      position: absolute; width: 360px; height: 360px;
+      border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0;
+      background: radial-gradient(circle, rgba(29,111,245,0.25) 0%, transparent 70%);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+    }
+
+    .hero-stats {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden; margin-top: 60px;
+    }
+    .stat-box {
+      background: var(--navy-light); padding: 22px 24px;
+      text-align: center;
+    }
+    .stat-box .num { font-size: 1.8rem; font-weight: 900; color: var(--blue-brand); }
+    .stat-box .lbl { font-size: 0.78rem; color: var(--gray-400); margin-top: 4px; }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  SECTION 2 – BEFORE / AFTER                                 */
+    /* ─────────────────────────────────────────────────────────── */
+    .compare-section {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
+    }
+
+    .compare-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+      margin-top: 56px;
+    }
+
+    .compare-col {
+      border-radius: var(--radius-lg); padding: 40px;
+      position: relative; overflow: hidden;
+    }
+    .compare-col.before {
+      background: linear-gradient(135deg, #1a0a0a, #180e1a);
+      border: 1px solid rgba(232,66,66,0.2);
+    }
+    .compare-col.after {
+      background: linear-gradient(135deg, #091426, #0d1e3a);
+      border: 1px solid rgba(29,111,245,0.3);
+    }
+
+    .compare-label {
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 28px;
+      padding: 6px 14px; border-radius: 100px;
+      display: inline-block;
+    }
+    .compare-col.before .compare-label { background: rgba(232,66,66,0.15); color: #ff8a8a; }
+    .compare-col.after  .compare-label { background: rgba(29,111,245,0.15); color: #7ab8ff; }
+
+    .compare-items { display: flex; flex-direction: column; gap: 16px; }
+    .compare-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.95rem;
+    }
+    .ci-dot {
+      width: 22px; height: 22px; border-radius: 50%;
+      flex-shrink: 0; margin-top: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem;
+    }
+    .before .ci-dot { background: rgba(232,66,66,0.2); color: var(--red-alert); }
+    .after  .ci-dot { background: rgba(29,111,245,0.2); color: var(--blue-brand); }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  SECTION 3 – FEATURES OVERVIEW                              */
+    /* ─────────────────────────────────────────────────────────── */
+    .features-section {
+      padding: 100px 0;
+      background: var(--navy-dark);
+    }
+
+    .features-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+      margin-top: 56px;
+    }
+
+    .feat-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 32px;
+      transition: all 0.3s;
+    }
+    .feat-card:hover {
+      border-color: rgba(29,111,245,0.4);
+      background: rgba(19,40,80,0.9);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .feat-card .icon-box { margin-bottom: 18px; }
+    .feat-card h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+    .feat-card p  { font-size: 0.88rem; color: var(--gray-400); line-height: 1.65; }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  SECTION 4 – AUDIO & VISUAL ALERTING                        */
+    /* ─────────────────────────────────────────────────────────── */
+    .av-section {
+      padding: 100px 0;
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+    }
+
+    .av-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+
+    .av-image-stack { position: relative; }
+    .av-main-img {
+      width: 100%; border-radius: var(--radius-lg); display: block;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
+    }
+
+    .av-float-card {
+      position: absolute; bottom: -24px; right: -24px;
+      background: rgba(13,21,38,0.95); backdrop-filter: blur(20px);
+      border: 1px solid rgba(29,111,245,0.3);
+      border-radius: var(--radius-md); padding: 18px 22px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+    .av-float-card .metric { font-size: 1.6rem; font-weight: 900; color: var(--blue-brand); }
+    .av-float-card .metric-lbl { font-size: 0.78rem; color: var(--gray-400); }
+
+    .av-features { display: flex; flex-direction: column; gap: 22px; }
+    .av-feat-item {
+      background: var(--navy-card); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 24px;
+      display: flex; gap: 18px; align-items: flex-start;
+      transition: border-color 0.25s;
+    }
+    .av-feat-item:hover { border-color: rgba(29,111,245,0.4); }
+    .av-feat-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .av-feat-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .av-feat-item p  { font-size: 0.875rem; color: var(--gray-400); line-height: 1.6; }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  SECTION 5 – AI INTEGRATION                                 */
+    /* ─────────────────────────────────────────────────────────── */
+    .ai-section {
+      padding: 100px 0;
+      background: var(--navy-dark);
+    }
+
+    .ai-flow {
+      display: flex; align-items: center; justify-content: center; gap: 0;
+      margin: 56px 0; flex-wrap: wrap; gap: 0;
+    }
+
+    .flow-item {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+      flex: 1; min-width: 140px; max-width: 180px;
+    }
+    .flow-icon {
+      width: 72px; height: 72px; border-radius: var(--radius-md);
+      background: var(--navy-card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    .flow-label { font-size: 0.85rem; font-weight: 600; color: var(--gray-300); text-align: center; }
+
+    .flow-arrow {
+      font-size: 1.4rem; color: var(--blue-brand);
+      flex: 0 0 auto; padding: 0 10px; margin-top: -12px;
+    }
+
+    .protocols-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+      margin-top: 48px;
+    }
+
+    .proto-card {
+      background: var(--navy-card); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 22px;
+      transition: all 0.25s;
+    }
+    .proto-card:hover {
+      border-color: rgba(29,111,245,0.4);
+      transform: translateY(-3px);
+    }
+    .proto-card .proto-icon { font-size: 1.5rem; margin-bottom: 12px; }
+    .proto-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .proto-card p  { font-size: 0.83rem; color: var(--gray-400); line-height: 1.55; }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  SECTION 6 – INDUSTRIAL RELIABILITY                         */
+    /* ─────────────────────────────────────────────────────────── */
+    .reliability-section {
+      padding: 100px 0;
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+    }
+
+    .reliability-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+      margin-top: 56px;
+    }
+
+    .rel-card {
+      background: var(--navy-card); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 26px 22px;
+      transition: all 0.25s; text-align: center;
+    }
+    .rel-card:hover { border-color: rgba(29,111,245,0.4); transform: translateY(-3px); }
+    .rel-card .ri { font-size: 2rem; margin-bottom: 14px; }
+    .rel-card h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 8px; }
+    .rel-card p  { font-size: 0.82rem; color: var(--gray-400); line-height: 1.55; }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  SECTION 7 – USE CASES                                      */
+    /* ─────────────────────────────────────────────────────────── */
+    .usecase-section {
+      padding: 100px 0;
+      background: var(--navy-dark);
+    }
+
+    .usecase-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+      margin-top: 56px;
+    }
+
+    .uc-card {
+      background: var(--navy-card); border: 1px solid var(--border);
+      border-radius: var(--radius-md); overflow: hidden;
+      transition: all 0.3s;
+    }
+    .uc-card:hover { border-color: rgba(29,111,245,0.4); transform: translateY(-4px); }
+
+    .uc-icon-wrap {
+      height: 120px; display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+      background: linear-gradient(135deg, rgba(29,111,245,0.08), rgba(29,111,245,0.02));
+      border-bottom: 1px solid var(--border);
+    }
+
+    .uc-body { padding: 20px; }
+    .uc-body h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .uc-body p  { font-size: 0.82rem; color: var(--gray-400); line-height: 1.55; }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  SECTION 8 – REAL APPLICATION                               */
+    /* ─────────────────────────────────────────────────────────── */
+    .realapp-section {
+      padding: 80px 0;
+      background: var(--navy);
+    }
+
+    .realapp-inner {
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: center;
+    }
+
+    .realapp-img {
+      border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.55);
+      border: 1px solid var(--border);
+    }
+    .realapp-img img { display: block; width: 100%; height: auto; }
+
+    .realapp-content h2 { margin-bottom: 20px; }
+    .realapp-content p  { margin-bottom: 28px; }
+
+    .install-steps { display: flex; flex-direction: column; gap: 16px; }
+    .install-step {
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--blue-brand); color: white;
+      font-size: 0.82rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .install-step p { font-size: 0.9rem; color: var(--gray-300); line-height: 1.6; }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  SECTION 9 – TECH SPECS                                     */
+    /* ─────────────────────────────────────────────────────────── */
+    .specs-section {
+      padding: 100px 0;
+      background: var(--navy-dark);
+    }
+
+    .specs-wrapper {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+      margin-top: 56px; align-items: start;
+    }
+
+    .specs-table-wrap {
+      background: var(--navy-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+    }
+
+    table.specs-table { width: 100%; border-collapse: collapse; }
+    .specs-table thead th {
+      background: rgba(29,111,245,0.15);
+      padding: 14px 22px; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--blue-brand); text-align: left;
+    }
+    .specs-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.2s; }
+    .specs-table tbody tr:last-child { border-bottom: none; }
+    .specs-table tbody tr:hover { background: rgba(29,111,245,0.05); }
+    .specs-table tbody td { padding: 13px 22px; font-size: 0.88rem; }
+    .specs-table .col-key { color: var(--gray-400); width: 42%; }
+    .specs-table .col-val { color: var(--white); font-weight: 500; }
+
+    .specs-img-col { display: flex; flex-direction: column; gap: 22px; }
+    .specs-img-col img {
+      width: 100%; border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  SECTION 10 – OEM / ODM                                     */
+    /* ─────────────────────────────────────────────────────────── */
+    .oemodm-section {
+      padding: 100px 0;
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 60%);
+    }
+
+    .oemodm-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px;
+      margin-top: 56px;
+    }
+    .oemodm-grid .full { grid-column: 1 / -1; }
+
+    .odm-card {
+      background: var(--navy-card); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 28px;
+      transition: all 0.25s;
+    }
+    .odm-card:hover { border-color: rgba(29,111,245,0.4); transform: translateY(-3px); }
+    .odm-card .icon { font-size: 1.8rem; margin-bottom: 14px; }
+    .odm-card h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+    .odm-card p  { font-size: 0.88rem; color: var(--gray-400); line-height: 1.65; }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  SECTION 11 – CONTACT / FOOTER                              */
+    /* ─────────────────────────────────────────────────────────── */
+    .contact-section {
+      padding: 100px 0 60px;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 100%, rgba(29,111,245,0.12) 0%, transparent 65%),
+        var(--navy-dark);
+      position: relative; overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.015) 80px),
+        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.015) 80px);
+      pointer-events: none;
+    }
+
+    .contact-inner { position: relative; z-index: 1; }
+
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;
+      margin: 56px 0 64px;
+    }
+    .contact-item { text-align: center; }
+    .contact-item .ci-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--blue-glow); border: 1px solid rgba(29,111,245,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin: 0 auto 16px;
+    }
+    .contact-item h4 { font-size: 0.85rem; font-weight: 700; color: var(--gray-400); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .contact-item p  { font-size: 1rem; font-weight: 600; color: var(--white); }
+    .contact-item a  { color: var(--blue-brand); text-decoration: none; font-size: 0.95rem; }
+    .contact-item a:hover { text-decoration: underline; }
+
+    .services-row {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+      margin-bottom: 56px;
+    }
+    .svc-tag {
+      padding: 8px 20px; border-radius: 100px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      font-size: 0.85rem; color: var(--gray-300); font-weight: 500;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 32px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-bottom img { height: 28px; }
+    .footer-bottom p { font-size: 0.8rem; color: var(--gray-500); }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  FLOATING NAV                                               */
+    /* ─────────────────────────────────────────────────────────── */
+    .nav-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(6,11,24,0.88); backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo img { height: 28px; }
+    .nav-links {
+      display: flex; gap: 28px; list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem; font-weight: 500; color: var(--gray-300);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-actions {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .lang-toggle {
+      display: flex; align-items: center; gap: 6px;
+    }
+    .lang-toggle button {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: var(--gray-300);
+      padding: 7px 10px;
+      border-radius: 10px;
+      font-size: 0.78rem; font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-toggle button:hover {
+      color: var(--white);
+      border-color: rgba(29,111,245,0.35);
+    }
+    .lang-toggle button.active {
+      background: rgba(29,111,245,0.18);
+      border-color: rgba(29,111,245,0.45);
+      color: #7ab8ff;
+    }
+    .nav-cta {
+      font-size: 0.82rem; font-weight: 700;
+      background: var(--blue-brand); color: white;
+      padding: 8px 20px; border-radius: 100px;
+      text-decoration: none; transition: all 0.25s;
+    }
+    .nav-cta:hover { background: #1a5fdb; }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  PRINT / A4                                                 */
+    /* ─────────────────────────────────────────────────────────── */
+    @media print {
+      .nav-bar { display: none; }
+      body { background: #fff; color: #111; }
+      .hero, .compare-section, .features-section, .av-section,
+      .ai-section, .reliability-section, .usecase-section,
+      .realapp-section, .specs-section, .oemodm-section, .contact-section {
+        padding: 40px 0;
+        background: #fff !important;
+      }
+      .card, .feat-card, .rel-card, .uc-card, .odm-card, .proto-card,
+      .av-feat-item, .compare-col, .contact-item {
+        border: 1px solid #ddd; background: #fafafa !important;
+      }
+      .h1, .h2, .h3, .h4 { color: #111 !important; }
+      .lead, p, td { color: #333 !important; }
+      .text-blue, .grad-blue { color: #1d6ff5 !important; -webkit-text-fill-color: #1d6ff5 !important; }
+      .badge-blue { border: 1px solid #1d6ff5; color: #1d6ff5; background: #eaf0ff; }
+    }
+
+    /* ─────────────────────────────────────────────────────────── */
+    /*  RESPONSIVE                                                 */
+    /* ─────────────────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner, .av-inner, .realapp-inner, .specs-wrapper { grid-template-columns: 1fr; }
+      .compare-grid, .features-grid, .protocols-grid, .contact-grid { grid-template-columns: 1fr 1fr; }
+      .reliability-grid, .usecase-grid { grid-template-columns: 1fr 1fr; }
+      .oemodm-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-actions { gap: 8px; }
+    }
+    @media (max-width: 580px) {
+      .compare-grid, .features-grid, .protocols-grid, .contact-grid,
+      .reliability-grid, .usecase-grid, .oemodm-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .hero-title .h1 { font-size: 2rem; }
+      .nav-bar {
+        padding: 0 16px;
+        gap: 10px;
+      }
+      .nav-actions {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      .lang-toggle {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .lang-toggle button {
+        padding: 6px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  NAV BAR                                                     -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<nav class="nav-bar">
+  <div class="nav-logo">
+    <img src="MEIKO AUTOMATION LOGO.png" alt="MEIKO AUTOMATION" />
+  </div>
+  <ul class="nav-links">
+    <li><a href="#tinh-nang">Tính năng</a></li>
+    <li><a href="#ket-noi">Kết nối</a></li>
+    <li><a href="#ung-dung">Ứng dụng</a></li>
+    <li><a href="#thong-so">Thông số</a></li>
+    <li><a href="#lien-he">Liên hệ</a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="lang-toggle">
+      <button id="catalog-lang-vi" class="active">🇻🇳 VI</button>
+      <button id="catalog-lang-jp">🇯🇵 JP</button>
+      <button id="catalog-lang-en">🇬🇧 EN</button>
+    </div>
+    <a href="#lien-he" class="nav-cta">Liên hệ ngay →</a>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  HERO                                                        -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Left -->
+      <div class="hero-left">
+        <div class="logo-wrap">
+          <img src="MEIKO AUTOMATION LOGO.png" alt="MEIKO AUTOMATION" />
+        </div>
+
+        <div class="hero-eyebrow">
+          <span class="badge badge-blue">⚡ Thiết bị mới</span>
+          <span class="badge badge-red">🏭 Industrial Grade</span>
+        </div>
+
+        <div class="hero-title">
+          <div class="h1">
+            <span class="grad-blue">MGAW-V1</span>
+          </div>
+          <div class="h2" style="margin-top: 8px; color: var(--gray-100); font-size: clamp(1.2rem,2.5vw,1.7rem); font-weight: 600;">
+            Thiết Bị Cảnh Báo Âm Thanh &amp; Ánh Sáng IoT Công Nghiệp
+          </div>
+        </div>
+
+        <p class="hero-desc">
+          Nền tảng cảnh báo thời gian thực tích hợp AI — kết hợp loa công nghiệp,
+          đèn tháp và gateway IoT trong một hệ thống thống nhất. Cấp nguồn qua PoE,
+          giao tiếp MQTT/HTTP, sẵn sàng cho Smart Factory.
+        </p>
+
+        <div class="hero-pills">
+          <span class="pill">MQTT + HTTP</span>
+          <span class="pill">PoE 802.3af/at</span>
+          <span class="pill">OTA Firmware</span>
+          <span class="pill">AI Integration Ready</span>
+          <span class="pill">Modbus RS485</span>
+          <span class="pill">Industrial-grade</span>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#thong-so" class="btn btn-primary">Xem thông số kỹ thuật →</a>
+          <a href="#lien-he" class="btn btn-outline">Báo giá ngay</a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="hero-right">
+        <div class="hero-glow"></div>
+        <div style="position:relative; z-index:1;">
+          <div class="hero-img-wrap">
+            <img src="Industrial IoT_1.png"
+                 alt="MGAW-V1 – Hệ thống cảnh báo IoT công nghiệp"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+            <div style="display:none; width:480px; height:340px; background:var(--navy-card);
+                        border-radius:var(--radius-lg); align-items:center; justify-content:center;
+                        flex-direction:column; gap:12px; border:1px solid var(--border);">
+              <span style="font-size:4rem;">🏭</span>
+              <p style="color:var(--gray-400); font-size:0.9rem;">MGAW-V1 System</p>
+            </div>
+          </div>
+          <!-- <div class="av-float-card" style="position:absolute; bottom:-20px; right:-20px;">
+            <div class="metric">≤ 1s</div>
+            <div class="metric-lbl">Độ trễ kích hoạt cảnh báo</div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="hero-stats">
+      <div class="stat-box">
+        <div class="num">8W</div>
+        <div class="lbl">Loa Class D</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">~90dB</div>
+        <div class="lbl">Áp suất âm thanh @1m</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">24/7</div>
+        <div class="lbl">Vận hành liên tục</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  SECTION: BEFORE / AFTER                                     -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="compare-section">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-tag">VẤN ĐỀ & GIẢI PHÁP</span>
+      <h2 class="h2">Từ hệ thống rời rạc<br /><span class="grad-blue">đến an toàn thống nhất</span></h2>
+      <p class="lead" style="max-width:600px; margin:16px auto 0;">
+        MGAW-V1 thay thế các giải pháp cảnh báo phân tán, trễ phản hồi và không có AI
+        bằng một nền tảng tích hợp, thông minh, thời gian thực.
+      </p>
+    </div>
+
+    <div class="compare-grid">
+      <!-- Before -->
+      <div class="compare-col before">
+        <span class="compare-label">❌ Trước đây</span>
+        <div class="compare-items">
+          <div class="compare-item before">
+            <div class="ci-dot">✗</div>
+            <span>Hệ thống báo động riêng lẻ, không kết nối với nhau</span>
+          </div>
+          <div class="compare-item before">
+            <div class="ci-dot">✗</div>
+            <span>Phản hồi cảnh báo chậm, gây nguy hiểm</span>
+          </div>
+          <div class="compare-item before">
+            <div class="ci-dot">✗</div>
+            <span>Can thiệp thủ công, phụ thuộc con người</span>
+          </div>
+          <div class="compare-item before">
+            <div class="ci-dot">✗</div>
+            <span>Không có AI, không phân tích được sự kiện</span>
+          </div>
+          <div class="compare-item before">
+            <div class="ci-dot">✗</div>
+            <span>Không có giám sát từ xa, khó bảo trì</span>
+          </div>
+          <div class="compare-item before">
+            <div class="ci-dot">✗</div>
+            <span>Chi phí vận hành cao do cần nhân công thường xuyên</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- After -->
+      <div class="compare-col after">
+        <span class="compare-label">✅ Với MGAW-V1</span>
+        <div class="compare-items">
+          <div class="compare-item after">
+            <div class="ci-dot">✓</div>
+            <span>Cảnh báo âm thanh &amp; ánh sáng thống nhất trong một thiết bị</span>
+          </div>
+          <div class="compare-item after">
+            <div class="ci-dot">✓</div>
+            <span>Phản hồi tức thì ≤2 giây kể từ khi có sự kiện</span>
+          </div>
+          <div class="compare-item after">
+            <div class="ci-dot">✓</div>
+            <span>Tự động kích hoạt nhờ AI, giảm phụ thuộc con người</span>
+          </div>
+          <div class="compare-item after">
+            <div class="ci-dot">✓</div>
+            <span>Tích hợp sẵn AI Camera, Fire Alarm, SCADA, BMS</span>
+          </div>
+          <div class="compare-item after">
+            <div class="ci-dot">✓</div>
+            <span>Giám sát cloud, remote diagnostics toàn thời gian</span>
+          </div>
+          <div class="compare-item after">
+            <div class="ci-dot">✓</div>
+            <span>OTA firmware, zero-downtime maintenance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  SECTION: FEATURES OVERVIEW                                  -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="features-section" id="tinh-nang">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-tag">MỘT THIẾT BỊ – TOÀN BỘ GIẢI PHÁP</span>
+      <h2 class="h2">Tính năng <span class="grad-blue">toàn diện</span><br />cho nhà máy thông minh</h2>
+      <p class="lead" style="max-width:580px; margin:16px auto 0;">
+        MGAW-V1 tích hợp đầy đủ các chức năng cảnh báo, kết nối và quản lý
+        trong một form-factor nhỏ gọn, phù hợp cho môi trường công nghiệp khắc nghiệt.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="icon-box">🔊</div>
+        <h4>Loa Công Nghiệp 8W</h4>
+        <p>Loa Class D 8W phát âm thanh ~90dB@1m, rõ ràng ngay trong môi trường ồn ào của nhà máy. Hỗ trợ phát file audio offline và TTS đa ngôn ngữ.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon-box">🚦</div>
+        <h4>Đèn Tháp 3 Màu</h4>
+        <p>Beacon tích hợp Đỏ / Vàng / Xanh với các chế độ BẬT, TẮT, Nháy và Pattern. Đồng bộ chính xác với cảnh báo âm thanh theo từng cấp độ sự kiện.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon-box">📡</div>
+        <h4>Gateway IoT MQTT/HTTP</h4>
+        <p>Kết nối MQTT broker và HTTP API, truyền nhận lệnh tức thời. Tương thích với mọi hệ thống IoT, SCADA, BMS hiện hành trên thị trường.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon-box">🤖</div>
+        <h4>Sẵn Sàng Tích Hợp AI</h4>
+        <p>Nhận lệnh trực tiếp từ AI Server hoặc AI Camera. Độ trễ ≤2 giây từ khi phát hiện sự kiện đến khi kích hoạt cảnh báo đầy đủ.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon-box">☁️</div>
+        <h4>Quản Lý Cloud / Dashboard</h4>
+        <p>Giám sát trạng thái online/offline theo thời gian thực. Cấu hình từ xa, xem log sự kiện, và điều khiển thiết bị qua dashboard web trực quan.</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon-box">🔄</div>
+        <h4>OTA Firmware Update</h4>
+        <p>Cập nhật firmware không dây không cần đến hiện trường. Hỗ trợ rollback tự động khi bản cập nhật lỗi, đảm bảo uptime tối đa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  SECTION: AUDIO & VISUAL                                     -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="av-section">
+  <div class="container">
+    <div class="av-inner">
+
+      <!-- Image stack -->
+      <div class="av-image-stack">
+        <img class="av-main-img"
+             src="Industrial IoT_2.png"
+             alt="Loa cảnh báo công nghiệp MGSP-V1"
+             onerror="this.src='Industrial IoT.png'" />
+        <div class="av-float-card">
+          <div class="metric">~90dB</div>
+          <div class="metric-lbl">Áp suất âm thanh @1m</div>
+        </div>
+      </div>
+
+      <!-- Features list -->
+      <div>
+        <span class="section-tag">CẢNH BÁO ÂM THANH & ÁNH SÁNG</span>
+        <h2 class="h2" style="margin-bottom:12px;">
+          Cảnh báo <span class="grad-blue">tức thì</span>,<br />không bao giờ bỏ lỡ
+        </h2>
+        <p class="lead" style="margin-bottom:36px;">
+          Kết hợp cảnh báo âm thanh mạnh mẽ và đèn tín hiệu trực quan
+          để đảm bảo mọi nhân viên đều nhận được thông báo ngay lập tức,
+          dù ở bất kỳ góc nào trong nhà máy.
+        </p>
+
+        <div class="av-features">
+          <div class="av-feat-item">
+            <span class="av-feat-icon">🔉</span>
+            <div>
+              <h4>Âm thanh mạnh mẽ trong môi trường ồn ào</h4>
+              <p>Loa 8W Class D phát âm thanh ~90dB@1m, xuyên qua tiếng máy móc. Phát file audio cục bộ hoặc TTS kể cả khi mất kết nối mạng.</p>
+            </div>
+          </div>
+          <div class="av-feat-item">
+            <span class="av-feat-icon">🚨</span>
+            <div>
+              <h4>Đèn tháp 3 màu cấu hình linh hoạt</h4>
+              <p>Đỏ / Vàng / Xanh hỗ trợ chế độ ON, OFF, Blink và Pattern tuỳ chỉnh — phản ánh chính xác cấp độ khẩn cấp của từng sự kiện.</p>
+            </div>
+          </div>
+          <div class="av-feat-item">
+            <span class="av-feat-icon">⚡</span>
+            <div>
+              <h4>Phản hồi siêu nhanh ≤2 giây</h4>
+              <p>Từ lúc AI phát hiện sự kiện đến khi loa phát âm thanh và đèn sáng, tổng thời gian ≤2 giây — đủ nhanh cho mọi tình huống khẩn cấp.</p>
+            </div>
+          </div>
+          <div class="av-feat-item">
+            <span class="av-feat-icon">💾</span>
+            <div>
+              <h4>Phát audio offline đảm bảo</h4>
+              <p>File âm thanh được lưu cục bộ trong thiết bị. Cảnh báo vẫn hoạt động hoàn toàn ngay cả khi mất kết nối mạng hoặc server.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  SECTION: AI INTEGRATION                                     -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="ai-section" id="ket-noi">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-tag">TÍCH HỢP HỆ THỐNG</span>
+      <h2 class="h2">Kết nối với <span class="grad-blue">hệ thống AI</span><br />và công nghiệp</h2>
+      <p class="lead" style="max-width:600px; margin:16px auto 0;">
+        MGAW-V1 được thiết kế để tích hợp liền mạch với AI Camera, AI Server,
+        hệ thống SCADA, BMS và thiết bị legacy Modbus — không cần thay đổi hạ tầng.
+      </p>
+    </div>
+
+    <!-- Flow diagram -->
+    <div class="ai-flow">
+      <div class="flow-item">
+        <div class="flow-icon">📷</div>
+        <div class="flow-label">AI Camera</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-item">
+        <div class="flow-icon">🖥️</div>
+        <div class="flow-label">AI Server /<br />SCADA / BMS</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-item" style="background:var(--blue-glow); border-radius:var(--radius-md); padding:12px;">
+        <div class="flow-icon" style="background:var(--blue-brand); border:none;">📦</div>
+        <div class="flow-label" style="color:var(--blue-brand); font-weight:700;">MGAW-V1</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-item">
+        <div class="flow-icon">🔊</div>
+        <div class="flow-label">Loa cảnh báo</div>
+      </div>
+      <div class="flow-arrow">+</div>
+      <div class="flow-item">
+        <div class="flow-icon">🚦</div>
+        <div class="flow-label">Đèn tháp</div>
+      </div>
+    </div>
+
+    <!-- Protocol cards -->
+    <div class="protocols-grid">
+      <div class="proto-card">
+        <div class="proto-icon">📨</div>
+        <h4>Giao Thức MQTT</h4>
+        <p>Nhắn tin nhẹ, chuẩn hoá cho IoT công nghiệp. Độ trễ thấp, hỗ trợ publish/subscribe linh hoạt.</p>
+      </div>
+      <div class="proto-card">
+        <div class="proto-icon">🌐</div>
+        <h4>HTTP API</h4>
+        <p>Tích hợp linh hoạt với hệ thống IT, ứng dụng web và phần mềm quản lý hiện hành.</p>
+      </div>
+      <div class="proto-card">
+        <div class="proto-icon">🔌</div>
+        <h4>Ethernet RJ45</h4>
+        <p>Kết nối có dây đáng tin cậy cho các triển khai quan trọng, đảm bảo ổn định tối đa.</p>
+      </div>
+      <div class="proto-card">
+        <div class="proto-icon">📶</div>
+        <h4>WiFi</h4>
+        <p>Triển khai không dây linh hoạt ở các khu vực khó đi dây cáp mạng.</p>
+      </div>
+      <div class="proto-card">
+        <div class="proto-icon">⚙️</div>
+        <h4>Modbus RS485</h4>
+        <p>Tích hợp liền mạch với thiết bị công nghiệp cũ, PLC và hệ thống SCADA legacy.</p>
+      </div>
+      <div class="proto-card">
+        <div class="proto-icon">🛡️</div>
+        <h4>Cấu Hình Từ Xa</h4>
+        <p>Quản lý cài đặt thiết bị từ mọi nơi, giảm thiểu lượt đến hiện trường và chi phí bảo trì.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  SECTION: INDUSTRIAL RELIABILITY                             -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="reliability-section">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-tag">ĐỘ BỀN CÔNG NGHIỆP</span>
+      <h2 class="h2">Thiết kế cho vận hành<br /><span class="grad-blue">24/7 không gián đoạn</span></h2>
+      <p class="lead" style="max-width:580px; margin:16px auto 0;">
+        Mọi thành phần được lựa chọn và kiểm nghiệm để đáp ứng yêu cầu
+        khắc nghiệt nhất của môi trường công nghiệp.
+      </p>
+    </div>
+
+    <div class="reliability-grid">
+      <div class="rel-card">
+        <div class="ri">⚡</div>
+        <h4>PoE 802.3af/at</h4>
+        <p>Cấp nguồn qua cáp mạng, đơn giản hoá lắp đặt, không cần nguồn riêng.</p>
+      </div>
+      <div class="rel-card">
+        <div class="ri">🔋</div>
+        <h4>Nguồn Dự Phòng 12V</h4>
+        <p>Đảm bảo hoạt động liên tục khi mất điện lưới hoặc PoE gặp sự cố.</p>
+      </div>
+      <div class="rel-card">
+        <div class="ri">🛡️</div>
+        <h4>OVP / UVP / OCP</h4>
+        <p>Bảo vệ quá áp (27V), thiếu áp (7V) và quá dòng (3.8A) toàn diện.</p>
+      </div>
+      <div class="rel-card">
+        <div class="ri">🔄</div>
+        <h4>Chống Ngược Cực</h4>
+        <p>Bảo vệ tự động khi kết nối nguồn sai cực, tránh hư hỏng thiết bị.</p>
+      </div>
+      <div class="rel-card">
+        <div class="ri">📊</div>
+        <h4>Giám Sát Online/Offline</h4>
+        <p>Cập nhật trạng thái thiết bị theo thời gian thực, phát hiện lỗi tức thì.</p>
+      </div>
+      <div class="rel-card">
+        <div class="ri">🔎</div>
+        <h4>Remote Diagnostics</h4>
+        <p>Chẩn đoán và khắc phục sự cố từ xa mà không cần đến hiện trường.</p>
+      </div>
+      <div class="rel-card">
+        <div class="ri">⏱️</div>
+        <h4>Hardware Watchdog</h4>
+        <p>Tự động khởi động lại hệ thống khi xảy ra lỗi, đảm bảo uptime tối đa.</p>
+      </div>
+      <div class="rel-card">
+        <div class="ri">🏗️</div>
+        <h4>Vỏ Nhôm Công Nghiệp</h4>
+        <p>Thiết kế bền chắc cho môi trường nhà máy: nhiệt độ -10°C đến +50°C.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  SECTION: USE CASES                                          -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="usecase-section" id="ung-dung">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-tag">ỨNG DỤNG THỰC TẾ</span>
+      <h2 class="h2">Triển khai tại <span class="grad-blue">mọi môi trường</span><br />công nghiệp quan trọng</h2>
+      <p class="lead" style="max-width:580px; margin:16px auto 0;">
+        Từ nhà máy sản xuất đến kho hàng, từ phòng server đến hệ thống PCCC —
+        MGAW-V1 đã được triển khai thành công trong nhiều ngành.
+      </p>
+    </div>
+
+    <div class="usecase-grid">
+      <div class="uc-card">
+        <div class="uc-icon-wrap">🏭</div>
+        <div class="uc-body">
+          <h4>Nhà Máy Thông Minh</h4>
+          <p>Giám sát dây chuyền sản xuất bằng AI, cảnh báo tức thì khi phát hiện bất thường.</p>
+        </div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon-wrap">📹</div>
+        <div class="uc-body">
+          <h4>Cảnh Báo AI Camera</h4>
+          <p>Tích hợp CCTV-AI để phát hiện xâm nhập, PPE, hành vi bất thường và cảnh báo ngay.</p>
+        </div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon-wrap">🔥</div>
+        <div class="uc-body">
+          <h4>Tích Hợp Báo Cháy</h4>
+          <p>Nhận tín hiệu từ hệ thống FACP qua Modbus/BACnet, phát thông báo sơ tán đa vùng.</p>
+        </div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon-wrap">🚧</div>
+        <div class="uc-body">
+          <h4>Cảnh Báo Vùng Cấm</h4>
+          <p>Thông báo ngay khi có người xâm nhập khu vực nguy hiểm hoặc vùng hạn chế.</p>
+        </div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon-wrap">📦</div>
+        <div class="uc-body">
+          <h4>Kho Vận & Logistics</h4>
+          <p>Cảnh báo kiểm soát hàng hoá, hỗ trợ AGV, thông báo tình trạng kho theo thời gian thực.</p>
+        </div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon-wrap">⚙️</div>
+        <div class="uc-body">
+          <h4>An Toàn Máy Móc</h4>
+          <p>Kết nối trực tiếp với PLC/SCADA để phát cảnh báo khi thiết bị vượt ngưỡng an toàn.</p>
+        </div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon-wrap">🖥️</div>
+        <div class="uc-body">
+          <h4>Phòng Server & IDC</h4>
+          <p>Giám sát nhiệt độ, độ ẩm, điện áp — cảnh báo ngay khi môi trường vượt ngưỡng.</p>
+        </div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon-wrap">🚨</div>
+        <div class="uc-body">
+          <h4>Khẩn Cấp Toàn Nhà Máy</h4>
+          <p>Kích hoạt cảnh báo đồng loạt nhiều thiết bị MGAW-V1 khi xảy ra sự cố diện rộng.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  SECTION: REAL APPLICATION PHOTO                             -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="realapp-section">
+  <div class="container">
+    <div class="realapp-inner">
+      <div class="realapp-img">
+        <img src="Real_Application_Images.jpg" alt="Lắp đặt thực tế MGAW-V1 tại nhà máy" />
+      </div>
+      <div class="realapp-content">
+        <span class="section-tag">TRIỂN KHAI THỰC TẾ</span>
+        <h2 class="h2" style="margin-bottom:16px;">
+          Đã vận hành tại<br /><span class="grad-blue">nhà máy thực tế</span>
+        </h2>
+        <p class="lead" style="margin-bottom:28px;">
+          MGAW-V1 đã được lắp đặt và vận hành thực tế tại các nhà máy sản xuất,
+          chứng minh hiệu quả trong điều kiện môi trường công nghiệp thực.
+        </p>
+        <div class="install-steps">
+          <div class="install-step">
+            <div class="step-num">1</div>
+            <p><strong>Gắn lên tường hoặc cột</strong> — Bộ bracket đi kèm, lắp đặt nhanh trong 15 phút.</p>
+          </div>
+          <div class="install-step">
+            <div class="step-num">2</div>
+            <p><strong>Cắm cáp mạng (PoE)</strong> — Một dây là đủ: vừa cấp điện, vừa kết nối mạng.</p>
+          </div>
+          <div class="install-step">
+            <div class="step-num">3</div>
+            <p><strong>Cấu hình MQTT/IP</strong> — Trỏ đến MQTT Broker hoặc server nội bộ qua giao diện web.</p>
+          </div>
+          <div class="install-step">
+            <div class="step-num">4</div>
+            <p><strong>Tích hợp hệ thống AI/SCADA</strong> — Publish event, MGAW-V1 tự động xử lý và cảnh báo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  SECTION: TECH SPECS                                         -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="specs-section" id="thong-so">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-tag">THÔNG SỐ KỸ THUẬT</span>
+      <h2 class="h2">Datasheet <span class="grad-blue">MGAW-V1</span></h2>
+      <p class="lead" style="max-width:540px; margin:16px auto 0;">
+        Thông số kỹ thuật để đội ngũ kỹ thuật đánh giá và tích hợp.
+      </p>
+    </div>
+
+    <div class="specs-wrapper">
+      <!-- Table -->
+      <div class="specs-table-wrap">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Thông Số</th>
+              <th>Giá Trị</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="col-key">Model</td>                   <td class="col-val">MGAW-V1</td></tr>
+            <tr><td class="col-key">Loại thiết bị</td>            <td class="col-val">Thiết bị cảnh báo âm thanh &amp; ánh sáng IoT công nghiệp</td></tr>
+            <tr><td class="col-key">Nguồn điện vào</td>           <td class="col-val">PoE 802.3af/at + 12V dự phòng</td></tr>
+            <tr><td class="col-key">Kết nối mạng</td>             <td class="col-val">Ethernet RJ45</td></tr>
+            <tr><td class="col-key">Kết nối không dây</td>        <td class="col-val">WiFi</td></tr>
+            <tr><td class="col-key">Giao thức</td>                <td class="col-val">MQTT / HTTP API</td></tr>
+            <tr><td class="col-key">Công suất loa</td>            <td class="col-val text-blue">8W Class D</td></tr>
+            <tr><td class="col-key">Áp suất âm thanh</td>         <td class="col-val text-blue">~90dB @1m</td></tr>
+            <tr><td class="col-key">Đèn beacon</td>               <td class="col-val">LED Đỏ / Vàng / Xanh</td></tr>
+            <tr><td class="col-key">Chế độ cảnh báo</td>          <td class="col-val">ON / OFF / Blink / Pattern</td></tr>
+            <tr><td class="col-key">Modbus</td>                   <td class="col-val">RS485</td></tr>
+            <tr><td class="col-key">Firmware</td>                 <td class="col-val">OTA (Over-the-Air)</td></tr>
+            <tr><td class="col-key">Giám sát</td>                 <td class="col-val">Trạng thái Online / Offline</td></tr>
+            <tr><td class="col-key">Bảo vệ quá áp</td>            <td class="col-val">27V</td></tr>
+            <tr><td class="col-key">Bảo vệ thiếu áp</td>          <td class="col-val">7V</td></tr>
+            <tr><td class="col-key">Bảo vệ quá dòng</td>          <td class="col-val">3.8A</td></tr>
+            <tr><td class="col-key">Chống ngược cực</td>          <td class="col-val">Có</td></tr>
+            <tr><td class="col-key">Kích thước</td>               <td class="col-val">120 × 88 × 38 mm</td></tr>
+            <tr><td class="col-key">Độ trễ phản hồi</td>          <td class="col-val text-blue">≤ 1–2 giây</td></tr>
+            <tr><td class="col-key">Vỏ hộp</td>                   <td class="col-val">Nhôm cấp công nghiệp</td></tr>
+            <tr><td class="col-key">Nhiệt độ hoạt động</td>       <td class="col-val">-10°C đến +50°C</td></tr>
+            <tr><td class="col-key">Độ ẩm</td>                    <td class="col-val">10% – 90% (không ngưng tụ)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Images column -->
+      <div class="specs-img-col">
+        <img src="Industrial IoT_3.png"
+             alt=""
+             onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  SECTION: OEM / ODM                                          -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="oemodm-section">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-tag">ĐỐI TÁC & OEM/ODM</span>
+      <h2 class="h2">Nền tảng sẵn sàng<br /><span class="grad-blue">OEM / ODM</span></h2>
+      <p class="lead" style="max-width:600px; margin:16px auto 0;">
+        Chúng tôi cung cấp giải pháp tuỳ chỉnh hoàn toàn — từ firmware, thương hiệu,
+        phần cứng đến sản xuất hàng loạt — phù hợp với mọi yêu cầu đặc thù.
+      </p>
+    </div>
+
+    <div class="oemodm-grid">
+      <div class="odm-card">
+        <div class="icon">🛠️</div>
+        <h4>Phát Triển Firmware Tuỳ Chỉnh</h4>
+        <p>Tuỳ chỉnh hành vi thiết bị và tích hợp các chức năng đặc thù theo yêu cầu dự án cụ thể của khách hàng.</p>
+      </div>
+      <div class="odm-card">
+        <div class="icon">🏷️</div>
+        <h4>Private Label Branding</h4>
+        <p>Cung cấp MGAW-V1 dưới thương hiệu của đối tác với logo, bao bì và tài liệu tuỳ chỉnh hoàn toàn.</p>
+      </div>
+      <div class="odm-card">
+        <div class="icon">🔧</div>
+        <h4>Tuỳ Chỉnh Phần Cứng</h4>
+        <p>Điều chỉnh phần cứng theo yêu cầu môi trường hoặc vận hành đặc thù để đảm bảo hiệu suất tối ưu.</p>
+      </div>
+      <div class="odm-card">
+        <div class="icon">🏭</div>
+        <h4>Hỗ Trợ Sản Xuất Hàng Loạt</h4>
+        <p>Năng lực sản xuất công nghiệp, đáp ứng nhanh các đơn hàng lớn với thời gian giao hàng cam kết.</p>
+      </div>
+      <div class="odm-card full">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px;">
+          <div>
+            <div class="icon">🔗</div>
+            <h4>Dịch Vụ System Integration</h4>
+            <p>Hỗ trợ kỹ thuật chuyên sâu trong việc tích hợp MGAW-V1 vào hệ sinh thái công nghiệp và hệ thống điều khiển hiện hành của khách hàng.</p>
+          </div>
+          <div>
+            <div class="icon">⚙️</div>
+            <h4>Tuỳ Chọn Công Nghiệp Mở Rộng</h4>
+            <p>Từ vỏ hộp chuyên biệt đến giao thức truyền thông đặc thù — chúng tôi cung cấp tùy chỉnh toàn diện cho mọi ứng dụng công nghiệp.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--  SECTION: CONTACT                                            -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section class="contact-section" id="lien-he">
+  <div class="container contact-inner">
+    <div class="text-center">
+      <span class="section-tag">LIÊN HỆ</span>
+      <h2 class="h2">Liên hệ ngay để được<br /><span class="grad-blue">tư vấn và báo giá</span></h2>
+      <p class="lead" style="max-width:560px; margin:16px auto 0;">
+        Hỏi về giá theo số lượng, phát triển firmware tuỳ chỉnh và hỗ trợ tích hợp
+        chuyên sâu cho dự án của bạn.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="ci-icon">🌐</div>
+        <h4>Website</h4>
+        <a href="https://meiko-auto.vn" target="_blank">www.meiko-auto.vn</a>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">✉️</div>
+        <h4>Email</h4>
+        <a href="mailto:duc.vuminh@meiko.vn">duc.vuminh@meiko.vn</a>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📦</div>
+        <h4>Sản Phẩm</h4>
+        <p>MGAW-V1</p>
+      </div>
+    </div>
+
+    <!-- Services tags -->
+    <div class="services-row">
+      <span class="svc-tag">🏭 Giải Pháp IoT Công Nghiệp</span>
+      <span class="svc-tag">🤖 Tích Hợp Smart Factory</span>
+      <span class="svc-tag">🔧 Dịch Vụ OEM / ODM</span>
+      <span class="svc-tag">🎯 Hỗ Trợ Tích Hợp AI</span>
+      <span class="svc-tag">🔗 System Integration</span>
+    </div>
+
+    <!-- CTA banner -->
+    <div style="background: linear-gradient(135deg, rgba(29,111,245,0.15), rgba(74,144,226,0.1));
+                border: 1px solid rgba(29,111,245,0.3); border-radius: var(--radius-lg);
+                padding: 48px; text-align: center; margin-bottom: 64px;">
+      <h3 class="h3" style="margin-bottom:12px;">Sẵn sàng triển khai MGAW-V1 trong nhà máy của bạn?</h3>
+      <p style="color:var(--gray-300); margin-bottom:28px; max-width:500px; margin-left:auto; margin-right:auto;">
+        Đội ngũ kỹ thuật MEIKO AUTOMATION sẵn sàng hỗ trợ đánh giá yêu cầu,
+        tư vấn giải pháp và demo sản phẩm tại chỗ.
+      </p>
+      <a href="mailto:sales@meikoautomation.com" class="btn btn-primary" style="font-size:1rem; padding:14px 36px;">
+        Gửi yêu cầu tư vấn →
+      </a>
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="footer-bottom">
+      <img src="MEIKO AUTOMATION LOGO.png" alt="MEIKO AUTOMATION" />
+      <p>© 2026 MEIKO AUTOMATION. Tất cả quyền được bảo lưu. | MGAW-V1 Industrial IoT Audio &amp; Light Alert Device</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const catalogTranslations = {
+    vi: {
+      metaTitle: "MGAW-V1 – Thiết Bị Cảnh Báo IoT Công Nghiệp | MEIKO AUTOMATION",
+      navLinks: ["Tính năng", "Kết nối", "Ứng dụng", "Thông số", "Liên hệ"],
+      navCta: "Liên hệ ngay →",
+      hero: {
+        badges: ["⚡ Thiết bị mới", "🏭 Industrial Grade"],
+        subtitle: "Thiết Bị Cảnh Báo Âm Thanh &amp; Ánh Sáng IoT Công Nghiệp",
+        desc: "Nền tảng cảnh báo thời gian thực tích hợp AI — kết hợp loa công nghiệp, đèn tháp và gateway IoT trong một hệ thống thống nhất. Cấp nguồn qua PoE, giao tiếp MQTT/HTTP, sẵn sàng cho Smart Factory.",
+        pills: ["MQTT + HTTP", "PoE 802.3af/at", "OTA Firmware", "AI Integration Ready", "Modbus RS485", "Industrial-grade"],
+        ctas: ["Xem thông số kỹ thuật →", "Báo giá ngay"],
+        stats: ["Loa Class D", "Áp suất âm thanh @1m", "Vận hành liên tục"],
+        fallback: "Hệ thống MGAW-V1"
+      },
+      compare: {
+        tag: "VẤN ĐỀ & GIẢI PHÁP",
+        title: "Từ hệ thống rời rạc<br /><span class=\"grad-blue\">đến an toàn thống nhất</span>",
+        lead: "MGAW-V1 thay thế các giải pháp cảnh báo phân tán, trễ phản hồi và không có AI bằng một nền tảng tích hợp, thông minh, thời gian thực.",
+        beforeLabel: "❌ Trước đây",
+        beforeItems: [
+          "Hệ thống báo động riêng lẻ, không kết nối với nhau",
+          "Phản hồi cảnh báo chậm, gây nguy hiểm",
+          "Can thiệp thủ công, phụ thuộc con người",
+          "Không có AI, không phân tích được sự kiện",
+          "Không có giám sát từ xa, khó bảo trì",
+          "Chi phí vận hành cao do cần nhân công thường xuyên"
+        ],
+        afterLabel: "✅ Với MGAW-V1",
+        afterItems: [
+          "Cảnh báo âm thanh & ánh sáng thống nhất trong một thiết bị",
+          "Phản hồi tức thì ≤2 giây kể từ khi có sự kiện",
+          "Tự động kích hoạt nhờ AI, giảm phụ thuộc con người",
+          "Tích hợp sẵn AI Camera, Fire Alarm, SCADA, BMS",
+          "Giám sát cloud, remote diagnostics toàn thời gian",
+          "OTA firmware, zero-downtime maintenance"
+        ]
+      },
+      features: {
+        tag: "MỘT THIẾT BỊ – TOÀN BỘ GIẢI PHÁP",
+        title: "Tính năng <span class=\"grad-blue\">toàn diện</span><br />cho nhà máy thông minh",
+        lead: "MGAW-V1 tích hợp đầy đủ các chức năng cảnh báo, kết nối và quản lý trong một form-factor nhỏ gọn, phù hợp cho môi trường công nghiệp khắc nghiệt.",
+        cards: [
+          ["Loa Công Nghiệp 8W", "Loa Class D 8W phát âm thanh ~90dB@1m, rõ ràng ngay trong môi trường ồn ào của nhà máy. Hỗ trợ phát file audio offline và TTS đa ngôn ngữ."],
+          ["Đèn Tháp 3 Màu", "Beacon tích hợp Đỏ / Vàng / Xanh với các chế độ BẬT, TẮT, Nháy và Pattern. Đồng bộ chính xác với cảnh báo âm thanh theo từng cấp độ sự kiện."],
+          ["Gateway IoT MQTT/HTTP", "Kết nối MQTT broker và HTTP API, truyền nhận lệnh tức thời. Tương thích với mọi hệ thống IoT, SCADA, BMS hiện hành trên thị trường."],
+          ["Sẵn Sàng Tích Hợp AI", "Nhận lệnh trực tiếp từ AI Server hoặc AI Camera. Độ trễ ≤2 giây từ khi phát hiện sự kiện đến khi kích hoạt cảnh báo đầy đủ."],
+          ["Quản Lý Cloud / Dashboard", "Giám sát trạng thái online/offline theo thời gian thực. Cấu hình từ xa, xem log sự kiện, và điều khiển thiết bị qua dashboard web trực quan."],
+          ["OTA Firmware Update", "Cập nhật firmware không dây không cần đến hiện trường. Hỗ trợ rollback tự động khi bản cập nhật lỗi, đảm bảo uptime tối đa."]
+        ]
+      },
+      av: {
+        tag: "CẢNH BÁO ÂM THANH & ÁNH SÁNG",
+        title: "Cảnh báo <span class=\"grad-blue\">tức thì</span>,<br />không bao giờ bỏ lỡ",
+        lead: "Kết hợp cảnh báo âm thanh mạnh mẽ và đèn tín hiệu trực quan để đảm bảo mọi nhân viên đều nhận được thông báo ngay lập tức, dù ở bất kỳ góc nào trong nhà máy.",
+        metricLabel: "Áp suất âm thanh @1m",
+        items: [
+          ["Âm thanh mạnh mẽ trong môi trường ồn ào", "Loa 8W Class D phát âm thanh ~90dB@1m, xuyên qua tiếng máy móc. Phát file audio cục bộ hoặc TTS kể cả khi mất kết nối mạng."],
+          ["Đèn tháp 3 màu cấu hình linh hoạt", "Đỏ / Vàng / Xanh hỗ trợ chế độ ON, OFF, Blink và Pattern tuỳ chỉnh — phản ánh chính xác cấp độ khẩn cấp của từng sự kiện."],
+          ["Phản hồi siêu nhanh ≤2 giây", "Từ lúc AI phát hiện sự kiện đến khi loa phát âm thanh và đèn sáng, tổng thời gian ≤2 giây — đủ nhanh cho mọi tình huống khẩn cấp."],
+          ["Phát audio offline đảm bảo", "File âm thanh được lưu cục bộ trong thiết bị. Cảnh báo vẫn hoạt động hoàn toàn ngay cả khi mất kết nối mạng hoặc server."]
+        ]
+      },
+      ai: {
+        tag: "TÍCH HỢP HỆ THỐNG",
+        title: "Kết nối với <span class=\"grad-blue\">hệ thống AI</span><br />và công nghiệp",
+        lead: "MGAW-V1 được thiết kế để tích hợp liền mạch với AI Camera, AI Server, hệ thống SCADA, BMS và thiết bị legacy Modbus — không cần thay đổi hạ tầng.",
+        flow: ["AI Camera", "AI Server /<br />SCADA / BMS", "MGAW-V1", "Loa cảnh báo", "Đèn tháp"],
+        protocols: [
+          ["Giao Thức MQTT", "Nhắn tin nhẹ, chuẩn hoá cho IoT công nghiệp. Độ trễ thấp, hỗ trợ publish/subscribe linh hoạt."],
+          ["HTTP API", "Tích hợp linh hoạt với hệ thống IT, ứng dụng web và phần mềm quản lý hiện hành."],
+          ["Ethernet RJ45", "Kết nối có dây đáng tin cậy cho các triển khai quan trọng, đảm bảo ổn định tối đa."],
+          ["WiFi", "Triển khai không dây linh hoạt ở các khu vực khó đi dây cáp mạng."],
+          ["Modbus RS485", "Tích hợp liền mạch với thiết bị công nghiệp cũ, PLC và hệ thống SCADA legacy."],
+          ["Cấu Hình Từ Xa", "Quản lý cài đặt thiết bị từ mọi nơi, giảm thiểu lượt đến hiện trường và chi phí bảo trì."]
+        ]
+      },
+      reliability: {
+        tag: "ĐỘ BỀN CÔNG NGHIỆP",
+        title: "Thiết kế cho vận hành<br /><span class=\"grad-blue\">24/7 không gián đoạn</span>",
+        lead: "Mọi thành phần được lựa chọn và kiểm nghiệm để đáp ứng yêu cầu khắc nghiệt nhất của môi trường công nghiệp.",
+        cards: [
+          ["PoE 802.3af/at", "Cấp nguồn qua cáp mạng, đơn giản hoá lắp đặt, không cần nguồn riêng."],
+          ["Nguồn Dự Phòng 12V", "Đảm bảo hoạt động liên tục khi mất điện lưới hoặc PoE gặp sự cố."],
+          ["OVP / UVP / OCP", "Bảo vệ quá áp (27V), thiếu áp (7V) và quá dòng (3.8A) toàn diện."],
+          ["Chống Ngược Cực", "Bảo vệ tự động khi kết nối nguồn sai cực, tránh hư hỏng thiết bị."],
+          ["Giám Sát Online/Offline", "Cập nhật trạng thái thiết bị theo thời gian thực, phát hiện lỗi tức thì."],
+          ["Remote Diagnostics", "Chẩn đoán và khắc phục sự cố từ xa mà không cần đến hiện trường."],
+          ["Hardware Watchdog", "Tự động khởi động lại hệ thống khi xảy ra lỗi, đảm bảo uptime tối đa."],
+          ["Vỏ Nhôm Công Nghiệp", "Thiết kế bền chắc cho môi trường nhà máy: nhiệt độ -10°C đến +50°C."]
+        ]
+      },
+      usecase: {
+        tag: "ỨNG DỤNG THỰC TẾ",
+        title: "Triển khai tại <span class=\"grad-blue\">mọi môi trường</span><br />công nghiệp quan trọng",
+        lead: "Từ nhà máy sản xuất đến kho hàng, từ phòng server đến hệ thống PCCC — MGAW-V1 đã được triển khai thành công trong nhiều ngành.",
+        cards: [
+          ["Nhà Máy Thông Minh", "Giám sát dây chuyền sản xuất bằng AI, cảnh báo tức thì khi phát hiện bất thường."],
+          ["Cảnh Báo AI Camera", "Tích hợp CCTV-AI để phát hiện xâm nhập, PPE, hành vi bất thường và cảnh báo ngay."],
+          ["Tích Hợp Báo Cháy", "Nhận tín hiệu từ hệ thống FACP qua Modbus/BACnet, phát thông báo sơ tán đa vùng."],
+          ["Cảnh Báo Vùng Cấm", "Thông báo ngay khi có người xâm nhập khu vực nguy hiểm hoặc vùng hạn chế."],
+          ["Kho Vận & Logistics", "Cảnh báo kiểm soát hàng hoá, hỗ trợ AGV, thông báo tình trạng kho theo thời gian thực."],
+          ["An Toàn Máy Móc", "Kết nối trực tiếp với PLC/SCADA để phát cảnh báo khi thiết bị vượt ngưỡng an toàn."],
+          ["Phòng Server & IDC", "Giám sát nhiệt độ, độ ẩm, điện áp — cảnh báo ngay khi môi trường vượt ngưỡng."],
+          ["Khẩn Cấp Toàn Nhà Máy", "Kích hoạt cảnh báo đồng loạt nhiều thiết bị MGAW-V1 khi xảy ra sự cố diện rộng."]
+        ]
+      },
+      realapp: {
+        tag: "TRIỂN KHAI THỰC TẾ",
+        title: "Đã vận hành tại<br /><span class=\"grad-blue\">nhà máy thực tế</span>",
+        lead: "MGAW-V1 đã được lắp đặt và vận hành thực tế tại các nhà máy sản xuất, chứng minh hiệu quả trong điều kiện môi trường công nghiệp thực.",
+        steps: [
+          "<strong>Gắn lên tường hoặc cột</strong> — Bộ bracket đi kèm, lắp đặt nhanh trong 15 phút.",
+          "<strong>Cắm cáp mạng (PoE)</strong> — Một dây là đủ: vừa cấp điện, vừa kết nối mạng.",
+          "<strong>Cấu hình MQTT/IP</strong> — Trỏ đến MQTT Broker hoặc server nội bộ qua giao diện web.",
+          "<strong>Tích hợp hệ thống AI/SCADA</strong> — Publish event, MGAW-V1 tự động xử lý và cảnh báo."
+        ]
+      },
+      specs: {
+        tag: "THÔNG SỐ KỸ THUẬT",
+        title: "Datasheet <span class=\"grad-blue\">MGAW-V1</span>",
+        lead: "Thông số kỹ thuật để đội ngũ kỹ thuật đánh giá và tích hợp.",
+        header: ["Thông Số", "Giá Trị"],
+        rows: [
+          ["Model", "MGAW-V1"],
+          ["Loại thiết bị", "Thiết bị cảnh báo âm thanh &amp; ánh sáng IoT công nghiệp"],
+          ["Nguồn điện vào", "PoE 802.3af/at + 12V dự phòng"],
+          ["Kết nối mạng", "Ethernet RJ45"],
+          ["Kết nối không dây", "WiFi"],
+          ["Giao thức", "MQTT / HTTP API"],
+          ["Công suất loa", "8W Class D"],
+          ["Áp suất âm thanh", "~90dB @1m"],
+          ["Đèn beacon", "LED Đỏ / Vàng / Xanh"],
+          ["Chế độ cảnh báo", "ON / OFF / Blink / Pattern"],
+          ["Modbus", "RS485"],
+          ["Firmware", "OTA (Over-the-Air)"],
+          ["Giám sát", "Trạng thái Online / Offline"],
+          ["Bảo vệ quá áp", "27V"],
+          ["Bảo vệ thiếu áp", "7V"],
+          ["Bảo vệ quá dòng", "3.8A"],
+          ["Chống ngược cực", "Có"],
+          ["Kích thước", "120 × 88 × 38 mm"],
+          ["Độ trễ phản hồi", "≤ 1–2 giây"],
+          ["Vỏ hộp", "Nhôm cấp công nghiệp"],
+          ["Nhiệt độ hoạt động", "-10°C đến +50°C"],
+          ["Độ ẩm", "10% – 90% (không ngưng tụ)"]
+        ]
+      },
+      oemodm: {
+        tag: "ĐỐI TÁC & OEM/ODM",
+        title: "Nền tảng sẵn sàng<br /><span class=\"grad-blue\">OEM / ODM</span>",
+        lead: "Chúng tôi cung cấp giải pháp tuỳ chỉnh hoàn toàn — từ firmware, thương hiệu, phần cứng đến sản xuất hàng loạt — phù hợp với mọi yêu cầu đặc thù.",
+        cards: [
+          ["Phát Triển Firmware Tuỳ Chỉnh", "Tuỳ chỉnh hành vi thiết bị và tích hợp các chức năng đặc thù theo yêu cầu dự án cụ thể của khách hàng."],
+          ["Private Label Branding", "Cung cấp MGAW-V1 dưới thương hiệu của đối tác với logo, bao bì và tài liệu tuỳ chỉnh hoàn toàn."],
+          ["Tuỳ Chỉnh Phần Cứng", "Điều chỉnh phần cứng theo yêu cầu môi trường hoặc vận hành đặc thù để đảm bảo hiệu suất tối ưu."],
+          ["Hỗ Trợ Sản Xuất Hàng Loạt", "Năng lực sản xuất công nghiệp, đáp ứng nhanh các đơn hàng lớn với thời gian giao hàng cam kết."],
+          ["Dịch Vụ System Integration", "Hỗ trợ kỹ thuật chuyên sâu trong việc tích hợp MGAW-V1 vào hệ sinh thái công nghiệp và hệ thống điều khiển hiện hành của khách hàng."],
+          ["Tuỳ Chọn Công Nghiệp Mở Rộng", "Từ vỏ hộp chuyên biệt đến giao thức truyền thông đặc thù — chúng tôi cung cấp tùy chỉnh toàn diện cho mọi ứng dụng công nghiệp."]
+        ]
+      },
+      contact: {
+        tag: "LIÊN HỆ",
+        title: "Liên hệ ngay để được<br /><span class=\"grad-blue\">tư vấn và báo giá</span>",
+        lead: "Hỏi về giá theo số lượng, phát triển firmware tuỳ chỉnh và hỗ trợ tích hợp chuyên sâu cho dự án của bạn.",
+        labels: ["Website", "Email", "Sản Phẩm"],
+        services: ["🏭 Giải Pháp IoT Công Nghiệp", "🤖 Tích Hợp Smart Factory", "🔧 Dịch Vụ OEM / ODM", "🎯 Hỗ Trợ Tích Hợp AI", "🔗 System Integration"],
+        bannerTitle: "Sẵn sàng triển khai MGAW-V1 trong nhà máy của bạn?",
+        bannerDesc: "Đội ngũ kỹ thuật MEIKO AUTOMATION sẵn sàng hỗ trợ đánh giá yêu cầu, tư vấn giải pháp và demo sản phẩm tại chỗ.",
+        bannerCta: "Gửi yêu cầu tư vấn →",
+        footer: "© 2026 MEIKO AUTOMATION. Tất cả quyền được bảo lưu. | MGAW-V1 Industrial IoT Audio &amp; Light Alert Device"
+      }
+    },
+    ja: {
+      metaTitle: "MGAW-V1 – 産業用IoT警報デバイス | MEIKO AUTOMATION",
+      navLinks: ["機能", "接続", "用途", "仕様", "お問い合わせ"],
+      navCta: "今すぐ相談 →",
+      hero: {
+        badges: ["⚡ 2026年新製品", "🏭 産業グレード"],
+        subtitle: "産業向けIoT音声・表示警報デバイス",
+        desc: "AI連携リアルタイム警報プラットフォーム。産業用スピーカー、シグナルタワー、IoTゲートウェイを一体化し、PoE給電とMQTT/HTTP通信でスマートファクトリー導入に最適です。",
+        pills: ["MQTT + HTTP", "PoE 802.3af/at", "OTA Firmware", "AI Integration Ready", "Modbus RS485", "Industrial-grade"],
+        ctas: ["技術仕様を見る →", "見積を依頼"],
+        stats: ["Class Dスピーカー", "音圧 @1m", "24時間連続稼働"],
+        fallback: "MGAW-V1 システム"
+      },
+      compare: {
+        tag: "課題と解決策",
+        title: "分散した警報から<br /><span class=\"grad-blue\">統合安全プラットフォームへ</span>",
+        lead: "MGAW-V1は、分散運用・遅延・AI未対応の従来警報を、統合型・高応答・スマートなリアルタイム基盤へ置き換えます。",
+        beforeLabel: "❌ 従来",
+        beforeItems: [
+          "警報装置が個別運用され相互接続されていない",
+          "警報反応が遅く危険につながる",
+          "人手による対応が必要で属人化する",
+          "AIがなくイベント分析ができない",
+          "遠隔監視ができず保守が難しい",
+          "常時人員が必要で運用コストが高い"
+        ],
+        afterLabel: "✅ MGAW-V1導入後",
+        afterItems: [
+          "音声と表示を1台に統合した警報",
+          "イベント発生から2秒以内で応答",
+          "AI連携で自動起動し人的依存を削減",
+          "AIカメラ、火災警報、SCADA、BMSと統合可能",
+          "クラウド監視と遠隔診断に対応",
+          "OTA更新で停止時間を最小化"
+        ]
+      },
+      features: {
+        tag: "1台で完結するソリューション",
+        title: "スマートファクトリー向けの<br /><span class=\"grad-blue\">包括的な機能</span>",
+        lead: "MGAW-V1は警報、接続、管理機能をコンパクトな筐体に集約し、厳しい産業環境に適した構成を実現します。",
+        cards: [
+          ["8W産業用スピーカー", "8W Class Dスピーカーが約90dB@1mの明瞭な音声を出力。騒音環境でも聞き取りやすく、オフライン音声再生と多言語TTSに対応します。"],
+          ["3色シグナルタワー", "赤・黄・緑の表示灯を内蔵。ON/OFF、点滅、パターン制御に対応し、警報レベルに応じて正確に同期します。"],
+          ["MQTT/HTTP IoTゲートウェイ", "MQTTブローカーおよびHTTP APIへ接続し、即時にコマンド送受信。既存IoT、SCADA、BMSとの連携が容易です。"],
+          ["AI連携対応", "AIサーバーやAIカメラから直接コマンド受信。検知から警報まで2秒以内の応答を実現します。"],
+          ["クラウド管理 / ダッシュボード", "オンライン/オフライン状態をリアルタイム監視。遠隔設定、イベントログ確認、Webダッシュボードからの制御に対応します。"],
+          ["OTAファームウェア更新", "現地訪問なしで無線更新。更新失敗時のロールバックにも対応し、稼働率を維持します。"]
+        ]
+      },
+      av: {
+        tag: "音声・表示警報",
+        title: "<span class=\"grad-blue\">即時警報</span>で<br />見逃しを防止",
+        lead: "強力な音声警報と視認性の高い表示灯を組み合わせ、工場のどこにいても作業者が即座に通知を受け取れるようにします。",
+        metricLabel: "音圧 @1m",
+        items: [
+          ["騒音環境でも届く強い音声", "8W Class Dスピーカーが約90dB@1mを出力。機械音の中でも明瞭で、通信断時もローカル音声またはTTSで警報可能です。"],
+          ["柔軟に構成できる3色表示灯", "赤・黄・緑の各色をON/OFF、点滅、独自パターンで制御し、緊急度を明確に表現します。"],
+          ["2秒以内の高速応答", "AI検知からスピーカー再生と表示灯点灯までを2秒以内で実行し、緊急対応に十分な速さを確保します。"],
+          ["オフライン音声再生", "音声ファイルを装置内に保持するため、ネットワークやサーバー障害時でも警報機能を継続できます。"]
+        ]
+      },
+      ai: {
+        tag: "システム統合",
+        title: "<span class=\"grad-blue\">AIシステム</span>や<br />産業設備と接続",
+        lead: "MGAW-V1はAIカメラ、AIサーバー、SCADA、BMS、既存Modbus機器とシームレスに統合でき、既存インフラの大幅な変更を必要としません。",
+        flow: ["AIカメラ", "AIサーバー /<br />SCADA / BMS", "MGAW-V1", "警報スピーカー", "シグナルタワー"],
+        protocols: [
+          ["MQTTプロトコル", "軽量で標準化された産業IoT向けメッセージング。低遅延で柔軟なpublish/subscribeに対応します。"],
+          ["HTTP API", "ITシステム、Webアプリ、既存管理ソフトウェアと柔軟に統合できます。"],
+          ["Ethernet RJ45", "重要設備向けに安定した有線接続を提供し、高い信頼性を確保します。"],
+          ["WiFi", "配線が難しいエリアでも柔軟に無線導入できます。"],
+          ["Modbus RS485", "既存の産業機器、PLC、レガシーSCADAとの接続に対応します。"],
+          ["遠隔設定", "現場訪問を減らし、保守コストを抑えながらどこからでも設定管理できます。"]
+        ]
+      },
+      reliability: {
+        tag: "産業信頼性",
+        title: "<span class=\"grad-blue\">24時間365日</span><br />止まらない運用設計",
+        lead: "すべての構成部品は、厳しい産業環境に耐えられるよう選定・検証されています。",
+        cards: [
+          ["PoE 802.3af/at", "LANケーブル1本で給電でき、専用電源が不要で設置を簡素化します。"],
+          ["12Vバックアップ電源", "停電やPoE障害時でも継続稼働を支えます。"],
+          ["OVP / UVP / OCP", "過電圧27V、不足電圧7V、過電流3.8Aの包括保護を実装しています。"],
+          ["逆接続保護", "電源極性の誤接続時にも自動保護し、装置破損を防ぎます。"],
+          ["Online/Offline監視", "装置状態をリアルタイムに把握し、異常を即時検知します。"],
+          ["Remote Diagnostics", "現地に行かずに遠隔で診断・一次切り分けが可能です。"],
+          ["Hardware Watchdog", "システム異常時に自動再起動し、稼働率を最大化します。"],
+          ["産業用アルミ筐体", "-10°Cから+50°Cまでの工場環境に耐える堅牢な筐体設計です。"]
+        ]
+      },
+      usecase: {
+        tag: "導入用途",
+        title: "<span class=\"grad-blue\">あらゆる重要設備</span><br />で活用可能",
+        lead: "製造工場、物流倉庫、サーバールーム、防災設備まで、MGAW-V1は多様な産業用途で導入できます。",
+        cards: [
+          ["スマートファクトリー", "AIで生産ラインを監視し、異常を検知した瞬間に警報を発します。"],
+          ["AIカメラ警報", "CCTV-AIと連携し、侵入、PPE違反、異常行動を検知して即時通知します。"],
+          ["火災警報連携", "FACPからModbus/BACnetで信号を受信し、多ゾーン避難通知を行えます。"],
+          ["立入禁止区域警報", "危険区域や制限区域への侵入を即時に通知します。"],
+          ["物流・倉庫", "在庫管理、AGV支援、倉庫状態通知などをリアルタイムで実現します。"],
+          ["機械安全", "PLC/SCADAと直接接続し、安全閾値超過時に警報を発します。"],
+          ["サーバールーム / IDC", "温度、湿度、電圧を監視し、しきい値超過を即時に通知します。"],
+          ["工場全体の緊急警報", "広域障害時に複数のMGAW-V1を同時起動して一斉警報が可能です。"]
+        ]
+      },
+      realapp: {
+        tag: "実導入",
+        title: "<span class=\"grad-blue\">実工場</span>で<br />すでに稼働中",
+        lead: "MGAW-V1は実際の生産工場で導入・運用されており、産業環境下で有効性が実証されています。",
+        steps: [
+          "<strong>壁面または柱へ設置</strong> — 付属ブラケットにより約15分で設置可能。",
+          "<strong>LANケーブルを接続 (PoE)</strong> — 1本で給電と通信を同時に実現。",
+          "<strong>MQTT/IPを設定</strong> — Web UIからMQTTブローカーまたはローカルサーバーへ接続。",
+          "<strong>AI/SCADAと連携</strong> — イベントをPublishするとMGAW-V1が自動で警報処理を実行。"
+        ]
+      },
+      specs: {
+        tag: "技術仕様",
+        title: "Datasheet <span class=\"grad-blue\">MGAW-V1</span>",
+        lead: "技術チームによる評価・統合のための主要仕様です。",
+        header: ["項目", "値"],
+        rows: [
+          ["モデル", "MGAW-V1"],
+          ["装置種別", "産業向けIoT音声・表示警報デバイス"],
+          ["入力電源", "PoE 802.3af/at + 12Vバックアップ"],
+          ["有線ネットワーク", "Ethernet RJ45"],
+          ["無線接続", "WiFi"],
+          ["プロトコル", "MQTT / HTTP API"],
+          ["スピーカー出力", "8W Class D"],
+          ["音圧", "~90dB @1m"],
+          ["ビーコン", "赤 / 黄 / 緑 LED"],
+          ["警報モード", "ON / OFF / Blink / Pattern"],
+          ["Modbus", "RS485"],
+          ["ファームウェア", "OTA (Over-the-Air)"],
+          ["監視", "Online / Offline ステータス"],
+          ["過電圧保護", "27V"],
+          ["不足電圧保護", "7V"],
+          ["過電流保護", "3.8A"],
+          ["逆接続保護", "あり"],
+          ["寸法", "120 × 88 × 38 mm"],
+          ["応答遅延", "≤ 1–2秒"],
+          ["筐体", "産業用アルミ筐体"],
+          ["動作温度", "-10°C ～ +50°C"],
+          ["湿度", "10% – 90% (結露なし)"]
+        ]
+      },
+      oemodm: {
+        tag: "パートナー / OEM・ODM",
+        title: "<span class=\"grad-blue\">OEM / ODM</span><br />に対応したプラットフォーム",
+        lead: "ファームウェア、ブランド、ハードウェア、量産まで、用途に応じた柔軟なカスタマイズを提供します。",
+        cards: [
+          ["カスタムファームウェア開発", "案件要件に応じて装置動作や特殊機能を個別に実装できます。"],
+          ["プライベートラベル対応", "ロゴ、梱包、資料を含め、パートナーブランドでMGAW-V1を提供できます。"],
+          ["ハードウェアカスタマイズ", "設置環境や運用条件に合わせてハードウェアを調整し、最適な性能を確保します。"],
+          ["量産サポート", "大口発注にも対応できる量産体制と納期管理を備えています。"],
+          ["システム統合サービス", "MGAW-V1を既存の産業システムや制御基盤へ組み込むための技術支援を提供します。"],
+          ["拡張産業オプション", "専用筐体から特殊通信仕様まで、用途に応じた包括的な拡張に対応します。"]
+        ]
+      },
+      contact: {
+        tag: "お問い合わせ",
+        title: "<span class=\"grad-blue\">提案・見積</span>のために<br />今すぐお問い合わせください",
+        lead: "数量別価格、カスタムファームウェア、システム統合支援についてご相談いただけます。",
+        labels: ["Webサイト", "Email", "製品"],
+        services: ["🏭 産業IoTソリューション", "🤖 スマートファクトリー統合", "🔧 OEM / ODMサービス", "🎯 AI統合支援", "🔗 System Integration"],
+        bannerTitle: "MGAW-V1を御社工場へ導入しませんか？",
+        bannerDesc: "MEIKO AUTOMATIONの技術チームが、要件整理、ソリューション提案、現地デモまで支援します。",
+        bannerCta: "相談を送る →",
+        footer: "© 2026 MEIKO AUTOMATION. All rights reserved. | MGAW-V1 Industrial IoT Audio &amp; Light Alert Device"
+      }
+    },
+    en: {
+      metaTitle: "MGAW-V1 – Industrial IoT Alert Device | MEIKO AUTOMATION",
+      navLinks: ["Features", "Connectivity", "Applications", "Specs", "Contact"],
+      navCta: "Contact Now →",
+      hero: {
+        badges: ["⚡ New Product", "🏭 Industrial Grade"],
+        subtitle: "Industrial IoT Audio &amp; Light Alert Device",
+        desc: "An AI-ready real-time alert platform that combines an industrial speaker, signal tower, and IoT gateway into one unified system. Powered by PoE with MQTT/HTTP communication, ready for smart factories.",
+        pills: ["MQTT + HTTP", "PoE 802.3af/at", "OTA Firmware", "AI Integration Ready", "Modbus RS485", "Industrial-grade"],
+        ctas: ["View Technical Specs →", "Request Quote"],
+        stats: ["Class D Speaker", "Sound Pressure @1m", "Continuous Operation"],
+        fallback: "MGAW-V1 System"
+      },
+      compare: {
+        tag: "PROBLEM & SOLUTION",
+        title: "From fragmented systems<br /><span class=\"grad-blue\">to unified safety</span>",
+        lead: "MGAW-V1 replaces fragmented, slow, non-AI alert systems with a single integrated, intelligent, real-time platform.",
+        beforeLabel: "❌ Before",
+        beforeItems: [
+          "Standalone alarm systems with no connectivity",
+          "Slow alert response that increases risk",
+          "Manual intervention dependent on operators",
+          "No AI capability for event analysis",
+          "No remote monitoring and difficult maintenance",
+          "Higher operating cost due to constant manpower"
+        ],
+        afterLabel: "✅ With MGAW-V1",
+        afterItems: [
+          "Unified audio and visual alerting in one device",
+          "Instant response within 2 seconds after an event",
+          "AI-triggered activation reduces human dependency",
+          "Ready to integrate with AI cameras, fire alarm, SCADA, and BMS",
+          "Cloud monitoring and full-time remote diagnostics",
+          "OTA firmware with zero-downtime maintenance"
+        ]
+      },
+      features: {
+        tag: "ONE DEVICE – COMPLETE SOLUTION",
+        title: "<span class=\"grad-blue\">Comprehensive features</span><br />for smart factories",
+        lead: "MGAW-V1 integrates alerting, connectivity, and management features in a compact form factor designed for harsh industrial environments.",
+        cards: [
+          ["8W Industrial Speaker", "An 8W Class D speaker delivers ~90dB@1m for clear audio in noisy factories. Supports offline audio playback and multilingual TTS."],
+          ["3-Color Signal Tower", "Integrated red / yellow / green beacon with ON, OFF, blink, and custom patterns. Precisely synchronized with each alert level."],
+          ["MQTT/HTTP IoT Gateway", "Connects to MQTT brokers and HTTP APIs for real-time command exchange. Compatible with existing IoT, SCADA, and BMS systems."],
+          ["AI Integration Ready", "Receives commands directly from AI servers or AI cameras. End-to-end response time stays within 2 seconds."],
+          ["Cloud Management / Dashboard", "Monitor online/offline status in real time. Configure remotely, review logs, and control devices through a web dashboard."],
+          ["OTA Firmware Update", "Update firmware wirelessly without visiting the site. Automatic rollback helps maintain uptime if an update fails."]
+        ]
+      },
+      av: {
+        tag: "AUDIO & VISUAL ALERTING",
+        title: "<span class=\"grad-blue\">Instant alerts</span>,<br />never missed",
+        lead: "Combining powerful audio alerts with highly visible signal lighting ensures every worker gets notified immediately, from any corner of the factory.",
+        metricLabel: "Sound Pressure @1m",
+        items: [
+          ["Powerful audio in noisy environments", "The 8W Class D speaker outputs ~90dB@1m to cut through machine noise. Local audio playback and TTS still work even if the network is down."],
+          ["Flexible 3-color signal tower", "Red / yellow / green lights support ON, OFF, blink, and custom patterns to reflect the exact urgency level of each event."],
+          ["Ultra-fast response within 2 seconds", "From AI detection to speaker playback and beacon lighting, the total delay remains within 2 seconds for emergency-grade responsiveness."],
+          ["Reliable offline audio playback", "Audio files are stored locally on the device, so alerts continue operating even during network or server outages."]
+        ]
+      },
+      ai: {
+        tag: "SYSTEM INTEGRATION",
+        title: "Connect with <span class=\"grad-blue\">AI and industrial</span><br />systems",
+        lead: "MGAW-V1 is built for seamless integration with AI cameras, AI servers, SCADA, BMS, and legacy Modbus devices without changing existing infrastructure.",
+        flow: ["AI Camera", "AI Server /<br />SCADA / BMS", "MGAW-V1", "Alert Speaker", "Signal Tower"],
+        protocols: [
+          ["MQTT Protocol", "Lightweight, standardized messaging for industrial IoT with low latency and flexible publish/subscribe architecture."],
+          ["HTTP API", "Easy integration with IT systems, web applications, and existing management software."],
+          ["Ethernet RJ45", "Reliable wired connectivity for critical deployments where stability matters most."],
+          ["WiFi", "Flexible wireless deployment for areas where network cabling is difficult."],
+          ["Modbus RS485", "Seamless integration with legacy industrial devices, PLCs, and SCADA systems."],
+          ["Remote Configuration", "Manage settings from anywhere and reduce maintenance visits to the field."]
+        ]
+      },
+      reliability: {
+        tag: "INDUSTRIAL RELIABILITY",
+        title: "Designed for<br /><span class=\"grad-blue\">24/7 uninterrupted operation</span>",
+        lead: "Every component is selected and validated to meet the toughest requirements of industrial environments.",
+        cards: [
+          ["PoE 802.3af/at", "Power over Ethernet simplifies installation and removes the need for a separate power supply."],
+          ["12V Backup Power", "Keeps the device running when grid power is lost or PoE becomes unavailable."],
+          ["OVP / UVP / OCP", "Comprehensive protection for over-voltage (27V), under-voltage (7V), and over-current (3.8A)."],
+          ["Reverse Polarity Protection", "Automatic protection against incorrect power polarity prevents hardware damage."],
+          ["Online/Offline Monitoring", "Track device status in real time and detect failures instantly."],
+          ["Remote Diagnostics", "Diagnose and troubleshoot remotely without dispatching engineers onsite."],
+          ["Hardware Watchdog", "Automatically restarts the system when faults occur to maximize uptime."],
+          ["Industrial Aluminum Housing", "Rugged enclosure designed for factory conditions from -10°C to +50°C."]
+        ]
+      },
+      usecase: {
+        tag: "REAL-WORLD APPLICATIONS",
+        title: "Deploy across <span class=\"grad-blue\">every critical</span><br />industrial environment",
+        lead: "From manufacturing plants to warehouses, server rooms, and fire protection systems, MGAW-V1 fits a wide range of industrial use cases.",
+        cards: [
+          ["Smart Factory", "Monitor production lines with AI and trigger instant alerts when abnormalities are detected."],
+          ["AI Camera Alerts", "Integrate with CCTV-AI to detect intrusion, PPE violations, and abnormal behavior with immediate notifications."],
+          ["Fire Alarm Integration", "Receive signals from FACP via Modbus/BACnet and broadcast multi-zone evacuation alerts."],
+          ["Restricted Zone Alerts", "Notify instantly when someone enters dangerous or restricted areas."],
+          ["Warehouse & Logistics", "Support inventory monitoring, AGV workflows, and real-time warehouse status alerts."],
+          ["Machine Safety", "Connect directly with PLC/SCADA to trigger alerts when equipment exceeds safe thresholds."],
+          ["Server Room & IDC", "Monitor temperature, humidity, and voltage, and alert immediately when conditions exceed limits."],
+          ["Plant-Wide Emergency", "Trigger multiple MGAW-V1 devices simultaneously during wide-area incidents."]
+        ]
+      },
+      realapp: {
+        tag: "LIVE DEPLOYMENT",
+        title: "Already running in<br /><span class=\"grad-blue\">real factories</span>",
+        lead: "MGAW-V1 has been installed and operated in real manufacturing plants, proving its effectiveness in true industrial conditions.",
+        steps: [
+          "<strong>Mount on a wall or pole</strong> — Included bracket supports fast installation in around 15 minutes.",
+          "<strong>Plug in the network cable (PoE)</strong> — One cable provides both power and connectivity.",
+          "<strong>Configure MQTT/IP</strong> — Point the device to a broker or local server using the web interface.",
+          "<strong>Integrate with AI/SCADA</strong> — Publish an event and MGAW-V1 handles alert execution automatically."
+        ]
+      },
+      specs: {
+        tag: "TECHNICAL SPECS",
+        title: "Datasheet <span class=\"grad-blue\">MGAW-V1</span>",
+        lead: "Core technical specifications for engineering evaluation and integration.",
+        header: ["Parameter", "Value"],
+        rows: [
+          ["Model", "MGAW-V1"],
+          ["Device Type", "Industrial IoT audio &amp; light alert device"],
+          ["Input Power", "PoE 802.3af/at + 12V backup"],
+          ["Wired Network", "Ethernet RJ45"],
+          ["Wireless Connectivity", "WiFi"],
+          ["Protocols", "MQTT / HTTP API"],
+          ["Speaker Output", "8W Class D"],
+          ["Sound Pressure", "~90dB @1m"],
+          ["Beacon", "Red / Yellow / Green LED"],
+          ["Alert Modes", "ON / OFF / Blink / Pattern"],
+          ["Modbus", "RS485"],
+          ["Firmware", "OTA (Over-the-Air)"],
+          ["Monitoring", "Online / Offline status"],
+          ["Over-Voltage Protection", "27V"],
+          ["Under-Voltage Protection", "7V"],
+          ["Over-Current Protection", "3.8A"],
+          ["Reverse Polarity Protection", "Yes"],
+          ["Dimensions", "120 × 88 × 38 mm"],
+          ["Response Delay", "≤ 1–2 seconds"],
+          ["Housing", "Industrial-grade aluminum"],
+          ["Operating Temperature", "-10°C to +50°C"],
+          ["Humidity", "10% – 90% (non-condensing)"]
+        ]
+      },
+      oemodm: {
+        tag: "PARTNERS & OEM/ODM",
+        title: "A platform ready for<br /><span class=\"grad-blue\">OEM / ODM</span>",
+        lead: "We offer fully customized solutions across firmware, branding, hardware, and mass production to match each project's requirements.",
+        cards: [
+          ["Custom Firmware Development", "Tailor device behavior and add project-specific features based on customer requirements."],
+          ["Private Label Branding", "Deliver MGAW-V1 under your own brand with fully customized logo, packaging, and documentation."],
+          ["Hardware Customization", "Adjust hardware to fit environmental or operational conditions and ensure optimal performance."],
+          ["Mass Production Support", "Industrial production capability for high-volume orders with committed lead times."],
+          ["System Integration Service", "Provide deep technical support to integrate MGAW-V1 into existing industrial and control ecosystems."],
+          ["Extended Industrial Options", "From custom enclosures to specialized communication interfaces, we support broad industrial customization."]
+        ]
+      },
+      contact: {
+        tag: "CONTACT",
+        title: "Contact us now for<br /><span class=\"grad-blue\">consulting and quotation</span>",
+        lead: "Ask about volume pricing, custom firmware development, and deep integration support for your project.",
+        labels: ["Website", "Email", "Product"],
+        services: ["🏭 Industrial IoT Solutions", "🤖 Smart Factory Integration", "🔧 OEM / ODM Services", "🎯 AI Integration Support", "🔗 System Integration"],
+        bannerTitle: "Ready to deploy MGAW-V1 in your factory?",
+        bannerDesc: "The MEIKO AUTOMATION engineering team is ready to assess requirements, recommend a solution, and demonstrate the product onsite.",
+        bannerCta: "Send Consultation Request →",
+        footer: "© 2026 MEIKO AUTOMATION. All rights reserved. | MGAW-V1 Industrial IoT Audio &amp; Light Alert Device"
+      }
+    }
+  };
+
+  const catalogLangButtons = {
+    vi: document.getElementById('catalog-lang-vi'),
+    ja: document.getElementById('catalog-lang-jp'),
+    en: document.getElementById('catalog-lang-en')
+  };
+
+  const setText = (selector, value) => {
+    const element = document.querySelector(selector);
+    if (element && value !== undefined) {
+      element.textContent = value;
+    }
+  };
+
+  const setHtml = (selector, value) => {
+    const element = document.querySelector(selector);
+    if (element && value !== undefined) {
+      element.innerHTML = value;
+    }
+  };
+
+  const setNodeList = (selector, values, useHtml = false) => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      const value = values[index];
+      if (value === undefined) {
+        return;
+      }
+      if (useHtml) {
+        element.innerHTML = value;
+      } else {
+        element.textContent = value;
+      }
+    });
+  };
+
+  const setCardPairs = (selector, values) => {
+    document.querySelectorAll(selector).forEach((card, index) => {
+      const item = values[index];
+      if (!item) {
+        return;
+      }
+      const heading = card.querySelector('h4');
+      const paragraph = card.querySelector('p');
+      if (heading) {
+        heading.textContent = item[0];
+      }
+      if (paragraph) {
+        paragraph.textContent = item[1];
+      }
+    });
+  };
+
+  const applyCatalogLanguage = (lang) => {
+    const translations = catalogTranslations[lang] || catalogTranslations.vi;
+
+    document.documentElement.lang = lang;
+    document.title = translations.metaTitle;
+
+    setNodeList('.nav-links a', translations.navLinks);
+    setText('.nav-cta', translations.navCta);
+
+    setText('.badge-blue', translations.hero.badges[0]);
+    setText('.badge-red', translations.hero.badges[1]);
+    setHtml('.hero-title .h2', translations.hero.subtitle);
+    setText('.hero-desc', translations.hero.desc);
+    setNodeList('.hero-pills .pill', translations.hero.pills);
+    setText('.hero-ctas .btn-primary', translations.hero.ctas[0]);
+    setText('.hero-ctas .btn-outline', translations.hero.ctas[1]);
+    setNodeList('.hero-stats .lbl', translations.hero.stats);
+    setText('.hero-img-wrap div p', translations.hero.fallback);
+
+    setText('.compare-section .section-tag', translations.compare.tag);
+    setHtml('.compare-section .text-center .h2', translations.compare.title);
+    setText('.compare-section .lead', translations.compare.lead);
+    setText('.compare-col.before .compare-label', translations.compare.beforeLabel);
+    setText('.compare-col.after .compare-label', translations.compare.afterLabel);
+    setNodeList('.compare-col.before .compare-item span', translations.compare.beforeItems);
+    setNodeList('.compare-col.after .compare-item span', translations.compare.afterItems);
+
+    setText('.features-section .section-tag', translations.features.tag);
+    setHtml('.features-section .text-center .h2', translations.features.title);
+    setText('.features-section .lead', translations.features.lead);
+    setCardPairs('.features-grid .feat-card', translations.features.cards);
+
+    setText('.av-section .section-tag', translations.av.tag);
+    setHtml('.av-section .h2', translations.av.title);
+    setText('.av-section .lead', translations.av.lead);
+    setText('.av-float-card .metric-lbl', translations.av.metricLabel);
+    setCardPairs('.av-features .av-feat-item', translations.av.items);
+
+    setText('.ai-section .section-tag', translations.ai.tag);
+    setHtml('.ai-section .text-center .h2', translations.ai.title);
+    setText('.ai-section .lead', translations.ai.lead);
+    setNodeList('.ai-flow .flow-label', translations.ai.flow, true);
+    setCardPairs('.protocols-grid .proto-card', translations.ai.protocols);
+
+    setText('.reliability-section .section-tag', translations.reliability.tag);
+    setHtml('.reliability-section .text-center .h2', translations.reliability.title);
+    setText('.reliability-section .lead', translations.reliability.lead);
+    setCardPairs('.reliability-grid .rel-card', translations.reliability.cards);
+
+    setText('.usecase-section .section-tag', translations.usecase.tag);
+    setHtml('.usecase-section .text-center .h2', translations.usecase.title);
+    setText('.usecase-section .lead', translations.usecase.lead);
+    setCardPairs('.usecase-grid .uc-card .uc-body', translations.usecase.cards);
+
+    setText('.realapp-content .section-tag', translations.realapp.tag);
+    setHtml('.realapp-content .h2', translations.realapp.title);
+    setText('.realapp-content .lead', translations.realapp.lead);
+    setNodeList('.install-step p', translations.realapp.steps, true);
+
+    setText('.specs-section .section-tag', translations.specs.tag);
+    setHtml('.specs-section .text-center .h2', translations.specs.title);
+    setText('.specs-section .lead', translations.specs.lead);
+    setNodeList('.specs-table thead th', translations.specs.header);
+    document.querySelectorAll('.specs-table tbody tr').forEach((row, index) => {
+      const spec = translations.specs.rows[index];
+      if (!spec) {
+        return;
+      }
+      const cells = row.querySelectorAll('td');
+      if (cells[0]) {
+        cells[0].textContent = spec[0];
+      }
+      if (cells[1]) {
+        cells[1].innerHTML = spec[1];
+      }
+    });
+
+    setText('.oemodm-section .section-tag', translations.oemodm.tag);
+    setHtml('.oemodm-section .text-center .h2', translations.oemodm.title);
+    setText('.oemodm-section .lead', translations.oemodm.lead);
+    setCardPairs('.oemodm-grid .odm-card', translations.oemodm.cards.slice(0, 4));
+    const fullCardBlocks = document.querySelectorAll('.oemodm-grid .odm-card.full > div > div');
+    fullCardBlocks.forEach((block, index) => {
+      const item = translations.oemodm.cards[index + 4];
+      if (!item) {
+        return;
+      }
+      const heading = block.querySelector('h4');
+      const paragraph = block.querySelector('p');
+      if (heading) {
+        heading.textContent = item[0];
+      }
+      if (paragraph) {
+        paragraph.textContent = item[1];
+      }
+    });
+
+    setText('.contact-section .section-tag', translations.contact.tag);
+    setHtml('.contact-section .text-center .h2', translations.contact.title);
+    setText('.contact-section .lead', translations.contact.lead);
+    setNodeList('.contact-grid .contact-item h4', translations.contact.labels);
+    setNodeList('.services-row .svc-tag', translations.contact.services);
+    setText('.contact-section .h3', translations.contact.bannerTitle);
+    setText('.contact-section .h3 + p', translations.contact.bannerDesc);
+    setText('.contact-section .h3 + p + a', translations.contact.bannerCta);
+    setHtml('.footer-bottom p', translations.contact.footer);
+
+    Object.entries(catalogLangButtons).forEach(([buttonLang, button]) => {
+      button.classList.toggle('active', buttonLang === lang);
+    });
+
+    localStorage.setItem('meiko-catalog-lang', lang);
+  };
+
+  catalogLangButtons.vi.addEventListener('click', () => applyCatalogLanguage('vi'));
+  catalogLangButtons.ja.addEventListener('click', () => applyCatalogLanguage('ja'));
+  catalogLangButtons.en.addEventListener('click', () => applyCatalogLanguage('en'));
+
+  applyCatalogLanguage(localStorage.getItem('meiko-catalog-lang') || 'vi');
+</script>
+
+</body>
+</html>

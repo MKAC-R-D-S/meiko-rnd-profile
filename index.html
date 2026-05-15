@@ -42,6 +42,7 @@
     <!-- 🌐 Language Toggle -->
     <div class="lang-toggle">
       <button id="lang-vi" class="active">🇻🇳 VI</button>
+      <button id="lang-jp">🇯🇵 JP</button>
       <button id="lang-en">🇬🇧 EN</button>
     </div>
     <nav>
@@ -69,8 +70,25 @@
 
   <!-- 🚀 Projects -->
   <section id="projects" class="section projects">
+    <span class="section-tag animate-on-scroll" data-lang-key="projects_tag">SẢN PHẨM &amp; DỰ ÁN</span>
     <h2 data-lang-key="projects_title" class="animate-on-scroll">Dự án Tiêu Biểu</h2>
     <div class="project-grid">
+      <!-- MGAW-V1 Industrial IoT Alert -->
+      <div class="project-card animate-on-scroll" style="position:relative;">
+        <div class="card-badge-wrap">
+          <span class="card-badge new" data-lang-key="badge_new">🆕 Mới</span>
+        </div>
+        <img src="Product_Catalogue_MGAW-V1/Industrial%20IoT_1.png"
+             alt="Thiết bị cảnh báo IoT MGAW-V1"
+             loading="lazy"
+             onerror="this.src='assets/Iot_2.jpg'">
+        <div class="card-content">
+          <span class="card-product-tag">MGAW-V1</span>
+          <h3 data-lang-key="project5_title">Thiết Bị Cảnh Báo IoT Công Nghiệp</h3>
+          <p data-lang-key="project5_desc">Nền tảng cảnh báo âm thanh &amp; ánh sáng tích hợp AI. Loa 8W/~90dB, đèn tháp 3 màu, MQTT/HTTP, PoE 802.3af/at — phản hồi ≤2 giây, sẵn sàng cho Smart Factory.</p>
+          <a href="Product_Catalogue_MGAW-V1/MEIKO-AUTOMATION_MGAW-V1_Catalogue_VI.html" target="_blank" class="card-cta-btn" data-lang-key="project5_cta">Xem Catalogue →</a>
+        </div>
+      </div>
       <!-- TingBox -->
       <div class="project-card animate-on-scroll">
         <picture>
@@ -80,6 +98,7 @@
         <div class="card-content">
           <h3 data-lang-key="project1_title">Loa Thông Báo Thanh Toán (TingBox)</h3>
           <p data-lang-key="project1_desc">Giải quyết bài toán xác nhận giao dịch tức thì cho ngành bán lẻ và FinTech. Sản phẩm ODM này tự động thông báo kết quả thanh toán qua 4G/Wifi, nâng cao trải nghiệm khách hàng và giảm thiểu sai sót.</p>
+          <a href="assets/Catalogue/Catalogue_TingBoxPro_2025July23.pdf" target="_blank" class="card-cta-btn" data-lang-key="project1_cta">Tải Catalogue ↓</a>
         </div>
       </div>
 
@@ -92,6 +111,7 @@
         <div class="card-content">
           <h3 data-lang-key="project2_title">Hệ thống Giám sát Sensor IoT</h3>
           <p data-lang-key="project2_desc">Đảm bảo an toàn và tối ưu hóa vận hành cho nhà xưởng, khu công nghiệp. Hệ thống sử dụng công nghệ LoRa/LoRaWAN để giám sát nhiệt độ, độ ẩm và cảnh báo cháy nổ từ xa theo thời gian thực.</p>
+          <a href="assets/Catalogue/IoT_Catalogue.pdf" target="_blank" class="card-cta-btn" data-lang-key="project2_cta">Tải Catalogue ↓</a>
         </div>
       </div>
 
@@ -104,6 +124,7 @@
         <div class="card-content">
           <h3 data-lang-key="project3_title">Máy Thở Không Xâm Nhập BiPAP</h3>
           <p data-lang-key="project3_desc">Sản phẩm y tế công nghệ cao, hỗ trợ hô hấp cho bệnh nhân với độ tin cậy và chính xác tuyệt đối. Chúng tôi đã làm chủ từ thiết kế phần cứng, thuật toán điều khiển đến các tiêu chuẩn an toàn khắt khe.</p>
+          <a href="assets/Catalogue/Catalogue MBi-V1 (VN)_REV03_20260116.pdf" target="_blank" class="card-cta-btn" data-lang-key="project3_cta">Tải Catalogue ↓</a>
         </div>
       </div>
 
@@ -182,7 +203,7 @@
 
   <!-- 🧾 Footer -->
   <footer>
-    <p data-lang-key="footer_copyright">© 2025 Meiko Automation R&D Center | All rights reserved</p>
+    <p data-lang-key="footer_copyright">© 2026 Meiko Automation R&D Center | All rights reserved</p>
   </footer>
 
   <!-- ✅ EmailJS Script -->
@@ -193,16 +214,20 @@
       .then(() => {
         const statusEl = document.getElementById('form-status');
         const currentLang = document.documentElement.lang || 'vi';
-        statusEl.innerText = currentLang === 'vi' 
+        statusEl.innerText = currentLang === 'vi'
           ? "✅ Gửi thành công! Cảm ơn bạn đã liên hệ."
-          : "✅ Sent successfully! Thank you for your contact.";
+          : currentLang === 'ja'
+            ? "✅ 送信に成功しました。お問い合わせありがとうございます。"
+            : "✅ Sent successfully! Thank you for your contact.";
         this.reset();
       }, (err) => {
         const statusEl = document.getElementById('form-status');
         const currentLang = document.documentElement.lang || 'vi';
         statusEl.innerText = currentLang === 'vi'
           ? "❌ Lỗi gửi mail. Vui lòng thử lại."
-          : "❌ Mail sending failed. Please try again.";
+          : currentLang === 'ja'
+            ? "❌ メール送信に失敗しました。再度お試しください。"
+            : "❌ Mail sending failed. Please try again.";
       });
     });
   </script>
@@ -215,6 +240,7 @@
         nav_projects: "Dự án",
         nav_odm: "Năng lực ODM",
         nav_contact: "Liên hệ",
+        projects_tag: "Sản phẩm & Dự án",
         hero_title: "Biến Ý tưởng thành Sản phẩm Công nghệ Dẫn đầu",
         hero_subtitle: "Giải pháp IoT & ODM toàn diện, từ khâu R&D đến sản xuất hàng loạt.",
         hero_cta: "Khám phá Dự án",
@@ -223,12 +249,19 @@
         projects_title: "Dự án Tiêu Biểu",
         project1_title: "Loa Thông Báo Thanh Toán (TingBox)",
         project1_desc: "Giải quyết bài toán xác nhận giao dịch tức thì cho ngành bán lẻ và FinTech. Sản phẩm ODM này tự động thông báo kết quả thanh toán qua 4G/Wifi, nâng cao trải nghiệm khách hàng và giảm thiểu sai sót.",
+        project1_cta: "Tải Catalogue ↓",
         project2_title: "Hệ thống Giám sát Sensor IoT",
         project2_desc: "Đảm bảo an toàn và tối ưu hóa vận hành cho nhà xưởng, khu công nghiệp. Hệ thống sử dụng công nghệ LoRa/LoRaWAN để giám sát nhiệt độ, độ ẩm và cảnh báo cháy nổ từ xa theo thời gian thực.",
+        project2_cta: "Tải Catalogue ↓",
         project3_title: "Máy Thở Không Xâm Nhập BiPAP",
         project3_desc: "Sản phẩm y tế công nghệ cao, hỗ trợ hô hấp cho bệnh nhân với độ tin cậy và chính xác tuyệt đối. Chúng tôi đã làm chủ từ thiết kế phần cứng, thuật toán điều khiển đến các tiêu chuẩn an toàn khắt khe.",
+        project3_cta: "Tải Catalogue ↓",
         project4_title: "Tool / JIG ICT & FCT",
         project4_desc: "Tăng tốc và đảm bảo chất lượng 100% cho dây chuyền sản xuất. Chúng tôi thiết kế các bộ JIG kiểm thử (ICT/FCT) chuyên dụng, tự động hóa quy trình test firmware, chức năng và hiệu suất linh kiện.",
+        project5_title: "Thiết Bị Cảnh Báo IoT Công Nghiệp",
+        project5_desc: "Nền tảng cảnh báo âm thanh & ánh sáng tích hợp AI. Loa 8W/~90dB, đèn tháp 3 màu, MQTT/HTTP, PoE 802.3af/at — phản hồi ≤2 giây, sẵn sàng cho Smart Factory.",
+        project5_cta: "Xem chi tiết →",
+        badge_new: "🆕 Mới",
         process_title: "Quy trình của chúng tôi",
         process1_title: "Lắng nghe & Phân tích",
         process1_desc: "Tiếp nhận ý tưởng, phân tích yêu cầu kỹ thuật và mục tiêu kinh doanh của bạn.",
@@ -244,6 +277,10 @@
         odm_item4: "Thiết kế JIG ICT/FCT cho sản xuất",
         odm_item5: "Đạt chuẩn ISO 9001:2015, CE, RoHS",
         odm_item6: "Thiết kế & Phát triển Web/App",
+        odm_item7: "Tư vấn giải pháp IoT tổng thể — từ thiết bị đến Cloud",
+        odm_item8: "Phát triển nền tảng quản lý thiết bị và dashboard trực quan (Web + Mobile)",
+        odm_item9: "Tích hợp AI/ML vào thiết bị IoT để phân tích dữ liệu và dự đoán lỗi",
+        odm_item11: "Tối ưu thiết kế để sẵn sàng sản xuất hàng loạt (DFM/DFT)",
         contact_title: "Sẵn sàng Đổi mới?",
         form_name_placeholder: "Họ và tên",
         form_email_placeholder: "Email",
@@ -251,14 +288,73 @@
         form_company_placeholder: "Tên công ty (Tùy chọn)",
         form_message_placeholder: "Nội dung liên hệ...",
         form_submit_button: "Gửi liên hệ",
+        contact_cta: '<p><strong>Email:</strong> duc.vuminh@meiko.vn</p><p><strong>Địa chỉ:</strong> Tầng 1, Nhà EMS2, Lô CN9, KCN Thạch Thất - Quốc Oai, Hà Nội</p><p><a href="https://meiko-auto.vn/" target="_blank">🌐 https://meiko-auto.vn/</a></p>',
         contact_address_label: "Địa chỉ:",
-        footer_copyright: "© 2025 Meiko Automation R&D Center | Đã đăng ký bản quyền",
+        footer_copyright: "© 2026 Meiko Automation R&D Center | Đã đăng ký bản quyền",
+      },
+      ja: {
+        nav_about: "会社紹介",
+        nav_projects: "プロジェクト",
+        nav_odm: "ODM対応力",
+        nav_contact: "お問い合わせ",
+        projects_tag: "製品・プロジェクト",
+        hero_title: "アイデアを先進的なテクノロジー製品へ",
+        hero_subtitle: "R&Dから量産までを一貫して支援するIoT・ODMソリューション。",
+        hero_cta: "プロジェクトを見る",
+        about_title: "私たちについて",
+        about_desc: "Meiko Automation R&Dは、単なる受託製造ではなく価値を創り出します。情熱あるエンジニアチームと確かな開発プロセスにより、複雑な技術アイデアを市場投入可能な製品へと具現化します。私たちの使命は、信頼できるR&Dパートナーとしてお客様のイノベーションを支えることです。",
+        projects_title: "主なプロジェクト",
+        project1_title: "決済通知スピーカー (TingBox)",
+        project1_desc: "小売・FinTech向けに、取引結果を即時確認できる課題を解決します。4G/WiFiで自動音声通知を行うODM製品で、顧客体験向上と運用ミス削減に貢献します。",
+        project1_cta: "カタログをダウンロード ↓",
+        project2_title: "IoTセンサー監視システム",
+        project2_desc: "工場や産業施設の安全性向上と運用最適化を支援します。LoRa/LoRaWANにより温度・湿度・火災リスクを遠隔でリアルタイム監視します。",
+        project2_cta: "カタログをダウンロード ↓",
+        project3_title: "非侵襲型BiPAP人工呼吸器",
+        project3_desc: "高信頼・高精度の呼吸支援を実現する医療機器です。ハードウェア設計から制御アルゴリズム、安全規格対応まで一貫して開発しました。",
+        project3_cta: "カタログをダウンロード ↓",
+        project4_title: "ICT / FCT テスト治具",
+        project4_desc: "量産ラインの品質100%保証と立ち上げ高速化を支援します。専用ICT/FCT治具により、ファームウェア・機能・部品性能試験を自動化します。",
+        project5_title: "産業向けIoT警報デバイス",
+        project5_desc: "AI連携型の音声・表示警報プラットフォーム。8Wスピーカー、約90dB、3色パトライト、MQTT/HTTP、PoE対応で、2秒以内の応答を実現します。",
+        project5_cta: "詳細を見る →",
+        badge_new: "🆕 新製品",
+        process_title: "開発プロセス",
+        process1_title: "ヒアリング・分析",
+        process1_desc: "アイデア、技術要件、ビジネス目標を丁寧に把握します。",
+        process2_title: "設計・試作",
+        process2_desc: "ハードウェア、ソフトウェアを設計し、検証用プロトタイプを作成します。",
+        process3_title: "量産準備・最適化",
+        process3_desc: "試作量産、検査治具設計、量産最適化まで支援します。",
+        odm_title: "コア技術力",
+        odm_subtitle: "製品開発をエンドツーエンドで支える、プロフェッショナルな開発体制を提供します。",
+        odm_item1: "ハードウェア設計、レイアウト、EMC対応",
+        odm_item2: "ファームウェア開発 (ESP32, STM32, Quectel LTE...)",
+        odm_item3: "Wi-Fi、BLE、MQTT、OTA更新の統合",
+        odm_item4: "量産向けICT/FCT治具設計",
+        odm_item5: "ISO 9001:2015、CE、RoHS対応",
+        odm_item6: "Web・モバイルアプリ開発",
+        odm_item7: "デバイスからクラウドまでのIoTソリューション提案",
+        odm_item8: "デバイス管理基盤と可視化ダッシュボード開発 (Web + Mobile)",
+        odm_item9: "IoT機器へのAI/ML統合による分析・故障予兆",
+        odm_item11: "量産対応に向けた設計最適化 (DFM/DFT)",
+        contact_title: "ご相談の準備はできていますか？",
+        form_name_placeholder: "お名前",
+        form_email_placeholder: "メールアドレス",
+        form_phone_placeholder: "電話番号 (任意)",
+        form_company_placeholder: "会社名 (任意)",
+        form_message_placeholder: "お問い合わせ内容...",
+        form_submit_button: "送信する",
+        contact_cta: '<p><strong>Email:</strong> duc.vuminh@meiko.vn</p><p><strong>住所:</strong> ハノイ市タックタット・クオックオアイ工業団地 CN9 区画 EMS2棟 1階</p><p><a href="https://meiko-auto.vn/" target="_blank">🌐 https://meiko-auto.vn/</a></p>',
+        contact_address_label: "住所:",
+        footer_copyright: "© 2026 Meiko Automation R&D Center | All rights reserved",
       },
       en: {
         nav_about: "About",
         nav_projects: "Projects",
         nav_odm: "ODM Capabilities",
         nav_contact: "Contact",
+        projects_tag: "Products & Projects",
         hero_title: "Turning Ideas into Leading Tech Products",
         hero_subtitle: "Comprehensive IoT & ODM solutions, from R&D to mass production.",
         hero_cta: "Explore Projects",
@@ -267,12 +363,19 @@
         projects_title: "Featured Projects",
         project1_title: "Payment Notification Speaker (TingBox)",
         project1_desc: "Solving the instant transaction confirmation problem for retail and FinTech. This ODM product automatically announces payment results via 4G/Wifi, enhancing customer experience and minimizing errors.",
+        project1_cta: "Download Catalogue ↓",
         project2_title: "IoT Sensor Monitoring System",
         project2_desc: "Ensuring safety and optimizing operations for factories and industrial parks. The system uses LoRa/LoRaWAN technology to remotely monitor temperature, humidity, and fire hazards in real-time.",
+        project2_cta: "Download Catalogue ↓",
         project3_title: "Non-Invasive BiPAP Ventilator",
         project3_desc: "A high-tech medical product that supports patient respiration with absolute reliability and precision. We have mastered everything from hardware design and control algorithms to strict safety standards.",
+        project3_cta: "Download Catalogue ↓",
         project4_title: "Tool / JIG ICT & FCT",
         project4_desc: "Accelerating and ensuring 100% quality for production lines. We design specialized testing JIGs (ICT/FCT) that automate the process of testing firmware, functionality, and component performance.",
+        project5_title: "Industrial IoT Alert Device",
+        project5_desc: "AI-integrated industrial audio & visual alert platform. 8W speaker/~90dB, 3-color beacon tower, MQTT/HTTP, PoE 802.3af/at — ≤2s response time, Smart Factory ready.",
+        project5_cta: "View Catalogue →",
+        badge_new: "🆕 New",
         process_title: "Our Process",
         process1_title: "Listen & Analyze",
         process1_desc: "We start by understanding your idea, technical requirements, and business goals.",
@@ -288,6 +391,10 @@
         odm_item4: "JIG ICT/FCT design for production",
         odm_item5: "ISO 9001:2015, CE, RoHS compliant",
         odm_item6: "Web & Mobile App Development",
+        odm_item7: "End-to-end IoT solution consulting — from device to Cloud",
+        odm_item8: "Device management platform & intuitive dashboard development (Web + Mobile)",
+        odm_item9: "AI/ML integration into IoT devices for data analysis and fault prediction",
+        odm_item11: "Design optimization for mass production readiness (DFM/DFT)",
         contact_title: "Ready to Innovate?",
         form_name_placeholder: "Your Name",
         form_email_placeholder: "Email",
@@ -295,22 +402,35 @@
         form_company_placeholder: "Company Name (Optional)",
         form_message_placeholder: "Your Message...",
         form_submit_button: "Send Message",
+        contact_cta: '<p><strong>Email:</strong> duc.vuminh@meiko.vn</p><p><strong>Address:</strong> 1st Floor, EMS2 Building, CN9 Lot, Thach That - Quoc Oai Industrial Park, Hanoi</p><p><a href="https://meiko-auto.vn/" target="_blank">🌐 https://meiko-auto.vn/</a></p>',
         contact_address_label: "Address:",
-        footer_copyright: "© 2025 Meiko Automation R&D Center | All rights reserved",
+        footer_copyright: "© 2026 Meiko Automation R&D Center | All rights reserved",
       }
     };
 
     const langVI = document.getElementById('lang-vi');
+    const langJP = document.getElementById('lang-jp');
     const langEN = document.getElementById('lang-en');
+    const langButtons = { vi: langVI, ja: langJP, en: langEN };
+
+    const normalizeLanguage = (lang) => {
+      if (lang === 'jp') {
+        return 'ja';
+      }
+
+      return translations[lang] ? lang : 'vi';
+    };
 
     const setLanguage = (lang) => {
+      const normalizedLang = normalizeLanguage(lang);
+
       // Cập nhật thuộc tính lang của thẻ html
-      document.documentElement.lang = lang;
+      document.documentElement.lang = normalizedLang;
 
       // Cập nhật nội dung text
       document.querySelectorAll('[data-lang-key]').forEach(el => {
         const key = el.getAttribute('data-lang-key');
-        const translation = translations[lang][key];
+        const translation = translations[normalizedLang][key];
         if (translation) {
           // Kiểm tra xem có cần dịch placeholder không
           if (key.includes('placeholder')) {
@@ -323,20 +443,19 @@
       });
 
       // Cập nhật class 'active' cho nút
-      if (lang === 'vi') {
-        langVI.classList.add('active');
-        langEN.classList.remove('active');
-      } else {
-        langEN.classList.add('active');
-        langVI.classList.remove('active');
-      }
+      Object.entries(langButtons).forEach(([buttonLang, button]) => {
+        button.classList.toggle('active', buttonLang === normalizedLang);
+      });
+
+      localStorage.setItem('preferred-lang', normalizedLang);
     };
 
     langVI.addEventListener('click', () => setLanguage('vi'));
+    langJP.addEventListener('click', () => setLanguage('ja'));
     langEN.addEventListener('click', () => setLanguage('en'));
 
     // Thiết lập ngôn ngữ mặc định khi tải trang
-    setLanguage('vi');
+    setLanguage(localStorage.getItem('preferred-lang') || 'vi');
   </script>
 
   <!-- ✅ Scroll Animation Script -->

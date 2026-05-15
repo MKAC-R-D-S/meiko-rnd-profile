@@ -171,7 +171,11 @@ body {
   color: #e0e0e0;
   font-size: 2.5rem;
   margin-bottom: 48px;
-  font-weight: 600;
+  font-weight: 700;
+  background: linear-gradient(90deg, #c77dff, #58a6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .section-subtitle {
@@ -184,7 +188,7 @@ body {
 /* 🚀 Project Cards - Hiệu ứng 3D và viền phát sáng */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 32px;
 }
 
@@ -212,6 +216,7 @@ body {
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.4s ease;
+  pointer-events: none; /* ✅ Không chặn click các phần tử bên trong */
 }
 
 .project-card:hover {
@@ -232,6 +237,8 @@ body {
 
 .card-content {
   padding: 24px;
+  position: relative; /* ✅ Đảm bảo nội dung luôn trên pseudo-element */
+  z-index: 1;
 }
 
 .card-content h3 {
@@ -242,6 +249,77 @@ body {
 .card-content p {
   color: #b0b0b0;
   line-height: 1.6;
+}
+
+/* 🏷️ Product card badges & tags */
+.card-badge-wrap {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+}
+
+.card-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.card-badge.new {
+  background: linear-gradient(90deg, rgba(138,43,226,0.9), rgba(88,166,255,0.9));
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(138,43,226,0.35);
+}
+
+.card-product-tag {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background: rgba(88, 166, 255, 0.1);
+  color: #58a6ff;
+  border: 1px solid rgba(88, 166, 255, 0.28);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.card-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 16px;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(88, 166, 255, 0.08);
+  color: #58a6ff;
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.card-cta-btn:hover {
+  background: rgba(88, 166, 255, 0.18);
+  border-color: rgba(88, 166, 255, 0.5);
+  transform: translateX(3px);
+}
+
+/* 🔖 Section label tag */
+.section-tag {
+  display: block;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #58a6ff;
+  margin-bottom: 8px;
 }
 
 /* ⚙️ ODM Capabilities - Dạng lưới Icon trực quan */
@@ -356,6 +434,10 @@ footer {
   /* Bỏ position: fixed, nó sẽ được sắp xếp bởi flexbox của navbar */
   z-index: 1000;
   margin-left: 20px; /* Tạo khoảng cách với logo */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
 }
 
 .lang-toggle button {
@@ -380,6 +462,10 @@ footer {
   .navbar {
     flex-direction: column;
     padding: 15px 20px;
+  }
+  .lang-toggle {
+    margin: 12px 0 0;
+    justify-content: center;
   }
   .navbar nav {
     margin-top: 15px;
