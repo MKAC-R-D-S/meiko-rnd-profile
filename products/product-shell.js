@@ -13,6 +13,14 @@ const setupProductPageI18n = (translations) => {
     en: document.getElementById("product-lang-en"),
   };
 
+  const setMetaContent = (selector, value) => {
+    const element = document.querySelector(selector);
+
+    if (element && value) {
+      element.setAttribute("content", value);
+    }
+  };
+
   const setContent = (selector, value, useHtml = false) => {
     const element = document.querySelector(selector);
 
@@ -39,6 +47,11 @@ const setupProductPageI18n = (translations) => {
     if (metaDescription && locale.metaDescription) {
       metaDescription.setAttribute("content", locale.metaDescription);
     }
+
+    setMetaContent('meta[property="og:title"]', locale.ogTitle || locale.metaTitle);
+    setMetaContent('meta[property="og:description"]', locale.ogDescription || locale.metaDescription);
+    setMetaContent('meta[name="twitter:title"]', locale.twitterTitle || locale.ogTitle || locale.metaTitle);
+    setMetaContent('meta[name="twitter:description"]', locale.twitterDescription || locale.ogDescription || locale.metaDescription);
 
     Object.entries(langButtons).forEach(([code, button]) => {
       if (button) {
