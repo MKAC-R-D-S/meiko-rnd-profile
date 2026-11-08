@@ -83,7 +83,7 @@ const setupProductPageI18n = (translations) => {
     setContent(".open-source-link", locale.topCta);
     setContent(".preview-open-link", locale.previewOpen);
 
-    localStorage.setItem("preferred-lang", normalizedLang);
+    try { localStorage.setItem("preferred-lang", normalizedLang); } catch {}
   };
 
   Object.entries(langButtons).forEach(([code, button]) => {
@@ -92,5 +92,23 @@ const setupProductPageI18n = (translations) => {
     }
   });
 
-  applyLanguage(localStorage.getItem("preferred-lang") || "vi");
+  let savedLanguage = 'vi';
+  try { savedLanguage = localStorage.getItem('preferred-lang') || 'vi'; } catch {}
+  applyLanguage(savedLanguage);
 };
+
+// Shared consultation routing and the selected road-design visual language.
+(() => {
+  const scriptUrl = document.currentScript.src;
+  const stylesheet = document.createElement('link');
+  stylesheet.rel = 'stylesheet';
+  stylesheet.href = new URL('product-road.css', scriptUrl).href;
+  document.head.append(stylesheet);
+  const slug = location.pathname.split('/').filter(Boolean).filter(p => p !== 'index.html').pop();
+  const names = {'mesi-v1':'MESI-V1','mgaw-v1':'MGAW-V1','sensor-iot':'Sensor IoT','tingbox':'TingBox','bipap':'BiPAP','tool-jig':'Tool / JIG'};
+  if (names[slug]) document.querySelectorAll('a[href*="#contact"]').forEach(link => {
+    const url = new URL(link.getAttribute('href'), location.href);
+    url.searchParams.set('product', names[slug]);
+    link.href = url.href;
+  });
+})();

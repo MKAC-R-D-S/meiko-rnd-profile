@@ -1,0 +1,8 @@
+# Source-only files are not part of the public website.
+exclude:
+  - scripts
+  - scratch
+  - docs
+  - AGENTS.md
+  - GLOSSARY.md
+  - TongHop_SanPham_IoT_RnD

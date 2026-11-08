@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mkac-r-d-s.github.io/meiko-rnd-profile/sitemap.xml
