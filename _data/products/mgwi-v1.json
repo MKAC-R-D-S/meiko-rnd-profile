@@ -1,0 +1,234 @@
+{
+  "slug": "mgwi-v1",
+  "name": "MGWI-V1",
+  "family": "iot",
+  "status": "provisional",
+  "role": {
+    "vi": "Gateway cảnh báo IoT",
+    "en": "IoT alert gateway",
+    "ja": "IoT警報ゲートウェイ"
+  },
+  "tagline": {
+    "vi": "Gateway kết nối máy chủ AI, MQTT, Modbus và thiết bị cảnh báo IP.",
+    "en": "A gateway linking AI servers, MQTT, Modbus, and IP alert devices.",
+    "ja": "AIサーバー、MQTT、Modbus、IP警報機器をつなぐゲートウェイです。"
+  },
+  "summary": {
+    "vi": "MGWI-V1 là gateway cảnh báo IoT cho nền tảng cảnh báo công nghiệp. Tài liệu mô tả các kết nối Ethernet, WiFi và RS485 Modbus, cùng nguồn PoE/12V và quản lý thiết bị.",
+    "en": "MGWI-V1 is the IoT gateway for the industrial alert platform. The documents describe Ethernet, WiFi, and RS485 Modbus connectivity, plus PoE/12V power and device management.",
+    "ja": "MGWI-V1は産業用警報プラットフォームのIoTゲートウェイです。資料では、Ethernet、WiFi、RS485 Modbus接続、PoE／12V電源、機器管理について説明されています。"
+  },
+  "highlights": [
+    {
+      "title": {
+        "vi": "Kết nối đa dạng",
+        "en": "Multiple connectivity options",
+        "ja": "多様な接続"
+      },
+      "text": {
+        "vi": "Kết nối Ethernet RJ45, WiFi và Modbus RS485 cho thiết bị hiện trường.",
+        "en": "Provides Ethernet RJ45, WiFi, and Modbus RS485 connectivity for field devices.",
+        "ja": "現場機器向けにEthernet RJ45、WiFi、Modbus RS485を提供します。"
+      },
+      "source": "products/mgwi-v1/docs/Technical_Spec.pdf p.1"
+    },
+    {
+      "title": {
+        "vi": "Gateway cảnh báo",
+        "en": "Alert gateway",
+        "ja": "警報ゲートウェイ"
+      },
+      "text": {
+        "vi": "Kết nối máy chủ AI, MQTT broker, thiết bị Modbus và các đầu cuối cảnh báo IP.",
+        "en": "Bridges AI servers, an MQTT broker, Modbus devices, and IP alert endpoints.",
+        "ja": "AIサーバー、MQTTブローカー、Modbus機器、IP警報端末を接続します。"
+      },
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.6"
+    },
+    {
+      "title": {
+        "vi": "Nguồn dự phòng",
+        "en": "Backup power",
+        "ja": "バックアップ電源"
+      },
+      "text": {
+        "vi": "Nguồn PoE 802.3af/at và nguồn dự phòng 12V được nêu trong tài liệu.",
+        "en": "The documents specify PoE 802.3af/at and 12V backup power.",
+        "ja": "資料ではPoE 802.3af/atと12Vバックアップ電源が指定されています。"
+      },
+      "source": "products/mgwi-v1/docs/Technical_Spec.pdf p.1"
+    },
+    {
+      "title": {
+        "vi": "Bảo vệ đầu vào",
+        "en": "Input protection",
+        "ja": "入力保護"
+      },
+      "text": {
+        "vi": "Tài liệu nêu ngưỡng bảo vệ cao áp 27 V, thấp áp 7 V, quá tải 3,8 A và chống ngược áp.",
+        "en": "The document lists 27 V over-voltage, 7 V under-voltage, 3.8 A overload protection, and reverse-polarity protection.",
+        "ja": "資料には、過電圧27 V、低電圧7 V、過負荷3.8 A、逆極性保護が記載されています。"
+      },
+      "source": "products/mgwi-v1/docs/Technical_Spec.pdf p.1"
+    }
+  ],
+  "applications": [
+    {
+      "vi": "Kết nối thiết bị cảnh báo trong nhà máy thông minh",
+      "en": "Alert-device connectivity in smart factories",
+      "ja": "スマート工場の警報機器接続"
+    },
+    {
+      "vi": "Tích hợp CCTV-AI và máy chủ AI",
+      "en": "CCTV-AI and AI-server integration",
+      "ja": "CCTV-AI・AIサーバー連携"
+    },
+    {
+      "vi": "Tích hợp thiết bị Modbus tại hiện trường",
+      "en": "Field Modbus-device integration",
+      "ja": "現場Modbus機器連携"
+    }
+  ],
+  "specs": [
+    {
+      "label": {
+        "vi": "Loại thiết bị",
+        "en": "Device type",
+        "ja": "機器タイプ"
+      },
+      "value": "IoT Alert Gateway",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.3"
+    },
+    {
+      "label": {
+        "vi": "Nguồn cấp",
+        "en": "Power input",
+        "ja": "電源入力"
+      },
+      "value": "PoE 802.3af/at + 12V dự phòng",
+      "status": "provisional",
+      "source": "products/mgwi-v1/docs/Technical_Spec.pdf p.1"
+    },
+    {
+      "label": {
+        "vi": "Công suất tiêu thụ",
+        "en": "Consumption",
+        "ja": "消費電力"
+      },
+      "value": "25 W",
+      "status": "provisional",
+      "source": "products/mgwi-v1/docs/Technical_Spec.pdf p.1"
+    },
+    {
+      "label": {
+        "vi": "Mạng",
+        "en": "Network",
+        "ja": "ネットワーク"
+      },
+      "value": "Ethernet RJ45 + WiFi",
+      "status": "provisional",
+      "source": "products/mgwi-v1/docs/Technical_Spec.pdf p.1"
+    },
+    {
+      "label": {
+        "vi": "Giao tiếp công nghiệp",
+        "en": "Industrial interface",
+        "ja": "産業用インターフェース"
+      },
+      "value": "Modbus RS485",
+      "status": "provisional",
+      "source": "products/mgwi-v1/docs/Technical_Spec.pdf p.1"
+    },
+    {
+      "label": {
+        "vi": "Bảo vệ cao áp",
+        "en": "Over-voltage protection",
+        "ja": "過電圧保護"
+      },
+      "value": "27 V",
+      "status": "provisional",
+      "source": "products/mgwi-v1/docs/Technical_Spec.pdf p.1"
+    },
+    {
+      "label": {
+        "vi": "Bảo vệ thấp áp",
+        "en": "Under-voltage protection",
+        "ja": "低電圧保護"
+      },
+      "value": "7 V",
+      "status": "provisional",
+      "source": "products/mgwi-v1/docs/Technical_Spec.pdf p.1"
+    },
+    {
+      "label": {
+        "vi": "Bảo vệ quá tải",
+        "en": "Overload protection",
+        "ja": "過負荷保護"
+      },
+      "value": "3.8 A",
+      "status": "provisional",
+      "source": "products/mgwi-v1/docs/Technical_Spec.pdf p.1"
+    },
+    {
+      "label": {
+        "vi": "Kích thước",
+        "en": "Dimensions",
+        "ja": "寸法"
+      },
+      "value": "120 × 88 × 38 mm",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.9"
+    }
+  ],
+  "documents": [],
+  "images": [
+    {
+      "path": "assets/products/mgwi-v1-1.jpg",
+      "kind": "photo",
+      "note": "IoT Gateway MGWI-V1, vỏ nhôm",
+      "useAsHero": true
+    },
+    {
+      "path": "assets/products/mgwi-v1-3.jpg",
+      "kind": "photo",
+      "note": "Mặt cổng kết nối của MGWI-V1"
+    },
+    {
+      "path": "assets/products/mgwi-v1-2.jpg",
+      "kind": "photo",
+      "note": "MGWI-V1 với ăng-ten và bộ cấp nguồn PoE"
+    },
+    {
+      "path": "assets/home/pcb-board.jpg",
+      "kind": "render3d",
+      "note": "Mô hình 3D thiết kế PCB MGWI-V1"
+    },
+    {
+      "path": "assets/home/site-gateway.jpg",
+      "kind": "installation",
+      "note": "IoT Gateway Meiko lắp trên tường"
+    }
+  ],
+  "related": [
+    "mgaw-v1",
+    "mglb-v1",
+    "mgsp-v1"
+  ],
+  "openQuestions": [
+    "Xác nhận Technical_Spec.pdf là tài liệu phát hành công khai trước khi hiển thị liên kết.",
+    "Xác nhận trạng thái cung cấp và các thông số còn thiếu của MGWI-V1."
+  ],
+  "sources": [
+    ".scratch/product-data/SCHEMA.md",
+    "GLOSSARY.md",
+    "PRODUCT.md",
+    "products/mgwi-v1/docs/Technical_Spec.pdf",
+    "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf",
+    "products/mgwi-v1/images/MGWI-V1_1.png",
+    "products/mgwi-v1/images/MGWI-V1_2.png",
+    "products/mgwi-v1/images/MGWI-V1_3.png",
+    "products/mgwi-v1/images/Setup_in_factory.jpg",
+    "products/mgwi-v1/images/MGWI-V1_PCBA.png"
+  ]
+}

@@ -1,0 +1,409 @@
+{
+  "slug": "iotplc-a02",
+  "name": "IOTPLC-A02",
+  "family": "automation",
+  "status": "provisional",
+  "role": {
+    "vi": "Bộ I/O và điều khiển cho AGV",
+    "en": "I/O and control assembly for AGVs",
+    "ja": "AGV 向け I/O・制御アセンブリ"
+  },
+  "tagline": {
+    "vi": "Bo IO ghép Bo MCU cho ứng dụng AGV.",
+    "en": "An IO board paired with an MCU board for AGV applications.",
+    "ja": "AGV 用の IO ボードと MCU ボードの組み合わせ。"
+  },
+  "summary": {
+    "vi": "IOTPLC-A02 được xác định là Bo IO Rev 1.0.3 ghép với Bo MCU Rev V1.0 qua socket 2×40, với phạm vi ứng dụng công bố ban đầu là AGV. Dữ liệu hiện ở trạng thái dự kiến vì hồ sơ và tài liệu sản phẩm vẫn là DRAFT, còn cần kiểm thử và xác nhận trước khi công bố.",
+    "en": "IOTPLC-A02 is defined as an IO board Rev 1.0.3 paired with an MCU board Rev V1.0 through a 2×40 socket, with AGV as the initial declared application. The data remains provisional because the product dossier and product documents are still drafts and require testing and confirmation before publication.",
+    "ja": "IOTPLC-A02 は、2×40 ソケットで接続する IO ボード Rev 1.0.3 と MCU ボード Rev V1.0 の組み合わせとして定義され、当初の公表用途は AGV です。製品資料がまだ DRAFT であり、公開前に試験と確認が必要なため、データは暫定扱いです。"
+  },
+  "stats": [
+    { "value": "24", "label": { "vi": "đầu vào số · NPN / PNP", "en": "digital inputs · NPN / PNP", "ja": "デジタル入力 · NPN / PNP" } },
+    { "value": "16", "label": { "vi": "ngõ ra MOSFET", "en": "MOSFET outputs", "ja": "MOSFET 出力" } },
+    { "value": "4", "label": { "vi": "relay · 1 Form A", "en": "relays · 1 Form A", "ja": "リレー · 1 Form A" } },
+    { "value": "4", "unit": "×16 bit", "label": { "vi": "kênh ADC", "en": "ADC channels", "ja": "ADC チャンネル" } },
+    { "value": "9–36", "unit": "VDC", "label": { "vi": "nguồn vào (mức thiết kế)", "en": "supply input (design level)", "ja": "入力電源（設計段階）" } }
+  ],
+  "statsNote": {
+    "vi": "Số liệu mức thiết kế (BOM V1.0.3, pinout, schematic); chưa có kết quả kiểm thử trên Rev 1.0.3.",
+    "en": "Design-level figures (BOM V1.0.3, pinout, schematic); no test results yet on Rev 1.0.3.",
+    "ja": "設計段階の数値（BOM V1.0.3、ピン配置、回路図）です。Rev 1.0.3 の試験結果はまだありません。"
+  },
+  "highlights": [
+    {
+      "title": { "vi": "Kiến trúc hai bo", "en": "Two-board architecture", "ja": "2 ボード構成" },
+      "text": {
+        "vi": "Bo IO Rev 1.0.3 ghép Bo MCU Rev V1.0 qua socket 2×40.",
+        "en": "An IO board Rev 1.0.3 pairs with an MCU board Rev V1.0 through a 2×40 socket.",
+        "ja": "IO ボード Rev 1.0.3 と MCU ボード Rev V1.0 を 2×40 ソケットで接続します。"
+      },
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q1, Q13"
+    },
+    {
+      "title": { "vi": "I/O mức thiết kế", "en": "Design-level I/O", "ja": "設計段階の I/O" },
+      "text": {
+        "vi": "Thiết kế nêu 24 đầu vào số, 16 ngõ ra MOSFET và 4 relay; các thông số vận hành còn cần xác nhận.",
+        "en": "The design states 24 digital inputs, 16 MOSFET outputs, and 4 relays; operating ratings still require confirmation.",
+        "ja": "設計上はデジタル入力 24 点、MOSFET 出力 16 点、リレー 4 個ですが、動作定格は確認が必要です。"
+      },
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q8-Q12"
+    },
+    {
+      "title": { "vi": "Giao tiếp", "en": "Interfaces", "ja": "インターフェース" },
+      "text": {
+        "vi": "Thiết kế nêu RS485 cách ly, RS232 DB9, I2C cách ly và UART; USB-B nằm trên Bo MCU.",
+        "en": "The design states isolated RS485, RS232 DB9, isolated I2C, and UART; USB-B is on the MCU board.",
+        "ja": "設計上は絶縁 RS485、RS232 DB9、絶縁 I2C、UART に対応し、USB-B は MCU ボード上にあります。"
+      },
+      "source": "products/iotplc-a02/02_tai_lieu/IOTPLC-A02_Rev1.0.3_Datasheet_DRAFT_v0.2.pdf § 3"
+    },
+    {
+      "title": { "vi": "Phạm vi ứng dụng", "en": "Application scope", "ja": "用途範囲" },
+      "text": {
+        "vi": "Bản đầu chỉ nêu ứng dụng AGV; các ứng dụng khác chưa được xác nhận.",
+        "en": "The first release names AGV as the application; other applications are not confirmed.",
+        "ja": "初版で示す用途は AGV のみで、その他の用途は未確認です。"
+      },
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q3"
+    }
+  ],
+  "architecture": {
+    "title": {
+      "vi": "Hai bo, <strong>một bộ ghép.</strong>",
+      "en": "Two boards, <strong>one assembly.</strong>",
+      "ja": "2 枚のボードで、<strong>1 つのアセンブリ。</strong>"
+    },
+    "lead": {
+      "vi": "Bo IO xử lý nguồn vào, đầu vào, ngõ ra, ADC và truyền thông; Bo MCU chạy ATmega2560. Hai bo nối nhau qua socket 2×40.",
+      "en": "The IO board handles the supply input, inputs, outputs, ADC and communication; the MCU board runs an ATmega2560. The two boards join through a 2×40 socket.",
+      "ja": "IO ボードが電源入力、入力、出力、ADC、通信を担い、MCU ボードは ATmega2560 を搭載します。2 枚は 2×40 ソケットで接続します。"
+    },
+    "joint": "2×40",
+    "boards": [
+      {
+        "rev": "Bo IO · Rev 1.0.3",
+        "name": "PCB_IOTPLC-A02",
+        "items": [
+          { "vi": "Nguồn vào 9–36 VDC (mức thiết kế)", "en": "9–36 VDC supply input (design level)", "ja": "入力電源 9–36 VDC（設計段階）" },
+          { "vi": "24 đầu vào số, 16 ngõ ra MOSFET, 4 relay", "en": "24 digital inputs, 16 MOSFET outputs, 4 relays", "ja": "デジタル入力 24 点、MOSFET 出力 16 点、リレー 4 個" },
+          { "vi": "4 kênh ADC 16 bit", "en": "4 ADC channels, 16-bit", "ja": "16 ビット ADC 4 チャンネル" },
+          { "vi": "RS485 cách ly, RS232 DB9, I2C cách ly", "en": "Isolated RS485, RS232 DB9, isolated I2C", "ja": "絶縁 RS485、RS232 DB9、絶縁 I2C" }
+        ]
+      },
+      {
+        "rev": "Bo MCU · Rev V1.0",
+        "name": "PCB_MCU_AGV",
+        "items": [
+          { "vi": "ATmega2560, thạch anh 16 MHz", "en": "ATmega2560, 16 MHz crystal", "ja": "ATmega2560、16 MHz クリスタル" },
+          { "vi": "Cổng USB-B kèm mạch USB-UART", "en": "USB-B port with a USB-UART circuit", "ja": "USB-B ポートと USB-UART 回路" },
+          { "vi": "Header 2×40 nối với Bo IO", "en": "2×40 header that mates with the IO board", "ja": "IO ボードと接続する 2×40 ヘッダー" }
+        ]
+      }
+    ]
+  },
+  "diagram": {
+    "path": "assets/products/iotplc-a02-block-diagram.jpg",
+    "kind": "diagram",
+    "alt": {
+      "vi": "Sơ đồ khối mức thiết kế: nguồn vào 9–36 VDC, 24 đầu vào số, 16 ngõ ra MOSFET, 4 relay, 4 kênh analog, RS485, RS232 và I2C cách ly ở Bo IO, nối qua socket 2×40 tới Bo MCU ATmega2560 có cổng USB-B.",
+      "en": "Design-level block diagram: 9–36 VDC supply input, 24 digital inputs, 16 MOSFET outputs, 4 relays, 4 analog channels, RS485, RS232 and isolated I2C on the IO board, joined through a 2×40 socket to the ATmega2560 MCU board with a USB-B port.",
+      "ja": "設計段階のブロック図：IO ボード上の入力電源 9–36 VDC、デジタル入力 24 点、MOSFET 出力 16 点、リレー 4 個、アナログ 4 チャンネル、RS485、RS232、絶縁 I2C が、2×40 ソケットを介して USB-B 付き ATmega2560 の MCU ボードへ接続されます。"
+    },
+    "caption": {
+      "vi": "Sơ đồ khối mức thiết kế (BOM V1.0.3, pinout, schematic). Không phải kết quả đo hay kiểm thử.",
+      "en": "Design-level block diagram (BOM V1.0.3, pinout, schematic). Not a measurement or test result.",
+      "ja": "設計段階のブロック図（BOM V1.0.3、ピン配置、回路図）。測定・試験結果ではありません。"
+    }
+  },
+  "ioLead": {
+    "vi": "Số lượng và nhóm kênh theo thiết kế và pinout. Định mức điện áp, dòng và dải đo đang chờ người thiết kế xác nhận nên chưa công bố.",
+    "en": "Channel counts and groups follow the design and pinout. Voltage, current and measuring ratings await the designer's confirmation and are not published.",
+    "ja": "チャンネル数とグループは設計とピン配置に基づきます。電圧・電流・測定範囲の定格は設計者の確認待ちのため公表していません。"
+  },
+  "ioGroups": [
+    {
+      "type": "cells", "w": 12, "count": "24", "columns": 12,
+      "ariaLabel": "X0–X23",
+      "title": { "vi": "Đầu vào số", "en": "Digital inputs", "ja": "デジタル入力" },
+      "groups": [
+        { "cls": "npn", "cells": ["X0","X1","X2","X3","X4","X5","X6","X7","X8","X9","X10","X11","X12","X13","X14","X15"] },
+        { "cls": "p48", "cells": ["X16","X17","X18","X19"] },
+        { "cls": "p24", "cells": ["X20","X21","X22","X23"] }
+      ],
+      "legend": [
+        { "cls": "npn", "label": { "vi": "16 NPN · X0–X15", "en": "16 NPN · X0–X15", "ja": "NPN 16 点 · X0–X15" } },
+        { "cls": "p48", "label": { "vi": "4 PNP 48 V · X16–X19", "en": "4 PNP 48 V · X16–X19", "ja": "PNP 48 V 4 点 · X16–X19" } },
+        { "cls": "p24", "label": { "vi": "4 PNP 24 V · X20–X23", "en": "4 PNP 24 V · X20–X23", "ja": "PNP 24 V 4 点 · X20–X23" } }
+      ],
+      "note": { "vi": "Cách ly quang, mỗi kênh có LED báo trạng thái (mức thiết kế).", "en": "Optically isolated, with a status LED on every channel (design level).", "ja": "フォトカプラ絶縁で、各チャンネルにステータス LED があります（設計段階）。" }
+    },
+    {
+      "type": "cells", "w": 8, "count": "16",
+      "title": { "vi": "Ngõ ra MOSFET", "en": "MOSFET outputs", "ja": "MOSFET 出力" },
+      "groups": [
+        { "cls": "out", "label": "CM1", "cells": ["Y0","Y1","Y2","Y3"] },
+        { "cls": "out", "label": "CM2", "cells": ["Y4","Y5","Y6","Y7"] },
+        { "cls": "out", "label": "CM3", "cells": ["Y8","Y9","Y10","Y11"] },
+        { "cls": "out", "label": "CM4", "cells": ["Y12","Y13","Y14","Y15"] }
+      ],
+      "note": { "vi": "Cách ly quang, có LED báo trạng thái. Chia 4 nhóm theo cực chung CM1–CM4 (theo pinout, cần kiểm chứng trên bo thật). Định mức:", "en": "Optically isolated, with status LEDs. Four groups by common terminal CM1–CM4 (per pinout, to be verified on a real board). Rating:", "ja": "フォトカプラ絶縁、ステータス LED 付き。共通端子 CM1–CM4 の 4 グループ（ピン配置に基づく、実機での確認が必要）。定格：" },
+      "pending": { "vi": "chưa công bố, chờ xác nhận.", "en": "not published, awaiting confirmation.", "ja": "未公開・確認待ち。" }
+    },
+    {
+      "type": "cells", "w": 4, "count": "4",
+      "title": { "vi": "Relay", "en": "Relays", "ja": "リレー" },
+      "groups": [
+        { "cls": "rly", "label": "CM5", "cells": ["Y16","Y17"] },
+        { "cls": "rly", "label": "CM6", "cells": ["Y18","Y19"] }
+      ],
+      "note": { "vi": "1 Form A (SPST-NO), cuộn 12 V, cách ly quang. Định mức tiếp điểm:", "en": "1 Form A (SPST-NO), 12 V coil, optically isolated. Contact rating:", "ja": "1 Form A（SPST-NO）、コイル 12 V、フォトカプラ絶縁。接点定格：" },
+      "pending": { "vi": "chưa công bố, chờ xác nhận.", "en": "not published, awaiting confirmation.", "ja": "未公開・確認待ち。" }
+    },
+    {
+      "type": "slots", "w": 4, "count": "4", "ariaLabel": "AD0–AD3",
+      "title": { "vi": "Kênh ADC", "en": "ADC channels", "ja": "ADC チャンネル" },
+      "slots": ["AD0","AD1","AD2","AD3"],
+      "note": { "vi": "16 bit (ADS1115), giao tiếp I2C. Dải đo từng kênh:", "en": "16-bit (ADS1115), I2C interface. Measuring range per channel:", "ja": "16 ビット（ADS1115）、I2C 接続。各チャンネルの測定範囲：" },
+      "pending": { "vi": "chưa công bố, chờ đo xác nhận.", "en": "not published, awaiting measurement.", "ja": "未公開・測定による確認待ち。" }
+    },
+    {
+      "type": "chips", "w": 8,
+      "title": { "vi": "Giao tiếp", "en": "Interfaces", "ja": "インターフェース" },
+      "chips": [
+        { "t": { "vi": "RS485", "en": "RS485", "ja": "RS485" }, "sub": { "vi": "cách ly", "en": "isolated", "ja": "絶縁" } },
+        { "t": { "vi": "RS232", "en": "RS232", "ja": "RS232" }, "sub": { "vi": "cổng DB9", "en": "DB9 port", "ja": "DB9 ポート" } },
+        { "t": { "vi": "I2C", "en": "I2C", "ja": "I2C" }, "sub": { "vi": "cách ly", "en": "isolated", "ja": "絶縁" } },
+        { "t": { "vi": "UART", "en": "UART", "ja": "UART" } },
+        { "t": { "vi": "USB-B", "en": "USB-B", "ja": "USB-B" }, "sub": { "vi": "trên Bo MCU", "en": "on the MCU board", "ja": "MCU ボード上" } }
+      ],
+      "note": { "vi": "Mức thiết kế (BOM, pinout). Chưa có kết quả kiểm thử trên Rev 1.0.3.", "en": "Design level (BOM, pinout). No test results yet on Rev 1.0.3.", "ja": "設計段階（BOM、ピン配置）。Rev 1.0.3 の試験結果はまだありません。" }
+    },
+    {
+      "type": "kv", "w": 12,
+      "title": { "vi": "Nguồn và đầu nối", "en": "Power and connectors", "ja": "電源とコネクター" },
+      "rows": [
+        { "k": { "vi": "Nguồn vào", "en": "Supply input", "ja": "入力電源" }, "v": { "vi": "9–36 VDC (mức thiết kế)", "en": "9–36 VDC (design level)", "ja": "9–36 VDC（設計段階）" } },
+        { "k": { "vi": "Nguồn cho cảm biến", "en": "Sensor supply", "ja": "センサー用電源" }, "v": { "vi": "5 V cách ly, dùng chung với 4 đầu nối JST", "en": "Isolated 5 V, shared with the four JST connectors", "ja": "絶縁 5 V、4 個の JST コネクターで共用" } },
+        { "k": { "vi": "Đầu nối", "en": "Connectors", "ja": "コネクター" }, "v": { "vi": "Cắm rời bước 3,81 mm · JST XH 6 chân ×4 · DB9", "en": "3.81 mm pluggable · JST XH 6-pin ×4 · DB9", "ja": "3.81 mm ピッチ着脱式 · JST XH 6 ピン ×4 · DB9" } }
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "vi": "Hệ thống AGV (phạm vi ứng dụng đã nêu).",
+      "en": "AGV systems (the stated application scope).",
+      "ja": "AGV システム（記載済みの用途範囲）。"
+    }
+  ],
+  "scenario": {
+    "title": { "vi": "Phạm vi ứng dụng: <strong>AGV.</strong>", "en": "Application scope: <strong>AGV.</strong>", "ja": "用途範囲：<strong>AGV。</strong>" },
+    "lead": {
+      "vi": "Bản đầu chỉ nêu ứng dụng AGV. Kịch bản dưới đây là dự kiến, cần kiểm chứng trên bo thật.",
+      "en": "The first release names AGV only. The scenario below is expected, and must be verified on a real board.",
+      "ja": "初版で示す用途は AGV のみです。以下のシナリオは想定であり、実機での検証が必要です。"
+    },
+    "steps": [
+      { "vi": "Đọc trạng thái nút nhấn hoặc cảm biến ở đầu vào số và ADC.", "en": "Read the state of push buttons or sensors on the digital inputs and ADC.", "ja": "デジタル入力と ADC で押しボタンやセンサーの状態を読み取る。" },
+      { "vi": "Chương trình trên ATmega2560 xử lý tín hiệu.", "en": "A program on the ATmega2560 processes the signals.", "ja": "ATmega2560 上のプログラムが信号を処理する。" },
+      { "vi": "Điều khiển ngõ ra MOSFET hoặc relay (đèn báo, tải điều khiển).", "en": "Drive a MOSFET output or relay (indicator lamp, controlled load).", "ja": "MOSFET 出力またはリレーを制御する（表示灯、制御対象の負荷）。" },
+      { "vi": "Gửi và nhận dữ liệu với máy tính qua RS485, RS232 hoặc USB-B.", "en": "Exchange data with a computer over RS485, RS232 or USB-B.", "ja": "RS485、RS232、USB-B でコンピューターとデータをやり取りする。" }
+    ],
+    "caveat": {
+      "vi": "Kịch bản chưa được thực hiện trên phần cứng thật, nên chưa phải bằng chứng về khả năng đã triển khai.",
+      "en": "The scenario has not been run on real hardware, so it is not evidence of a deployed capability.",
+      "ja": "このシナリオは実機で実行されておらず、導入済みの実績を示すものではありません。"
+    },
+    "image": {
+      "path": "assets/products/iotplc-a02-application-concept.jpg",
+      "kind": "diagram",
+      "alt": {
+        "vi": "Sơ đồ khái niệm: nút nhấn, cảm biến và tín hiệu analog vào IOTPLC-A02, ra đèn báo và tải qua relay, truyền thông RS485 / RS232 / USB-B lên máy tính; nguồn AGV 9–36 VDC.",
+        "en": "Concept diagram: push buttons, sensors and analog signals into IOTPLC-A02, indicator lamps and relay loads out, RS485 / RS232 / USB-B communication to a computer; AGV supply 9–36 VDC.",
+        "ja": "概念図：押しボタン、センサー、アナログ信号が IOTPLC-A02 に入り、表示灯とリレー負荷へ出力、RS485 / RS232 / USB-B でコンピューターと通信。AGV 電源 9–36 VDC。"
+      },
+      "caption": {
+        "vi": "Sơ đồ khái niệm, chưa phải hệ thống đã triển khai hay kiểm chứng.",
+        "en": "Concept diagram, not a deployed or verified system.",
+        "ja": "概念図であり、導入済み・検証済みのシステムではありません。"
+      }
+    }
+  },
+  "specs": [
+    {
+      "label": { "vi": "Baseline phần cứng", "en": "Hardware baseline", "ja": "ハードウェア・ベースライン" },
+      "value": { "vi": "Bo IO Rev 1.0.3 + Bo MCU Rev V1.0, nối qua socket 2×40", "en": "IO board Rev 1.0.3 + MCU board Rev V1.0, joined through a 2×40 socket", "ja": "IO ボード Rev 1.0.3 + MCU ボード Rev V1.0、2×40 ソケット接続" },
+      "status": "provisional",
+      "source": "products/iotplc-a02/README_BAN_GIAO.md § Trạng thái"
+    },
+    {
+      "label": { "vi": "Nguồn vào", "en": "Input supply", "ja": "入力電源" },
+      "value": "9–36 VDC",
+      "status": "provisional",
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Sổ tuyên bố"
+    },
+    {
+      "label": { "vi": "Đầu vào số", "en": "Digital inputs", "ja": "デジタル入力" },
+      "value": { "vi": "24 kênh: 16 NPN (X0–X15), 4 PNP 48 V (X16–X19), 4 PNP 24 V (X20–X23); cách ly quang và LED", "en": "24 channels: 16 NPN (X0–X15), 4 PNP 48 V (X16–X19), 4 PNP 24 V (X20–X23); optically isolated, with LEDs", "ja": "24 チャンネル：NPN 16 点（X0–X15）、PNP 48 V 4 点（X16–X19）、PNP 24 V 4 点（X20–X23）。フォトカプラ絶縁、LED 付き" },
+      "status": "provisional",
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q8; FAQ DRAFT v0.2"
+    },
+    {
+      "label": { "vi": "Ngõ ra MOSFET", "en": "MOSFET outputs", "ja": "MOSFET 出力" },
+      "value": { "vi": "16 ngõ ra (Y0–Y15), cách ly quang, LED", "en": "16 outputs (Y0–Y15), optically isolated, with LEDs", "ja": "16 出力（Y0–Y15）、フォトカプラ絶縁、LED 付き" },
+      "status": "provisional",
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q12"
+    },
+    {
+      "label": { "vi": "Relay", "en": "Relays", "ja": "リレー" },
+      "value": { "vi": "4 relay (Y16–Y19), 1 Form A (SPST-NO), cuộn 12 V", "en": "4 relays (Y16–Y19), 1 Form A (SPST-NO), 12 V coil", "ja": "リレー 4 個（Y16–Y19）、1 Form A（SPST-NO）、コイル 12 V" },
+      "status": "provisional",
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q9"
+    },
+    {
+      "label": { "vi": "ADC", "en": "ADC", "ja": "ADC" },
+      "value": { "vi": "4 kênh (AD0–AD3), 16 bit (ADS1115), giao tiếp I2C", "en": "4 channels (AD0–AD3), 16-bit (ADS1115), I2C interface", "ja": "4 チャンネル（AD0–AD3）、16 ビット（ADS1115）、I2C 接続" },
+      "status": "provisional",
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q10"
+    },
+    {
+      "label": { "vi": "Giao tiếp", "en": "Interfaces", "ja": "インターフェース" },
+      "value": { "vi": "RS485 cách ly, RS232 (DB9), I2C cách ly, UART; USB-B trên Bo MCU", "en": "Isolated RS485, RS232 (DB9), isolated I2C, UART; USB-B on the MCU board", "ja": "絶縁 RS485、RS232（DB9）、絶縁 I2C、UART。USB-B は MCU ボード上" },
+      "status": "provisional",
+      "source": "products/iotplc-a02/02_tai_lieu/IOTPLC-A02_Rev1.0.3_Datasheet_DRAFT_v0.2.pdf § 3"
+    },
+    {
+      "label": { "vi": "Vi điều khiển", "en": "Microcontroller", "ja": "マイクロコントローラー" },
+      "value": "ATmega2560, 16 MHz",
+      "status": "provisional",
+      "source": "products/iotplc-a02/02_tai_lieu/IOTPLC-A02_Rev1.0.3_Datasheet_DRAFT_v0.2.pdf § 3"
+    },
+    {
+      "label": { "vi": "Kích thước Bo IO", "en": "IO board dimensions", "ja": "IO ボード寸法" },
+      "value": { "vi": "175 × 96,7 mm; 4 lỗ M4 cách nhau 161,5 × 81 mm", "en": "175 × 96.7 mm; four M4 holes spaced 161.5 × 81 mm", "ja": "175 × 96.7 mm、M4 穴 4 か所（間隔 161.5 × 81 mm）" },
+      "status": "provisional",
+      "source": "products/iotplc-a02/02_tai_lieu/IOTPLC-A02_Rev1.0.3_Datasheet_DRAFT_v0.2.pdf § 3"
+    },
+    {
+      "label": { "vi": "Đầu nối", "en": "Connectors", "ja": "コネクター" },
+      "value": { "vi": "Cắm rời bước 3,81 mm, JST XH 6 chân (4 cái), DB9, USB-B (Bo MCU)", "en": "3.81 mm pluggable, JST XH 6-pin (4), DB9, USB-B (MCU board)", "ja": "3.81 mm ピッチ着脱式、JST XH 6 ピン（4 個）、DB9、USB-B（MCU ボード）" },
+      "status": "provisional",
+      "source": "products/iotplc-a02/02_tai_lieu/IOTPLC-A02_Rev1.0.3_Datasheet_DRAFT_v0.2.pdf § 3"
+    }
+  ],
+  "pending": [
+    { "vi": "Định mức tiếp điểm relay", "en": "Relay contact rating", "ja": "リレー接点定格" },
+    { "vi": "Định mức ngõ ra MOSFET", "en": "MOSFET output rating", "ja": "MOSFET 出力定格" },
+    { "vi": "Dải đo từng kênh ADC", "en": "Measuring range per ADC channel", "ja": "ADC 各チャンネルの測定範囲" },
+    { "vi": "Dòng tối đa của nguồn 5 V cách ly", "en": "Maximum current of the isolated 5 V supply", "ja": "絶縁 5 V 電源の最大電流" },
+    { "vi": "Kích thước Bo MCU và chiều cao bộ ghép", "en": "MCU board dimensions and assembly height", "ja": "MCU ボードの寸法と組み合わせ時の高さ" }
+  ],
+  "documents": [],
+  "pendingDocs": [
+    { "label": { "vi": "Bảng dữ liệu kỹ thuật", "en": "Technical datasheet", "ja": "技術データシート" }, "badge": "DRAFT v0.2" },
+    { "label": { "vi": "Catalogue", "en": "Catalogue", "ja": "カタログ" }, "badge": "DRAFT v0.2" },
+    { "label": { "vi": "Câu hỏi thường gặp", "en": "Frequently asked questions", "ja": "よくある質問" }, "badge": "DRAFT v0.2" },
+    { "label": { "vi": "Bài viết kỹ thuật · Tình huống ứng dụng", "en": "Technical article · Application scenario", "ja": "技術記事・用途シナリオ" }, "badge": "DRAFT v0.2" }
+  ],
+  "faq": [
+    { "q": { "vi": "IOTPLC-A02 gồm những gì?", "en": "What does IOTPLC-A02 consist of?", "ja": "IOTPLC-A02 は何で構成されていますか？" }, "a": { "vi": "Hai bo ghép với nhau qua socket 2×40 chân: Bo IO (Rev 1.0.3) và Bo MCU (Rev V1.0) dùng vi điều khiển ATmega2560.", "en": "Two boards joined through a 2×40-pin socket: the IO board (Rev 1.0.3) and the MCU board (Rev V1.0), which uses an ATmega2560 microcontroller.", "ja": "2×40 ピンのソケットで接続する 2 枚のボードです。IO ボード（Rev 1.0.3）と、ATmega2560 を使う MCU ボード（Rev V1.0）です。" } },
+    { "q": { "vi": "Có bao nhiêu đầu vào và loại nào?", "en": "How many inputs are there, and of what type?", "ja": "入力は何点で、どのタイプですか？" }, "a": { "vi": "24 đầu vào số: 16 NPN (X0–X15), 4 PNP 48 V (X16–X19) và 4 PNP 24 V (X20–X23), có cách ly quang và LED báo trạng thái (mức thiết kế).", "en": "24 digital inputs: 16 NPN (X0–X15), 4 PNP 48 V (X16–X19) and 4 PNP 24 V (X20–X23), with optical isolation and status LEDs (design level).", "ja": "デジタル入力 24 点：NPN 16 点（X0–X15）、PNP 48 V 4 点（X16–X19）、PNP 24 V 4 点（X20–X23）。フォトカプラ絶縁とステータス LED 付き（設計段階）。" } },
+    { "q": { "vi": "Có bao nhiêu ngõ ra và loại nào?", "en": "How many outputs are there, and of what type?", "ja": "出力は何点で、どのタイプですか？" }, "a": { "vi": "16 ngõ ra MOSFET (Y0–Y15) và 4 relay (Y16–Y19), có cách ly quang và LED báo trạng thái (mức thiết kế). Định mức dòng và áp: chưa công bố, đang chờ xác nhận.", "en": "16 MOSFET outputs (Y0–Y15) and 4 relays (Y16–Y19), with optical isolation and status LEDs (design level). Current and voltage ratings: not published, awaiting confirmation.", "ja": "MOSFET 出力 16 点（Y0–Y15）とリレー 4 個（Y16–Y19）。フォトカプラ絶縁とステータス LED 付き（設計段階）。電流・電圧定格は未公開で、確認待ちです。" } },
+    { "q": { "vi": "Relay dùng loại nào?", "en": "Which relay type is used?", "ja": "リレーの種類は何ですか？" }, "a": { "vi": "Relay 1 Form A (SPST-NO), cuộn 12 V, tiếp điểm cho tải DC. Định mức tiếp điểm: chưa công bố, đang chờ xác nhận.", "en": "1 Form A (SPST-NO) relays with a 12 V coil and contacts for DC loads. Contact rating: not published, awaiting confirmation.", "ja": "1 Form A（SPST-NO）リレー、コイル 12 V、接点は DC 負荷用です。接点定格は未公開で、確認待ちです。" } },
+    { "q": { "vi": "Đo analog được mấy kênh?", "en": "How many analog channels can it measure?", "ja": "アナログは何チャンネル測定できますか？" }, "a": { "vi": "4 kênh, 16 bit (ADS1115), giao tiếp I2C. Dải đo từng kênh: chưa công bố, đang chờ đo xác nhận.", "en": "4 channels, 16-bit (ADS1115), I2C interface. Measuring range per channel: not published, awaiting measurement.", "ja": "4 チャンネル、16 ビット（ADS1115）、I2C 接続。各チャンネルの測定範囲は未公開で、測定による確認待ちです。" } },
+    { "q": { "vi": "Có những cổng truyền thông nào?", "en": "Which communication ports are available?", "ja": "どの通信ポートがありますか？" }, "a": { "vi": "RS485 cách ly, RS232 cổng DB9, I2C cách ly, UART và cổng USB-B trên Bo MCU.", "en": "Isolated RS485, RS232 on a DB9 port, isolated I2C, UART, and a USB-B port on the MCU board.", "ja": "絶縁 RS485、DB9 ポートの RS232、絶縁 I2C、UART、MCU ボード上の USB-B ポートです。" } },
+    { "q": { "vi": "Dùng được cho ứng dụng nào?", "en": "Which applications can it be used for?", "ja": "どの用途で使えますか？" }, "a": { "vi": "Tài liệu hiện chỉ nêu ứng dụng AGV.", "en": "The documents currently name AGV as the only application.", "ja": "現時点の資料で示している用途は AGV のみです。" } }
+  ],
+  "images": [
+    { "path": "assets/products/iotplc-a02-3quarter.jpg", "kind": "render3d", "tone": "grey", "useAsHero": true, "note": "Render 3D góc 3/4 của bộ IOTPLC-A02 Rev 1.0.3: Bo MCU màu xanh ghép lên Bo IO, đầu nối cắm rời màu xanh lá ở hai cạnh dài." },
+    { "path": "assets/products/iotplc-a02-top.jpg", "kind": "render3d", "tone": "grey", "note": "Render 3D nhìn từ trên xuống bộ IOTPLC-A02: hàng đầu nối cắm rời phía trên và phía dưới, bốn relay và cổng DB9 bên trái, Bo MCU ở giữa." },
+    { "path": "assets/products/iotplc-a02-connectors.jpg", "kind": "render3d", "tone": "grey", "note": "Render 3D cận cảnh khu vực đầu nối của bộ IOTPLC-A02: đầu nối cắm rời, DB9 và đầu nối JST." },
+    { "path": "assets/products/iotplc-a02-mcu-only.jpg", "kind": "render3d", "tone": "grey", "note": "Render 3D riêng Bo MCU: vi điều khiển ở giữa, cổng USB-B bên trái, hàng chân ghép bên dưới." },
+    { "path": "assets/products/iotplc-a02-bottom.jpg", "kind": "render3d", "tone": "grey", "note": "Render 3D mặt dưới Bo IO màu xanh đậm (nội dung tạm, đang chờ dựng lại)." },
+    {
+      "path": "assets/products/iotplc-a02-sample-v1.0.0.jpg",
+      "kind": "sample",
+      "note": "Ảnh chụp bo mẫu thật Rev V1.0.0, silk ghi V1.0.0, có dây trắng hàn sửa; màu linh kiện khác bản render.",
+      "disclaimer": { "vi": "Bo mẫu Rev V1.0.0, không đại diện cho Rev 1.0.3.", "en": "Sample board Rev V1.0.0, not representative of Rev 1.0.3.", "ja": "サンプルボード Rev V1.0.0 であり、Rev 1.0.3 を代表するものではありません。" }
+    }
+  ],
+  "storyLayers": [
+    { "label": { "vi": "Bo IO", "en": "IO board", "ja": "IO ボード" }, "step": 1, "info": { "vi": "Bo IO: nguồn vào, 24 đầu vào số, 16 ngõ ra MOSFET, 4 relay, 4 kênh ADC, RS485 / RS232 / I2C.", "en": "IO board: supply input, 24 digital inputs, 16 MOSFET outputs, 4 relays, 4 ADC channels, RS485 / RS232 / I2C.", "ja": "IO ボード：電源入力、デジタル入力 24 点、MOSFET 出力 16 点、リレー 4 個、ADC 4 チャンネル、RS485 / RS232 / I2C。" } },
+    { "label": { "vi": "Bo MCU", "en": "MCU board", "ja": "MCU ボード" }, "step": 3, "info": { "vi": "Bo MCU: ATmega2560 16 MHz, cổng USB-B kèm mạch USB-UART, header 2×40 ghép với Bo IO.", "en": "MCU board: ATmega2560 at 16 MHz, USB-B port with a USB-UART circuit, 2×40 header that mates with the IO board.", "ja": "MCU ボード：ATmega2560（16 MHz）、USB-UART 回路付き USB-B ポート、IO ボードと接続する 2×40 ヘッダー。" } }
+  ],
+  "story": [
+    {
+      "image": "assets/products/iotplc-a02-3quarter.jpg", "layer": 0,
+      "cap": { "vi": "Rev 1.0.3 · góc 3/4", "en": "Rev 1.0.3 · 3/4 view", "ja": "Rev 1.0.3 · 斜め 3/4 ビュー" },
+      "title": { "vi": "Một bộ ghép, hai bo.", "en": "One assembly, two boards.", "ja": "1 つのアセンブリ、2 枚のボード。" },
+      "text": { "vi": "Bo IO Rev 1.0.3 ghép Bo MCU Rev V1.0 qua socket 2×40, thành một bộ đọc tín hiệu, điều khiển và truyền thông.", "en": "An IO board Rev 1.0.3 and an MCU board Rev V1.0 join through a 2×40 socket into one unit for reading signals, control and communication.", "ja": "IO ボード Rev 1.0.3 と MCU ボード Rev V1.0 を 2×40 ソケットで接続し、信号の読み取り、制御、通信を行う 1 つのユニットにします。" },
+      "note": { "vi": "Thông số dự kiến — cần xác nhận. Ảnh là render 3D dựng từ dữ liệu thiết kế, không phải ảnh sản phẩm thật.", "en": "Provisional — to be confirmed. The image is a 3D render built from design data, not a photo of the real product.", "ja": "暫定仕様（要確認）。画像は設計データから作成した 3D レンダリングで、実機の写真ではありません。" }
+    },
+    {
+      "image": "assets/products/iotplc-a02-top.jpg", "layer": 0,
+      "cap": { "vi": "Rev 1.0.3 · mặt trên", "en": "Rev 1.0.3 · top view", "ja": "Rev 1.0.3 · 上面" },
+      "title": { "vi": "Từng kênh đều có chỗ riêng.", "en": "Every channel has its place.", "ja": "すべてのチャンネルに居場所があります。" },
+      "text": { "vi": "Nhìn từ trên xuống, hai hàng đầu nối cắm rời chia các nhóm kênh ở hai cạnh dài của Bo IO.", "en": "From above, two rows of pluggable terminals split the channel groups along the long edges of the IO board.", "ja": "上から見ると、IO ボードの長辺に沿って 2 列の着脱式端子台がチャンネルグループを分けています。" },
+      "items": [
+        { "t": { "vi": "24 đầu vào số", "en": "24 digital inputs", "ja": "デジタル入力 24 点" }, "sub": { "vi": "16 NPN, 4 PNP 48 V, 4 PNP 24 V · cách ly quang, LED báo trạng thái", "en": "16 NPN, 4 PNP 48 V, 4 PNP 24 V · optically isolated, status LEDs", "ja": "NPN 16 点、PNP 48 V 4 点、PNP 24 V 4 点 · フォトカプラ絶縁、ステータス LED" } },
+        { "t": { "vi": "16 ngõ ra MOSFET", "en": "16 MOSFET outputs", "ja": "MOSFET 出力 16 点" }, "sub": { "vi": "cách ly quang, LED báo trạng thái", "en": "optically isolated, status LEDs", "ja": "フォトカプラ絶縁、ステータス LED" } },
+        { "t": { "vi": "4 relay", "en": "4 relays", "ja": "リレー 4 個" }, "sub": { "vi": "1 Form A (SPST-NO), cuộn 12 V", "en": "1 Form A (SPST-NO), 12 V coil", "ja": "1 Form A（SPST-NO）、コイル 12 V" } }
+      ],
+      "note": { "vi": "Số lượng theo thiết kế. Định mức dòng và áp: chưa công bố, chờ xác nhận.", "en": "Counts follow the design. Current and voltage ratings: not published, awaiting confirmation.", "ja": "数量は設計に基づきます。電流・電圧定格は未公開で、確認待ちです。" }
+    },
+    {
+      "image": "assets/products/iotplc-a02-connectors.jpg", "layer": 0,
+      "cap": { "vi": "Rev 1.0.3 · đầu nối", "en": "Rev 1.0.3 · connectors", "ja": "Rev 1.0.3 · コネクター" },
+      "title": { "vi": "Đấu nối ở hai cạnh bo.", "en": "Wiring along both board edges.", "ja": "ボードの両辺で配線します。" },
+      "text": { "vi": "Đầu nối cắm rời bước 3,81 mm, JST XH 6 chân (4 cái) và DB9 cho RS232. Cổng USB-B nằm trên Bo MCU.", "en": "3.81 mm pluggable terminals, four JST XH 6-pin connectors and a DB9 for RS232. The USB-B port is on the MCU board.", "ja": "3.81 mm ピッチの着脱式端子台、JST XH 6 ピン 4 個、RS232 用 DB9。USB-B ポートは MCU ボード上にあります。" },
+      "items": [
+        { "t": { "vi": "RS485 và I2C cách ly", "en": "Isolated RS485 and I2C", "ja": "絶縁 RS485 と I2C" }, "sub": { "vi": "mức thiết kế", "en": "design level", "ja": "設計段階" } },
+        { "t": { "vi": "RS232 cổng DB9 · UART", "en": "RS232 on DB9 · UART", "ja": "DB9 の RS232 · UART" }, "sub": { "vi": "mức thiết kế", "en": "design level", "ja": "設計段階" } },
+        { "t": { "vi": "4 kênh ADC 16 bit", "en": "4 ADC channels, 16-bit", "ja": "16 ビット ADC 4 チャンネル" }, "sub": { "vi": "dải đo từng kênh: chờ đo xác nhận", "en": "measuring range per channel: awaiting measurement", "ja": "各チャンネルの測定範囲：測定による確認待ち" } }
+      ]
+    },
+    {
+      "image": "assets/products/iotplc-a02-mcu-only.jpg", "layer": 1,
+      "cap": { "vi": "Rev V1.0 · chỉ Bo MCU", "en": "Rev V1.0 · MCU board only", "ja": "Rev V1.0 · MCU ボードのみ" },
+      "title": { "vi": "Bộ não, tách riêng một bo.", "en": "The brain, on its own board.", "ja": "頭脳は独立した 1 枚のボードに。" },
+      "text": { "vi": "Bo MCU Rev V1.0 chạy ATmega2560, thạch anh 16 MHz, có cổng USB-B kèm mạch USB-UART và header 2×40 để ghép lên Bo IO.", "en": "The MCU board Rev V1.0 runs an ATmega2560 with a 16 MHz crystal, and has a USB-B port with a USB-UART circuit and a 2×40 header that mates with the IO board.", "ja": "MCU ボード Rev V1.0 は ATmega2560（16 MHz クリスタル）を搭載し、USB-UART 回路付きの USB-B ポートと、IO ボードに接続する 2×40 ヘッダーを備えます。" },
+      "note": { "vi": "Thông số dự kiến — cần xác nhận. Kích thước Bo MCU và chiều cao bộ ghép: chưa công bố.", "en": "Provisional — to be confirmed. MCU board dimensions and assembly height: not published.", "ja": "暫定仕様（要確認）。MCU ボードの寸法と組み合わせ時の高さは未公開です。" }
+    },
+    {
+      "image": "assets/products/iotplc-a02-bottom.jpg", "layer": 0,
+      "cap": { "vi": "Rev 1.0.3 · mặt dưới (nội dung tạm)", "en": "Rev 1.0.3 · underside (provisional)", "ja": "Rev 1.0.3 · 裏面（暫定）" },
+      "title": { "vi": "Mặt dưới của Bo IO.", "en": "The underside of the IO board.", "ja": "IO ボードの裏面。" },
+      "text": { "vi": "Mặt đáy chứa đi dây và các linh kiện còn lại. Ảnh render mặt dưới đang chờ dựng lại nên là nội dung tạm.", "en": "The underside carries the routing and the remaining components. The underside render is being rebuilt, so it is provisional content.", "ja": "裏面には配線と残りの部品があります。裏面のレンダリングは再作成中のため、暫定内容です。" },
+      "note": { "vi": "Hiện chưa có ảnh chụp bo thực Rev 1.0.3.", "en": "There is no photo of a real Rev 1.0.3 board yet.", "ja": "実機 Rev 1.0.3 の写真はまだありません。" }
+    }
+  ],
+  "related": [
+    "tool-jig",
+    "tingbox"
+  ],
+  "openQuestions": [
+    "Chạy lại 51 test case trên bộ ghép V1.0.3 trước khi phát hành ngoài.",
+    "Xác nhận định mức tiếp điểm relay và định mức ngõ ra MOSFET bằng văn bản cùng test có tải.",
+    "Đo xác nhận ADC ở 10 V và 60 V trước khi công bố dải đo.",
+    "Xác nhận dòng tối đa của nguồn 5 V cách ly.",
+    "Không đưa các tuyên bố về Arduino IDE, EMC, nhiệt độ, bảo vệ hoặc đo dòng vào nội dung công bố hiện tại.",
+    "Cần tài liệu phát hành thay cho các tài liệu DRAFT trước khi liên kết tài liệu sản phẩm.",
+    "Ảnh render mặt dưới thiếu linh kiện, cần dựng lại; chưa có ảnh bo thật Rev 1.0.3.",
+    "Nhóm cực chung CM1–CM6 theo pinout, cần kiểm chứng trên bo thật."
+  ],
+  "sources": [
+    ".scratch/product-data/SCHEMA.md",
+    ".scratch/product-mockups/iotplc-a02/README.md",
+    "GLOSSARY.md",
+    "PRODUCT.md",
+    "products/iotplc-a02/README_BAN_GIAO.md",
+    "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md",
+    "products/iotplc-a02/01_ho_so/bao-cao-doi-chieu-thong-so-IOTPLC-A02.md",
+    "products/iotplc-a02/01_ho_so/RA_SOAT_HO_SO_MARKETING_IOTPLC-A02.md",
+    "products/iotplc-a02/02_tai_lieu/IOTPLC-A02_Rev1.0.3_Datasheet_DRAFT_v0.2.pdf",
+    "products/iotplc-a02/02_tai_lieu/IOTPLC-A02_Rev1.0.3_FAQ_DRAFT_v0.2.pdf",
+    "products/iotplc-a02/02_tai_lieu/IOTPLC-A02_Rev1.0.3_TinhHuongUngDung_DRAFT_v0.2.pdf",
+    "products/iotplc-a02/03_hinh_anh/render/",
+    "products/iotplc-a02/03_hinh_anh/so_do/"
+  ]
+}

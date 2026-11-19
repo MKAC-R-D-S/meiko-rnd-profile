@@ -7,7 +7,15 @@ try {
  lang = saved === 'jp' ? 'ja' : (saved in localeIndex ? saved : 'vi');
 } catch { /* storage unavailable: stay on Vietnamese */ }
 
-const tr = key => text(key, lang);
+// Page-specific strings (product pages) override the shared copy: {key: [vi, en, ja]}.
+let pageCopy = {};
+try { pageCopy = JSON.parse(document.getElementById('page-copy')?.textContent || '{}'); } catch { pageCopy = {}; }
+const tr = key => {
+ const row = pageCopy[key];
+ if (!row) return text(key, lang);
+ const i = localeIndex[lang] ?? 0;
+ return row[i] ?? row[1] ?? row[0] ?? key;
+};
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 const nav = document.getElementById('navigation');
@@ -141,4 +149,4 @@ if (arch) {
 }
 
 applyLanguage(lang);
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+if ('serviceWorker' in navigator) navigator.serviceWorker.register((document.documentElement.dataset.root || '') + 'sw.js').catch(() => {});

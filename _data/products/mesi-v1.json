@@ -1,0 +1,177 @@
+{
+  "slug": "mesi-v1",
+  "name": "MESI-V1",
+  "family": "iot",
+  "status": "provisional",
+  "role": {
+    "vi": "Giám sát dòng điện",
+    "en": "Current monitoring",
+    "ja": "電流監視"
+  },
+  "tagline": {
+    "vi": "Cảm biến IoT theo dõi dòng điện và trạng thái vận hành.",
+    "en": "An IoT sensor for monitoring current and operating conditions.",
+    "ja": "電流と稼働状態を監視する IoT センサーです。"
+  },
+  "summary": {
+    "vi": "MESI-V1 là cảm biến IoT giám sát dòng điện thiết bị, dùng cảm biến CT và kết nối LoRa. Sản phẩm được mô tả cho các bài toán theo dõi năng lượng và trạng thái vận hành; cấu hình cụ thể cần được xác nhận.",
+    "en": "MESI-V1 is an IoT sensor for monitoring equipment current, using CT sensors and LoRa connectivity. It is described for energy and operating-condition monitoring; the specific configuration requires confirmation.",
+    "ja": "MESI-V1 は、CT センサーと LoRa 接続を用いて設備電流を監視する IoT センサーです。エネルギーおよび稼働状態の監視用途として説明されていますが、具体的な構成は確認が必要です。"
+  },
+  "highlights": [
+    {
+      "title": {
+        "vi": "Giám sát dòng điện",
+        "en": "Current monitoring",
+        "ja": "電流監視"
+      },
+      "text": {
+        "vi": "Theo dõi dòng điện thiết bị để hỗ trợ giám sát năng lượng và trạng thái vận hành.",
+        "en": "Monitors equipment current to support energy and operating-condition monitoring.",
+        "ja": "設備電流を監視し、エネルギーおよび稼働状態の監視を支援します。"
+      },
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 1, 4"
+    },
+    {
+      "title": {
+        "vi": "Cảm biến CT",
+        "en": "CT sensors",
+        "ja": "CT センサー"
+      },
+      "text": {
+        "vi": "Hỗ trợ đo dòng điện qua cảm biến CT Clamp cho nhiều tải hoặc máy.",
+        "en": "Supports current measurement through CT clamp sensors for multiple loads or machines.",
+        "ja": "CT クランプセンサーによる複数負荷または設備の電流測定に対応します。"
+      },
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 1, 2 - Multi-channel Current Monitoring"
+    },
+    {
+      "title": {
+        "vi": "Kết nối LoRa",
+        "en": "LoRa connectivity",
+        "ja": "LoRa 接続"
+      },
+      "text": {
+        "vi": "Dữ liệu được mô tả là truyền từ cảm biến qua LoRa đến gateway IoT.",
+        "en": "The documented architecture sends sensor data over LoRa to an IoT gateway.",
+        "ja": "資料上の構成では、センサーのデータを LoRa 経由で IoT ゲートウェイへ送信します。"
+      },
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 2 - Long Range LoRa Communication; mục 3"
+    }
+  ],
+  "applications": [
+    {
+      "vi": "Giám sát dòng điện máy móc và dây chuyền sản xuất",
+      "en": "Monitoring current in machines and production lines",
+      "ja": "設備および生産ラインの電流監視"
+    },
+    {
+      "vi": "Quản lý năng lượng cho nhà máy hoặc tòa nhà",
+      "en": "Energy management for factories or buildings",
+      "ja": "工場または建物のエネルギー管理"
+    },
+    {
+      "vi": "Theo dõi tải motor và phát hiện bất thường dòng điện",
+      "en": "Motor-load monitoring and current-anomaly detection",
+      "ja": "モーター負荷の監視と電流異常の検知"
+    }
+  ],
+  "specs": [
+    {
+      "label": {
+        "vi": "Giao tiếp",
+        "en": "Communication",
+        "ja": "通信"
+      },
+      "value": "LoRa",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Tần số",
+        "en": "Frequency",
+        "ja": "周波数"
+      },
+      "value": "920.125–922.225 MHz",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Kênh ADC",
+        "en": "ADC channels",
+        "ja": "ADC チャンネル"
+      },
+      "value": "4 channels, 12-bit",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Giao diện",
+        "en": "Interfaces",
+        "ja": "インターフェース"
+      },
+      "value": "I2C / UART / RS485",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Nguồn cấp",
+        "en": "Power supply",
+        "ja": "電源"
+      },
+      "value": "100–242 VAC",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Nhiệt độ vận hành",
+        "en": "Operating temperature",
+        "ja": "動作温度"
+      },
+      "value": "-10–55 °C",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Lắp đặt",
+        "en": "Mounting",
+        "ja": "取り付け"
+      },
+      "value": "DIN rail",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    }
+  ],
+  "documents": [],
+  "images": [
+    {
+      "path": "assets/home/mesi-studio.jpg",
+      "kind": "photo",
+      "note": "Thiết bị MESI-V1 với ba cảm biến CT",
+      "useAsHero": true
+    }
+  ],
+  "related": [
+    "mtsi-v1",
+    "modbus-reader"
+  ],
+  "openQuestions": [
+    "VI: Xác nhận revision, tài liệu phát hành và biên bản test cho các thông số. | EN: Confirm the revision, released documentation, and test records for the specifications. | JA: 仕様に対応するリビジョン、正式資料、試験記録を確認してください。",
+    "VI: Xác nhận cấu hình CT, tầm truyền và việc có thể công bố các số liệu trong tài liệu. | EN: Confirm the CT configuration, transmission range, and whether the documented figures may be published. | JA: CT 構成、通信距離、および資料記載値の公開可否を確認してください。"
+  ],
+  "sources": [
+    ".scratch/product-data/SCHEMA.md",
+    "GLOSSARY.md",
+    "PRODUCT.md",
+    ".scratch/homepage-premium/claims-verification.md",
+    ".scratch/homepage-premium/asset-inventory.md",
+    "products/mesi-v1/docs/mesi-v1.md",
+    "products/mesi-v1/index.html"
+  ]
+}

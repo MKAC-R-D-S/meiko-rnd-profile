@@ -1,0 +1,264 @@
+{
+  "slug": "mgaw-v1",
+  "name": "MGAW-V1",
+  "family": "iot",
+  "status": "available",
+  "role": {
+    "vi": "Cảnh báo âm thanh và đèn",
+    "en": "Audio and light alerting",
+    "ja": "音声・表示警報"
+  },
+  "tagline": {
+    "vi": "Thiết bị cảnh báo IoT công nghiệp tích hợp âm thanh và ánh sáng.",
+    "en": "An industrial IoT alert device combining audio and visual signals.",
+    "ja": "音声と表示を統合した産業用IoT警報装置です。"
+  },
+  "summary": {
+    "vi": "MGAW-V1 hợp nhất cảnh báo âm thanh và đèn báo trong một thiết bị IoT công nghiệp. Thiết bị hỗ trợ MQTT, HTTP API, PoE và cập nhật firmware OTA theo catalogue.",
+    "en": "MGAW-V1 combines audio and beacon alerts in one industrial IoT device. The catalogue specifies MQTT, HTTP API, PoE, and OTA firmware update support.",
+    "ja": "MGAW-V1は、音声警報と表示灯警報を一体化した産業用IoT装置です。カタログでは、MQTT、HTTP API、PoE、OTAファームウェア更新に対応すると記載されています。"
+  },
+  "highlights": [
+    {
+      "title": {
+        "vi": "Cảnh báo âm thanh",
+        "en": "Audio alert",
+        "ja": "音声警報"
+      },
+      "text": {
+        "vi": "Loa Class D 8 W, áp suất âm khoảng 90 dB tại 1 m.",
+        "en": "An 8 W Class D speaker with approximately 90 dB sound pressure at 1 m.",
+        "ja": "8 WのClass Dスピーカーで、1 mで約90 dBの音圧です。"
+      },
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "title": {
+        "vi": "Kết nối IoT",
+        "en": "IoT connectivity",
+        "ja": "IoT接続"
+      },
+      "text": {
+        "vi": "Kết nối Ethernet RJ45 và WiFi; giao thức MQTT và HTTP API.",
+        "en": "Ethernet RJ45 and WiFi connectivity with MQTT and HTTP API protocols.",
+        "ja": "Ethernet RJ45とWiFiに対応し、MQTTおよびHTTP APIを使用します。"
+      },
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "title": {
+        "vi": "Đèn báo ba màu",
+        "en": "Three-color beacon",
+        "ja": "3色表示灯"
+      },
+      "text": {
+        "vi": "Đèn LED đỏ, vàng, xanh với các chế độ bật, tắt, chớp và pattern.",
+        "en": "Red, yellow, and green LEDs with on, off, blink, and pattern modes.",
+        "ja": "赤・黄・緑のLEDを備え、点灯・消灯・点滅・パターンに対応します。"
+      },
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "title": {
+        "vi": "Quản lý từ xa",
+        "en": "Remote management",
+        "ja": "リモート管理"
+      },
+      "text": {
+        "vi": "Hỗ trợ cập nhật firmware OTA và theo dõi trạng thái online/offline.",
+        "en": "Supports OTA firmware updates and online/offline status monitoring.",
+        "ja": "OTAファームウェア更新とオンライン／オフライン状態監視に対応します。"
+      },
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    }
+  ],
+  "applications": [
+    {
+      "vi": "Giám sát dây chuyền trong nhà máy thông minh",
+      "en": "Smart-factory production-line monitoring",
+      "ja": "スマート工場の生産ライン監視"
+    },
+    {
+      "vi": "Cảnh báo tích hợp CCTV-AI",
+      "en": "CCTV-AI alert integration",
+      "ja": "CCTV-AI警報連携"
+    },
+    {
+      "vi": "Cảnh báo an toàn máy móc và kho vận",
+      "en": "Machine and warehouse safety alerts",
+      "ja": "機械・倉庫の安全警報"
+    },
+    {
+      "vi": "Cảnh báo phòng máy chủ và khu vực hạn chế",
+      "en": "Server-room and restricted-area alerts",
+      "ja": "サーバールーム・立入制限区域の警報"
+    }
+  ],
+  "specs": [
+    {
+      "label": {
+        "vi": "Nguồn cấp",
+        "en": "Power input",
+        "ja": "電源入力"
+      },
+      "value": "PoE 802.3af/at + 12V dự phòng",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Mạng có dây",
+        "en": "Wired network",
+        "ja": "有線ネットワーク"
+      },
+      "value": "Ethernet RJ45",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Kết nối không dây",
+        "en": "Wireless",
+        "ja": "無線"
+      },
+      "value": "WiFi",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Giao thức",
+        "en": "Protocols",
+        "ja": "プロトコル"
+      },
+      "value": "MQTT / HTTP API",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Công suất loa",
+        "en": "Speaker output",
+        "ja": "スピーカー出力"
+      },
+      "value": "8 W Class D",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Áp suất âm",
+        "en": "Sound pressure",
+        "ja": "音圧"
+      },
+      "value": "≈ 90 dB @ 1 m",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Đèn báo",
+        "en": "Beacon",
+        "ja": "表示灯"
+      },
+      "value": "LED đỏ / vàng / xanh",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Modbus",
+        "en": "Modbus",
+        "ja": "Modbus"
+      },
+      "value": "RS485",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Firmware",
+        "en": "Firmware",
+        "ja": "ファームウェア"
+      },
+      "value": "OTA Update",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Kích thước",
+        "en": "Dimensions",
+        "ja": "寸法"
+      },
+      "value": "120 × 88 × 38 mm",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Độ trễ",
+        "en": "Latency",
+        "ja": "遅延"
+      },
+      "value": "≤ 1–2 giây",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Nhiệt độ vận hành",
+        "en": "Operating temperature",
+        "ja": "動作温度"
+      },
+      "value": "−10°C đến +50°C",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    },
+    {
+      "label": {
+        "vi": "Độ ẩm",
+        "en": "Humidity",
+        "ja": "湿度"
+      },
+      "value": "10%–90% (không ngưng tụ)",
+      "status": "verified",
+      "source": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf p.8"
+    }
+  ],
+  "documents": [
+    {
+      "label": {
+        "vi": "Catalogue MGAW-V1",
+        "en": "MGAW-V1 catalogue",
+        "ja": "MGAW-V1カタログ"
+      },
+      "path": "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf",
+      "type": "pdf"
+    }
+  ],
+  "images": [
+    {
+      "path": "assets/home/site-alert-tower.jpg",
+      "kind": "installation",
+      "note": "Loa và đèn cảnh báo lắp tại nhà xưởng"
+    }
+  ],
+  "related": [
+    "mgwi-v1",
+    "mglb-v1",
+    "mgsp-v1"
+  ],
+  "openQuestions": [
+    "Xác nhận ảnh Real_Application_Images.jpg có đúng là MGAW-V1 hay là một cấu hình hệ thống liên quan trước khi xuất bản.",
+    "Xác nhận trạng thái cung cấp hiện tại của MGAW-V1."
+  ],
+  "sources": [
+    ".scratch/product-data/SCHEMA.md",
+    "GLOSSARY.md",
+    "PRODUCT.md",
+    "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf",
+    "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf",
+    "products/mgaw-v1/images/Real_Application_Images.jpg"
+  ]
+}

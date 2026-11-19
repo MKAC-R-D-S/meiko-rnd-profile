@@ -1,0 +1,116 @@
+{
+  "slug": "tool-jig",
+  "name": "Tool / JIG ICT & FCT",
+  "family": "test",
+  "status": "provisional",
+  "role": {
+    "vi": "Giải pháp kiểm thử cho sản xuất",
+    "en": "Manufacturing test solution",
+    "ja": "量産向け検査ソリューション"
+  },
+  "tagline": {
+    "vi": "Đồ gá và tự động hóa kiểm thử cho line sản xuất.",
+    "en": "Fixtures and test automation for production lines.",
+    "ja": "量産ライン向けの治具とテスト自動化。"
+  },
+  "summary": {
+    "vi": "Tool / JIG ICT & FCT là nhóm giải pháp giới thiệu năng lực thiết kế đồ gá, tự động hóa kiểm thử và hỗ trợ line sản xuất. Trang hiện cung cấp hình ảnh đại diện và hướng liên hệ kỹ thuật; chưa có catalogue hoặc case study chi tiết.",
+    "en": "Tool / JIG ICT & FCT is a solution group covering fixture design, test automation, and production-line support capabilities. The current page provides representative imagery and an engineering contact path; no detailed catalogue or case study is available yet.",
+    "ja": "Tool / JIG ICT & FCT は、治具設計、テスト自動化、量産ライン支援の対応力を紹介するソリューション群です。現在のページは代表イメージと技術相談への導線を掲載しており、詳細カタログや事例資料はまだありません。"
+  },
+  "highlights": [
+    {
+      "title": {
+        "vi": "ICT và FCT",
+        "en": "ICT and FCT",
+        "ja": "ICT と FCT"
+      },
+      "text": {
+        "vi": "Hỗ trợ các hạng mục ICT, FCT và đồ gá kiểm thử.",
+        "en": "Covers ICT, FCT, and test-fixture activities.",
+        "ja": "ICT、FCT、検査治具に対応します。"
+      },
+      "source": "products/tool-jig/index.html § sideItem1"
+    },
+    {
+      "title": {
+        "vi": "Tự động hóa kiểm thử",
+        "en": "Test automation",
+        "ja": "テスト自動化"
+      },
+      "text": {
+        "vi": "Giới thiệu năng lực tự động hóa kiểm thử cho line sản xuất.",
+        "en": "Provides test-automation capability for production lines.",
+        "ja": "量産ライン向けのテスト自動化に対応します。"
+      },
+      "source": "products/tool-jig/index.html § heroDesc"
+    },
+    {
+      "title": {
+        "vi": "Flashing firmware",
+        "en": "Firmware flashing",
+        "ja": "ファームウェア書き込み"
+      },
+      "text": {
+        "vi": "Các hạng mục sử dụng gồm flashing firmware, xác nhận chức năng và kiểm soát chất lượng trên line.",
+        "en": "Use cases include firmware flashing, functional verification, and line quality control.",
+        "ja": "用途にはファームウェア書き込み、機能確認、ライン品質管理が含まれます。"
+      },
+      "source": "products/tool-jig/index.html § meta1Desc"
+    },
+    {
+      "title": {
+        "vi": "Trao đổi kỹ thuật",
+        "en": "Engineering discussion",
+        "ja": "技術相談"
+      },
+      "text": {
+        "vi": "Liên hệ để trao đổi yêu cầu kỹ thuật hoặc ODM.",
+        "en": "Contact the team to discuss technical requirements or ODM work.",
+        "ja": "技術要件や ODM について相談できます。"
+      },
+      "source": "products/tool-jig/index.html § sideItem3"
+    }
+  ],
+  "applications": [
+    {
+      "vi": "Kiểm thử ICT trên line sản xuất.",
+      "en": "ICT testing on production lines.",
+      "ja": "量産ラインでの ICT 検査。"
+    },
+    {
+      "vi": "Kiểm thử chức năng FCT.",
+      "en": "Functional FCT testing.",
+      "ja": "FCT 機能検査。"
+    },
+    {
+      "vi": "Nạp firmware và xác nhận chức năng.",
+      "en": "Firmware flashing and functional verification.",
+      "ja": "ファームウェア書き込みと機能確認。"
+    }
+  ],
+  "specs": [],
+  "documents": [],
+  "images": [
+    {
+      "path": "assets/home/jig-studio.jpg",
+      "kind": "cad",
+      "note": "Mô hình CAD của JIG kiểm thử",
+      "useAsHero": true
+    }
+  ],
+  "related": [
+    "tingbox",
+    "iotplc-a02"
+  ],
+  "openQuestions": [
+    "Cần xác nhận model/phiên bản đồ gá, thông số kỹ thuật, catalogue và case study trước khi công bố như một sản phẩm cụ thể."
+  ],
+  "sources": [
+    ".scratch/product-data/SCHEMA.md",
+    "GLOSSARY.md",
+    "PRODUCT.md",
+    "products/tool-jig/index.html",
+    "products/tool-jig/images/tool_jig.jpg"
+  ]
+}

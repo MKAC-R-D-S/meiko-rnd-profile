@@ -1,0 +1,106 @@
+{
+  "slug": "mtsi-v1",
+  "name": "MTSI-V1",
+  "family": "iot",
+  "status": "provisional",
+  "role": {
+    "vi": "Đo nhiệt độ",
+    "en": "Temperature sensing",
+    "ja": "温度測定"
+  },
+  "tagline": {
+    "vi": "Cảm biến nhiệt độ không tiếp xúc cho các vị trí cần giám sát.",
+    "en": "A non-contact temperature sensor for monitored locations.",
+    "ja": "監視対象箇所向けの非接触温度センサーです。"
+  },
+  "summary": {
+    "vi": "MTSI-V1 được mô tả là cảm biến đo nhiệt độ không tiếp xúc cho môi trường sản xuất. Dải đo, độ chính xác, khoảng cách đo, nguồn cấp và chuẩn kết nối hiện chưa có nguồn model-specific và cần xác nhận.",
+    "en": "MTSI-V1 is described as a non-contact temperature sensor for production environments. Its measurement range, accuracy, distance, power supply, and interface have no model-specific source yet and require confirmation.",
+    "ja": "MTSI-V1 は、生産環境で使用する非接触温度センサーとして説明されています。測定範囲、精度、測定距離、電源、インターフェースについてはモデル固有の資料がなく、確認が必要です。"
+  },
+  "highlights": [
+    {
+      "title": {
+        "vi": "Đo không tiếp xúc",
+        "en": "Non-contact measurement",
+        "ja": "非接触測定"
+      },
+      "text": {
+        "vi": "Đo nhiệt độ mà không cần tiếp xúc trực tiếp với vị trí hoặc bề mặt đo.",
+        "en": "Measures temperature without direct contact with the monitored location or surface.",
+        "ja": "監視対象箇所または表面に直接接触せずに温度を測定します。"
+      },
+      "source": "products/mtsi-v1/index.html phần ‘Ứng dụng đề xuất’ và ‘Thông tin kỹ thuật’"
+    },
+    {
+      "title": {
+        "vi": "Theo dõi tại hiện trường",
+        "en": "Field monitoring",
+        "ja": "現場監視"
+      },
+      "text": {
+        "vi": "Hướng đến theo dõi các vị trí cần giám sát trong môi trường sản xuất.",
+        "en": "Intended for monitoring locations that require observation in production environments.",
+        "ja": "生産環境で監視が必要な箇所のモニタリングを想定しています。"
+      },
+      "source": "products/mtsi-v1/index.html phần hero và ‘Ứng dụng đề xuất’"
+    },
+    {
+      "title": {
+        "vi": "Cần khảo sát cấu hình",
+        "en": "Configuration survey required",
+        "ja": "構成確認が必要"
+      },
+      "text": {
+        "vi": "Vị trí và bề mặt đo cần được khảo sát trước khi triển khai.",
+        "en": "The measurement location and surface require a survey before deployment.",
+        "ja": "導入前に測定位置と対象表面の確認が必要です。"
+      },
+      "source": "products/mtsi-v1/index.html phần ‘Ứng dụng đề xuất’"
+    }
+  ],
+  "applications": [
+    {
+      "vi": "Theo dõi các vị trí cần đo nhiệt độ trong sản xuất",
+      "en": "Monitoring locations requiring temperature measurement in production",
+      "ja": "生産現場で温度測定が必要な箇所の監視"
+    },
+    {
+      "vi": "Khảo sát bề mặt đo trước khi triển khai",
+      "en": "Surveying the measurement surface before deployment",
+      "ja": "導入前の測定対象表面の確認"
+    }
+  ],
+  "specs": [],
+  "documents": [],
+  "images": [
+    {
+      "path": "assets/products/mtsi-v1-cad.jpg",
+      "kind": "cad",
+      "note": "Mô hình CAD vỏ MTSI-V1",
+      "useAsHero": true
+    },
+    {
+      "path": "assets/products/mtsi-v1-photo.jpg",
+      "kind": "photo",
+      "note": "Ảnh thiết bị thật, vỏ khớp mô hình CAD MTSI-V1"
+    }
+  ],
+  "related": [
+    "mesi-v1",
+    "modbus-reader"
+  ],
+  "openQuestions": [
+    "VI: Cần cung cấp datasheet hoặc test xác nhận dải đo, độ chính xác, khoảng cách đo, nguồn cấp và chuẩn kết nối. | EN: Provide a datasheet or test evidence for range, accuracy, measurement distance, power supply, and interface. | JA: 測定範囲、精度、測定距離、電源、インターフェースを示すデータシートまたは試験資料を提出してください。",
+    "VI: Xác nhận provenance và revision của ảnh/render trước khi công bố. | EN: Confirm image provenance and revision before publication. | JA: 公開前に画像の出所とリビジョンを確認してください。",
+    "Xác nhận ảnh thiết bị màu đen nhãn Type3 (MTSI-V1_1.jpg) là MTSI-V1; vỏ khớp mô hình CAD."
+  ],
+  "sources": [
+    ".scratch/product-data/SCHEMA.md",
+    "GLOSSARY.md",
+    "PRODUCT.md",
+    ".scratch/homepage-premium/claims-verification.md",
+    ".scratch/homepage-premium/asset-inventory.md",
+    "products/mtsi-v1/index.html"
+  ]
+}

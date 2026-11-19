@@ -78,6 +78,7 @@ const productSection = `<section class="chapter mist" id="products" aria-labelle
 <div class="head head-row"><h2 id="prod-title" data-t="prodHead2">${text('prodHead2')}</h2>
 <div class="filters" role="group" aria-label="Nhóm sản phẩm" data-aria="ariaGroups">${[['all','fAll'],['iot','fIot'],['test','fTest'],['special','fSpecial']].map(([f,k],i)=>`<button type="button" data-filter="${f}" aria-pressed="${i===0}" data-t="${k}">${text(k)}</button>`).join('')}</div></div>
 <p class="sr-only" id="results-status" role="status"></p>
+<p class="see-all"><a class="text-link" href="products/"><span data-t="seeAll">${text('seeAll')}</span>${arrow}</a></p>
 <div class="mosaic" id="mosaic">${products.map(tile).join('')}
 <div class="tile t-h odm"><p data-t="odmCta">${text('odmCta')}</p><a class="btn btn-signal" href="#contact"><span data-t="odmBtn">${text('odmBtn')}</span>${arrow}</a></div></div>
 </div></section>`;

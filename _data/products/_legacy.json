@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "bipap",
+    "name": "BiPAP",
+    "family": "medical",
+    "role": {
+      "vi": "Y tế",
+      "en": "Medical",
+      "ja": "医療"
+    },
+    "legacyHref": "products/bipap/",
+    "hero": {
+      "path": "assets/home/bipap-studio.jpg",
+      "kind": "photo"
+    }
+  }
+]
