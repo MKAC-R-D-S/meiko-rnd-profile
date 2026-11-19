@@ -1,0 +1,210 @@
+{
+  "slug": "mglb-v1",
+  "name": "MGLB-V1",
+  "family": "iot",
+  "status": "provisional",
+  "role": {
+    "vi": "Cảnh báo đèn IP",
+    "en": "IP visual alert",
+    "ja": "IP表示警報"
+  },
+  "tagline": {
+    "vi": "Đèn báo IP ba màu cho cảnh báo trực quan tại hiện trường.",
+    "en": "A tri-color IP beacon for visual alerts at the edge.",
+    "ja": "現場の視覚警報に対応する3色IP表示灯です。"
+  },
+  "summary": {
+    "vi": "MGLB-V1 là thiết bị cảnh báo trực quan IP với đèn LED đỏ, vàng, xanh và còi tích hợp. Tổng quan hệ thống mô tả thiết bị hỗ trợ PoE, điều khiển HTTP API/MQTT và cập nhật OTA.",
+    "en": "MGLB-V1 is an IP visual alert device with red, yellow, and green LEDs and an integrated buzzer. The system overview describes PoE, HTTP API/MQTT control, and OTA update support.",
+    "ja": "MGLB-V1は、赤・黄・緑のLEDとブザーを備えたIP表示警報装置です。システム概要では、PoE、HTTP API／MQTT制御、OTA更新に対応すると説明されています。"
+  },
+  "highlights": [
+    {
+      "title": {
+        "vi": "Đèn ba màu",
+        "en": "Tri-color beacon",
+        "ja": "3色表示灯"
+      },
+      "text": {
+        "vi": "Đèn LED đỏ, vàng, xanh cho các trạng thái cảnh báo khác nhau.",
+        "en": "Red, yellow, and green LEDs support distinct alert states.",
+        "ja": "赤・黄・緑のLEDで異なる警報状態を表示します。"
+      },
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    },
+    {
+      "title": {
+        "vi": "Nhiều chế độ",
+        "en": "Multiple modes",
+        "ja": "複数モード"
+      },
+      "text": {
+        "vi": "Hỗ trợ bật, tắt, chớp và pattern.",
+        "en": "Supports on, off, blink, and pattern modes.",
+        "ja": "点灯・消灯・点滅・パターンに対応します。"
+      },
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    },
+    {
+      "title": {
+        "vi": "Còi tích hợp",
+        "en": "Integrated buzzer",
+        "ja": "内蔵ブザー"
+      },
+      "text": {
+        "vi": "Còi 2 W với cường độ âm thanh khoảng 85–90 dB tại 1 m.",
+        "en": "A 2 W buzzer with approximately 85–90 dB at 1 m.",
+        "ja": "1 mで約85～90 dBの2 Wブザーを内蔵します。"
+      },
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    },
+    {
+      "title": {
+        "vi": "Kết nối nền tảng",
+        "en": "Platform connectivity",
+        "ja": "プラットフォーム接続"
+      },
+      "text": {
+        "vi": "Kết nối trong nền tảng cảnh báo qua PoE, HTTP API và MQTT.",
+        "en": "Connects within the alert platform through PoE, HTTP API, and MQTT.",
+        "ja": "PoE、HTTP API、MQTTを介して警報プラットフォームに接続します。"
+      },
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    }
+  ],
+  "applications": [
+    {
+      "vi": "Cảnh báo dây chuyền nhà máy thông minh",
+      "en": "Smart-factory line alerts",
+      "ja": "スマート工場ラインの警報"
+    },
+    {
+      "vi": "Cảnh báo CCTV-AI và khu vực hạn chế",
+      "en": "CCTV-AI and restricted-area alerts",
+      "ja": "CCTV-AI・立入制限区域の警報"
+    },
+    {
+      "vi": "Cảnh báo an toàn máy móc và PCCC",
+      "en": "Machine-safety and fire-alarm integration",
+      "ja": "機械安全・火災警報連携"
+    }
+  ],
+  "specs": [
+    {
+      "label": {
+        "vi": "Loại thiết bị",
+        "en": "Device type",
+        "ja": "機器タイプ"
+      },
+      "value": "IP Visual Alert",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.3"
+    },
+    {
+      "label": {
+        "vi": "Đèn báo",
+        "en": "Beacon",
+        "ja": "表示灯"
+      },
+      "value": "LED đỏ / vàng / xanh",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    },
+    {
+      "label": {
+        "vi": "Chế độ",
+        "en": "Modes",
+        "ja": "モード"
+      },
+      "value": "ON / OFF / Blink / Pattern",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    },
+    {
+      "label": {
+        "vi": "Còi",
+        "en": "Buzzer",
+        "ja": "ブザー"
+      },
+      "value": "2 W; 85–90 dB @ 1 m",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    },
+    {
+      "label": {
+        "vi": "Nguồn cấp",
+        "en": "Power input",
+        "ja": "電源入力"
+      },
+      "value": "PoE 802.3af/at + 12V dự phòng",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    },
+    {
+      "label": {
+        "vi": "Công suất tiêu thụ",
+        "en": "Consumption",
+        "ja": "消費電力"
+      },
+      "value": "25 W hệ thống",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    },
+    {
+      "label": {
+        "vi": "Giao thức",
+        "en": "Protocols",
+        "ja": "プロトコル"
+      },
+      "value": "HTTP API / MQTT",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    },
+    {
+      "label": {
+        "vi": "Firmware",
+        "en": "Firmware",
+        "ja": "ファームウェア"
+      },
+      "value": "OTA Supported",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    },
+    {
+      "label": {
+        "vi": "Kích thước",
+        "en": "Dimensions",
+        "ja": "寸法"
+      },
+      "value": "120 × 88 × 38 mm",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.5"
+    }
+  ],
+  "documents": [],
+  "images": [
+    {
+      "path": "assets/products/mglb-v1-kit.jpg",
+      "kind": "photo",
+      "dark": true,
+      "note": "Bộ MGLB-V1: đèn tháp ba màu, IoT Gateway và bộ cấp nguồn",
+      "useAsHero": true
+    }
+  ],
+  "related": [
+    "mgwi-v1",
+    "mgsp-v1",
+    "mgaw-v1"
+  ],
+  "openQuestions": [
+    "Xác nhận trạng thái phát hành và thông số chính thức của MGLB-V1 trước khi xuất bản."
+  ],
+  "sources": [
+    ".scratch/product-data/SCHEMA.md",
+    "GLOSSARY.md",
+    "PRODUCT.md",
+    "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf",
+    "products/mgaw-v1/mglb-v1/images/Product_Images_MGLB-V1.png",
+    "products/mgaw-v1/mglb-v1/images/Render_MGLB-V1.jpeg"
+  ]
+}

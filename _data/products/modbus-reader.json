@@ -1,0 +1,93 @@
+{
+  "slug": "modbus-reader",
+  "name": "Modbus reader",
+  "family": "iot",
+  "status": "provisional",
+  "role": {
+    "vi": "Đọc Modbus",
+    "en": "Modbus reading",
+    "ja": "Modbus 読み取り"
+  },
+  "tagline": {
+    "vi": "Chức năng đọc Modbus RTU và truyền dữ liệu không dây cần xác nhận theo cấu hình.",
+    "en": "Modbus RTU reading and wireless data transfer, subject to configuration confirmation.",
+    "ja": "Modbus RTU の読み取りと無線データ転送は構成確認が必要です。"
+  },
+  "summary": {
+    "vi": "Modbus reader được mô tả ở mức chức năng là đọc thiết bị đo qua Modbus RTU và chuyển dữ liệu về gateway qua LoRa. Repo chưa có datasheet hoặc nguồn model-specific cho sản phẩm này.",
+    "en": "The Modbus reader is described functionally as reading meters over Modbus RTU and sending data to a gateway over LoRa. The repository has no product-specific datasheet or source for this product.",
+    "ja": "Modbus reader は、Modbus RTU で計測器を読み取り、LoRa 経由でゲートウェイへデータを送る機能として説明されています。リポジトリには本製品固有のデータシートまたは資料がありません。"
+  },
+  "highlights": [
+    {
+      "title": {
+        "vi": "Đọc Modbus RTU",
+        "en": "Modbus RTU reading",
+        "ja": "Modbus RTU 読み取り"
+      },
+      "text": {
+        "vi": "Chức năng được mô tả là đọc dữ liệu từ đồng hồ hoặc thiết bị qua Modbus RTU.",
+        "en": "The function is described as reading data from meters or devices over Modbus RTU.",
+        "ja": "Modbus RTU を介してメーターまたは機器からデータを読み取る機能として説明されています。"
+      },
+      "source": ".scratch/homepage-premium/claims-verification.md mục 1.1"
+    },
+    {
+      "title": {
+        "vi": "Truyền về gateway",
+        "en": "Gateway transfer",
+        "ja": "ゲートウェイ転送"
+      },
+      "text": {
+        "vi": "Dữ liệu được mô tả là chuyển về gateway qua LoRa.",
+        "en": "The data is described as being transferred to a gateway over LoRa.",
+        "ja": "データを LoRa 経由でゲートウェイへ転送すると説明されています。"
+      },
+      "source": ".scratch/homepage-premium/claims-verification.md mục 1.1"
+    },
+    {
+      "title": {
+        "vi": "Cấu hình theo dự án",
+        "en": "Project-specific configuration",
+        "ja": "プロジェクト別構成"
+      },
+      "text": {
+        "vi": "Thông số và khả năng tương thích cần được xác nhận theo thiết bị đo và hệ thống đích.",
+        "en": "Specifications and compatibility must be confirmed for the meter and target system.",
+        "ja": "仕様と互換性は、対象メーターおよび接続先システムごとに確認が必要です。"
+      },
+      "source": ".scratch/homepage-premium/claims-verification.md mục 1.1"
+    }
+  ],
+  "applications": [
+    {
+      "vi": "Đọc dữ liệu đồng hồ hoặc thiết bị có Modbus RTU",
+      "en": "Reading meters or devices with Modbus RTU",
+      "ja": "Modbus RTU 対応メーターまたは機器のデータ読み取り"
+    },
+    {
+      "vi": "Chuyển dữ liệu đo về gateway trong hệ thống IoT",
+      "en": "Transferring measurement data to an IoT gateway",
+      "ja": "IoT ゲートウェイへの計測データ転送"
+    }
+  ],
+  "specs": [],
+  "documents": [],
+  "images": [],
+  "related": [
+    "mesi-v1",
+    "mtsi-v1"
+  ],
+  "openQuestions": [
+    "VI: Cần cung cấp model/revision, datasheet, giao thức LoRa và danh sách thiết bị Modbus tương thích. | EN: Provide the model/revision, datasheet, LoRa protocol, and compatible Modbus device list. | JA: モデル／リビジョン、データシート、LoRa プロトコル、互換 Modbus 機器一覧を提示してください。",
+    "VI: Xác nhận nguồn của card Modbus reader trước khi công bố như sản phẩm riêng. | EN: Confirm the source of the Modbus reader card before presenting it as a standalone product. | JA: 独立製品として掲載する前に、Modbus reader カードの出所を確認してください。"
+  ],
+  "sources": [
+    ".scratch/product-data/SCHEMA.md",
+    "GLOSSARY.md",
+    "PRODUCT.md",
+    ".scratch/homepage-premium/claims-verification.md",
+    "index.html",
+    "products/_shared/catalogue/IoT_Catalogue.pdf"
+  ]
+}

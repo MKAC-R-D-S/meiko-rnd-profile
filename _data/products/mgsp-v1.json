@@ -1,0 +1,210 @@
+{
+  "slug": "mgsp-v1",
+  "name": "MGSP-V1",
+  "family": "iot",
+  "status": "provisional",
+  "role": {
+    "vi": "Cảnh báo âm thanh IP",
+    "en": "IP audio alert",
+    "ja": "IP音声警報"
+  },
+  "tagline": {
+    "vi": "Loa IP cho cảnh báo âm thanh thời gian thực tại hiện trường.",
+    "en": "An IP speaker for real-time audio alerts at the edge.",
+    "ja": "現場のリアルタイム音声警報に対応するIPスピーカーです。"
+  },
+  "summary": {
+    "vi": "MGSP-V1 là thiết bị cảnh báo âm thanh IP dùng loa Class D 8 W. Tổng quan hệ thống mô tả kết nối MQTT/HTTP, PoE, phát âm thanh dự phòng khi offline và cập nhật firmware OTA.",
+    "en": "MGSP-V1 is an IP audio alert device using an 8 W Class D speaker. The system overview describes MQTT/HTTP connectivity, PoE, offline audio fallback, and OTA firmware updates.",
+    "ja": "MGSP-V1は8 WのClass Dスピーカーを使用するIP音声警報装置です。システム概要では、MQTT／HTTP接続、PoE、オフライン時の音声フォールバック、OTAファームウェア更新に対応すると説明されています。"
+  },
+  "highlights": [
+    {
+      "title": {
+        "vi": "Loa Class D 8 W",
+        "en": "8 W Class D speaker",
+        "ja": "8 W Class Dスピーカー"
+      },
+      "text": {
+        "vi": "Loa T-774W cho áp suất âm khoảng 90 dB tại 1 m.",
+        "en": "The T-774W speaker provides approximately 90 dB at 1 m.",
+        "ja": "T-774Wスピーカーで1 mで約90 dBを出力します。"
+      },
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    },
+    {
+      "title": {
+        "vi": "Hai giao thức",
+        "en": "Dual protocols",
+        "ja": "デュアルプロトコル"
+      },
+      "text": {
+        "vi": "Hỗ trợ MQTT và HTTP API với độ trễ mục tiêu 1–2 giây.",
+        "en": "Supports MQTT and HTTP API with a stated 1–2 second latency target.",
+        "ja": "MQTTとHTTP APIに対応し、遅延目標は1～2秒と記載されています。"
+      },
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    },
+    {
+      "title": {
+        "vi": "Phát âm thanh dự phòng",
+        "en": "Offline audio fallback",
+        "ja": "オフライン音声フォールバック"
+      },
+      "text": {
+        "vi": "Tổng quan hệ thống nêu khả năng phát âm thanh dự phòng khi mất kết nối.",
+        "en": "The system overview states that offline audio fallback is available.",
+        "ja": "システム概要では、接続がない場合の音声フォールバックに対応すると記載されています。"
+      },
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    },
+    {
+      "title": {
+        "vi": "Nguồn và quản lý",
+        "en": "Power and management",
+        "ja": "電源と管理"
+      },
+      "text": {
+        "vi": "Nguồn PoE chính, 12V DC dự phòng và cập nhật firmware OTA.",
+        "en": "Primary PoE power, 12V DC backup input, and OTA firmware updates.",
+        "ja": "主電源はPoE、バックアップ入力は12V DCで、OTAファームウェア更新に対応します。"
+      },
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    }
+  ],
+  "applications": [
+    {
+      "vi": "Cảnh báo dây chuyền nhà máy thông minh",
+      "en": "Smart-factory production-line alerts",
+      "ja": "スマート工場の生産ライン警報"
+    },
+    {
+      "vi": "Cảnh báo CCTV-AI và khu vực an toàn",
+      "en": "CCTV-AI and safety-zone alerts",
+      "ja": "CCTV-AI・安全区域の警報"
+    },
+    {
+      "vi": "Thông báo sơ tán và cảnh báo khẩn cấp",
+      "en": "Evacuation and emergency notifications",
+      "ja": "避難・緊急通知"
+    }
+  ],
+  "specs": [
+    {
+      "label": {
+        "vi": "Loại thiết bị",
+        "en": "Device type",
+        "ja": "機器タイプ"
+      },
+      "value": "IP Audio Alert",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.3"
+    },
+    {
+      "label": {
+        "vi": "Model loa",
+        "en": "Speaker model",
+        "ja": "スピーカーモデル"
+      },
+      "value": "T-774W",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    },
+    {
+      "label": {
+        "vi": "Công suất loa",
+        "en": "Speaker output",
+        "ja": "スピーカー出力"
+      },
+      "value": "8 W Class D",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    },
+    {
+      "label": {
+        "vi": "Áp suất âm",
+        "en": "Sound pressure",
+        "ja": "音圧"
+      },
+      "value": "≈ 90 dB @ 1 m",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    },
+    {
+      "label": {
+        "vi": "Nguồn cấp",
+        "en": "Power input",
+        "ja": "電源入力"
+      },
+      "value": "PoE 802.3af/at + 12V DC dự phòng",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    },
+    {
+      "label": {
+        "vi": "Mạng",
+        "en": "Network",
+        "ja": "ネットワーク"
+      },
+      "value": "Ethernet RJ45; 10/100 Mbps",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    },
+    {
+      "label": {
+        "vi": "Giao thức",
+        "en": "Protocols",
+        "ja": "プロトコル"
+      },
+      "value": "MQTT / HTTP API",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    },
+    {
+      "label": {
+        "vi": "Firmware",
+        "en": "Firmware",
+        "ja": "ファームウェア"
+      },
+      "value": "OTA Supported",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    },
+    {
+      "label": {
+        "vi": "Kích thước",
+        "en": "Dimensions",
+        "ja": "寸法"
+      },
+      "value": "120 × 88 × 38 mm",
+      "status": "provisional",
+      "source": "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf p.4"
+    }
+  ],
+  "documents": [],
+  "images": [
+    {
+      "path": "assets/products/mgsp-v1-kit.jpg",
+      "kind": "photo",
+      "dark": true,
+      "note": "Bộ MGSP-V1: loa IP, IoT Gateway và bộ cấp nguồn",
+      "useAsHero": true
+    }
+  ],
+  "related": [
+    "mgwi-v1",
+    "mglb-v1",
+    "mgaw-v1"
+  ],
+  "openQuestions": [
+    "Xác nhận trạng thái phát hành và thông số chính thức của MGSP-V1 trước khi xuất bản."
+  ],
+  "sources": [
+    ".scratch/product-data/SCHEMA.md",
+    "GLOSSARY.md",
+    "PRODUCT.md",
+    "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf",
+    "products/mgaw-v1/mgsp-v1/images/Product_Images_MGSP-V1.png",
+    "products/mgaw-v1/mgsp-v1/images/Render_LightGrey_Product_Images_MGSP-V1.png"
+  ]
+}

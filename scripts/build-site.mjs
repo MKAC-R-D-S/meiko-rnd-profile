@@ -4,6 +4,10 @@ import {fileURLToPath} from 'node:url';
 import {resolve,dirname} from 'node:path';
 import {text,productData} from '../assets/site-copy.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
+// Retired: the homepage is built by build-home.mjs and product pages by build-products.mjs.
+// Running this file would overwrite the new product pages with the legacy layout.
+console.log('build-site.mjs is retired. Use: node scripts/build-home.mjs && node scripts/build-products.mjs');
+process.exit(0);
 const t=(key,tag='span',attrs='')=>`<${tag} data-t="${key}" ${attrs}>${text(key)}</${tag}>`;
 const link=(key,href,cls='')=>t(key,'a',`href="${href}" class="${cls}"`);
 const contact=(name='',prefix='')=>`${prefix}index.html${name?'?product='+encodeURIComponent(name):''}#contact`;

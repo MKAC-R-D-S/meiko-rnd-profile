@@ -49,7 +49,8 @@ scratch/
 # Internal documents and unreleased products: never publish (this repo is public)
 docs/internal/
 docs/meiko-rnd-profile-handoff-*.md
-products/iotplc-a02/
+products/iotplc-a02/*
+!products/iotplc-a02/index.html
 
 # Impeccable runtime and machine-local files
 .impeccable/config.local.json

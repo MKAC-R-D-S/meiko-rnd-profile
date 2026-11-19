@@ -1,0 +1,217 @@
+{
+  "slug": "iotplc-a02",
+  "name": "IOTPLC-A02",
+  "family": "automation",
+  "status": "provisional",
+  "role": {
+    "vi": "Bộ I/O và điều khiển cho AGV",
+    "en": "I/O and control assembly for AGVs",
+    "ja": "AGV 向け I/O・制御アセンブリ"
+  },
+  "tagline": {
+    "vi": "Bộ Bo IO ghép Bo MCU cho ứng dụng AGV.",
+    "en": "An IO board paired with an MCU board for AGV applications.",
+    "ja": "AGV 用の IO ボードと MCU ボードの組み合わせ。"
+  },
+  "summary": {
+    "vi": "IOTPLC-A02 được xác định là Bo IO Rev 1.0.3 ghép với Bo MCU Rev V1.0 qua socket 2×40, với phạm vi ứng dụng công bố ban đầu là AGV. Dữ liệu hiện ở trạng thái dự kiến vì hồ sơ và tài liệu sản phẩm vẫn là DRAFT, còn cần kiểm thử và xác nhận trước khi công bố.",
+    "en": "IOTPLC-A02 is defined as an IO board Rev 1.0.3 paired with an MCU board Rev V1.0 through a 2×40 socket, with AGV as the initial declared application. The data remains provisional because the product dossier and product documents are still drafts and require testing and confirmation before publication.",
+    "ja": "IOTPLC-A02 は、2×40 ソケットで接続する IO ボード Rev 1.0.3 と MCU ボード Rev V1.0 の組み合わせとして定義され、当初の公表用途は AGV です。製品資料がまだ DRAFT であり、公開前に試験と確認が必要なため、データは暫定扱いです。"
+  },
+  "highlights": [
+    {
+      "title": {
+        "vi": "Kiến trúc hai bo",
+        "en": "Two-board architecture",
+        "ja": "2 ボード構成"
+      },
+      "text": {
+        "vi": "Bo IO Rev 1.0.3 ghép Bo MCU Rev V1.0 qua socket 2×40.",
+        "en": "An IO board Rev 1.0.3 pairs with an MCU board Rev V1.0 through a 2×40 socket.",
+        "ja": "IO ボード Rev 1.0.3 と MCU ボード Rev V1.0 を 2×40 ソケットで接続します。"
+      },
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q1, Q13"
+    },
+    {
+      "title": {
+        "vi": "I/O mức thiết kế",
+        "en": "Design-level I/O",
+        "ja": "設計段階の I/O"
+      },
+      "text": {
+        "vi": "Thiết kế nêu 24 đầu vào số, 16 ngõ ra MOSFET và 4 relay; các thông số vận hành còn cần xác nhận.",
+        "en": "The design states 24 digital inputs, 16 MOSFET outputs, and 4 relays; operating ratings still require confirmation.",
+        "ja": "設計上はデジタル入力 24 点、MOSFET 出力 16 点、リレー 4 個ですが、動作定格は確認が必要です。"
+      },
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q8-Q12"
+    },
+    {
+      "title": {
+        "vi": "Giao tiếp",
+        "en": "Interfaces",
+        "ja": "インターフェース"
+      },
+      "text": {
+        "vi": "Thiết kế nêu RS485 cách ly, RS232 DB9, I2C cách ly và UART; USB-B nằm trên Bo MCU.",
+        "en": "The design states isolated RS485, RS232 DB9, isolated I2C, and UART; USB-B is on the MCU board.",
+        "ja": "設計上は絶縁 RS485、RS232 DB9、絶縁 I2C、UART に対応し、USB-B は MCU ボード上にあります。"
+      },
+      "source": "products/iotplc-a02/04_trang_san_pham/index.html § Thông số tóm tắt"
+    },
+    {
+      "title": {
+        "vi": "Phạm vi ứng dụng",
+        "en": "Application scope",
+        "ja": "用途範囲"
+      },
+      "text": {
+        "vi": "Bản đầu chỉ nêu ứng dụng AGV; các ứng dụng tủ điện và tự động hóa khác chưa được xác nhận.",
+        "en": "The first release names AGV as the application; other cabinet and automation applications are not confirmed.",
+        "ja": "初版で示す用途は AGV のみで、その他の制御盤・自動化用途は未確認です。"
+      },
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q3"
+    }
+  ],
+  "applications": [
+    {
+      "vi": "Hệ thống AGV (phạm vi ứng dụng đã nêu).",
+      "en": "AGV systems (the stated application scope).",
+      "ja": "AGV システム（記載済みの用途範囲）。"
+    },
+    {
+      "vi": "Các ứng dụng tủ điện hoặc tự động hóa khác: tiềm năng, chưa xác nhận.",
+      "en": "Other cabinet or automation applications: potential, not confirmed.",
+      "ja": "その他の制御盤・自動化用途：可能性はありますが未確認です。"
+    }
+  ],
+  "specs": [
+    {
+      "label": {
+        "vi": "Baseline phần cứng",
+        "en": "Hardware baseline",
+        "ja": "ハードウェア・ベースライン"
+      },
+      "value": "Bo IO Rev 1.0.3 + Bo MCU Rev V1.0",
+      "status": "provisional",
+      "source": "products/iotplc-a02/README_BAN_GIAO.md § Trạng thái"
+    },
+    {
+      "label": {
+        "vi": "Nguồn vào",
+        "en": "Input supply",
+        "ja": "入力電源"
+      },
+      "value": "9–36 VDC (mức thiết kế)",
+      "status": "provisional",
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Sổ tuyên bố"
+    },
+    {
+      "label": {
+        "vi": "Đầu vào số",
+        "en": "Digital inputs",
+        "ja": "デジタル入力"
+      },
+      "value": "24 kênh: 16 NPN, 4 PNP 24 V, 4 PNP 48 V; cách ly quang và LED",
+      "status": "provisional",
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q8, Sổ tuyên bố"
+    },
+    {
+      "label": {
+        "vi": "Ngõ ra MOSFET",
+        "en": "MOSFET outputs",
+        "ja": "MOSFET 出力"
+      },
+      "value": "16 ngõ ra MOSFET, cách ly quang",
+      "status": "provisional",
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q12"
+    },
+    {
+      "label": {
+        "vi": "Relay",
+        "en": "Relays",
+        "ja": "リレー"
+      },
+      "value": "4 relay, 1 Form A (SPST-NO), cuộn 12 V; chưa có định mức tiếp điểm V/A",
+      "status": "provisional",
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q9"
+    },
+    {
+      "label": {
+        "vi": "ADC",
+        "en": "ADC",
+        "ja": "ADC"
+      },
+      "value": "4 kênh ADC 16 bit (ADS1115); dải đo từng kênh chưa công bố",
+      "status": "provisional",
+      "source": "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md § Q10"
+    },
+    {
+      "label": {
+        "vi": "Giao tiếp",
+        "en": "Interfaces",
+        "ja": "インターフェース"
+      },
+      "value": "RS485 cách ly; RS232 DB9; I2C cách ly; UART; USB-B trên Bo MCU",
+      "status": "provisional",
+      "source": "products/iotplc-a02/04_trang_san_pham/index.html § Thông số tóm tắt"
+    },
+    {
+      "label": {
+        "vi": "Vi điều khiển",
+        "en": "Microcontroller",
+        "ja": "マイクロコントローラー"
+      },
+      "value": "ATmega2560, 16 MHz (Bo MCU)",
+      "status": "provisional",
+      "source": "products/iotplc-a02/04_trang_san_pham/index.html § Thông số tóm tắt"
+    },
+    {
+      "label": {
+        "vi": "Kích thước Bo IO",
+        "en": "IO board dimensions",
+        "ja": "IO ボード寸法"
+      },
+      "value": "175 × 96,7 mm",
+      "status": "provisional",
+      "source": "products/iotplc-a02/04_trang_san_pham/index.html § Thông số tóm tắt"
+    }
+  ],
+  "documents": [],
+  "images": [
+    {
+      "path": "assets/products/iotplc-a02-3quarter.jpg",
+      "kind": "render3d",
+      "note": "Render 3D cụm IOTPLC-A02 Rev 1.0.3",
+      "useAsHero": true
+    },
+    {
+      "path": "assets/products/iotplc-a02-top.jpg",
+      "kind": "render3d",
+      "note": "Render 3D mặt trên IOTPLC-A02 Rev 1.0.3"
+    }
+  ],
+  "related": [
+    "tool-jig",
+    "tingbox"
+  ],
+  "openQuestions": [
+    "Chạy lại 51 test case trên bộ ghép V1.0.3 trước khi phát hành ngoài.",
+    "Xác nhận định mức tiếp điểm relay và định mức ngõ ra MOSFET bằng văn bản cùng test có tải.",
+    "Đo xác nhận ADC ở 10 V và 60 V trước khi công bố dải đo.",
+    "Xác nhận dòng tối đa của nguồn 5 V cách ly.",
+    "Không đưa các tuyên bố về Arduino IDE, EMC, nhiệt độ, bảo vệ hoặc đo dòng vào nội dung công bố hiện tại.",
+    "Cần tài liệu phát hành thay cho các tài liệu DRAFT trước khi liên kết tài liệu sản phẩm."
+  ],
+  "sources": [
+    ".scratch/product-data/SCHEMA.md",
+    "GLOSSARY.md",
+    "PRODUCT.md",
+    "products/iotplc-a02/README_BAN_GIAO.md",
+    "products/iotplc-a02/01_ho_so/QUYET_DINH_PHAM_VI_VA_QUY_TAC_TUYEN_BO.md",
+    "products/iotplc-a02/01_ho_so/bao-cao-doi-chieu-thong-so-IOTPLC-A02.md",
+    "products/iotplc-a02/01_ho_so/RA_SOAT_HO_SO_MARKETING_IOTPLC-A02.md",
+    "products/iotplc-a02/04_trang_san_pham/index.html",
+    "products/iotplc-a02/03_hinh_anh/render/IOTPLC-A02_rev1.0.3_assembly_3quarter.png",
+    "products/iotplc-a02/03_hinh_anh/render/IOTPLC-A02_rev1.0.3_assembly_top.png"
+  ]
+}

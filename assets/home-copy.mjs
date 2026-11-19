@@ -89,6 +89,27 @@ const added = {
  odmBtn:['Trao đổi dự án ODM/OEM','Discuss an ODM/OEM project','ODM/OEMのご相談'],
  appHead2:['Giải pháp <br><strong>đi vào hiện trường.</strong>','Solutions <br><strong>on the factory floor.</strong>','ソリューションを <br><strong>現場へ。</strong>'],
  contactHead2:['Cùng bắt đầu <br><strong>dự án tiếp theo.</strong>','Let’s start <br><strong>your next project.</strong>','次のプロジェクトを <br><strong>ともに始めましょう。</strong>'],
+ // ---- Product pages (v2 template) ----
+ pProducts:['Sản phẩm','Products','製品'],
+ pOverview:['Tổng quan','Overview','概要'],
+ pHighlights:['Điểm chính','Key points','主な特長'],
+ pApplications:['Ứng dụng','Applications','用途'],
+ pSpecs:['Thông số kỹ thuật','Specifications','仕様'],
+ pDocs:['Tài liệu','Documents','資料'],
+ pGallery:['Hình ảnh','Images','画像'],
+ pRelated:['Sản phẩm liên quan','Related products','関連製品'],
+ specVerified:['Theo catalogue','Per catalogue','カタログ記載'],
+ specProvisional:['Thông số dự kiến — cần xác nhận','Provisional — to be confirmed','暫定仕様（要確認）'],
+ specLegend:['Thông số được trích từ tài liệu kỹ thuật của Meiko. Dòng ghi "dự kiến" cần được xác nhận cùng đội kỹ thuật cho cấu hình cụ thể.','Values are taken from Meiko technical documents. Rows marked provisional must be confirmed with our engineers for your configuration.','数値はMeikoの技術資料に基づきます。「暫定」の行は、構成ごとに技術チームとご確認ください。'],
+ specNone:['Thông số chi tiết đang được hoàn thiện. Hãy trao đổi với đội kỹ thuật để nhận cấu hình phù hợp.','Detailed specifications are being finalised. Talk to our engineers for the right configuration.','詳細仕様は準備中です。最適な構成は技術チームにご相談ください。'],
+ provisionalPage:['Nội dung tạm: thông tin sản phẩm đang được hoàn thiện và cần xác nhận cùng đội kỹ thuật.','Provisional content: product information is being finalised and must be confirmed with our engineers.','暫定内容：製品情報は準備中のため、技術チームにご確認ください。'],
+ docOpen:['Mở tài liệu','Open document','資料を開く'],
+ pCtaHead:['Cần cấu hình cho dự án của bạn? <strong>Trao đổi với đội kỹ thuật Meiko.</strong>','Need a configuration for your project? <strong>Talk to Meiko engineers.</strong>','プロジェクトに合わせた構成が必要ですか？<strong>Meikoの技術チームにご相談ください。</strong>'],
+ catalogHead:['Danh mục <strong>sản phẩm Meiko.</strong>','The Meiko <strong>product portfolio.</strong>','Meikoの<strong>製品一覧。</strong>'],
+ catalogLead:['Thiết bị do Meiko nghiên cứu và phát triển, từ IoT công nghiệp, kiểm thử đến thiết bị chuyên dụng.','Devices researched and developed by Meiko, from industrial IoT and testing to specialised equipment.','産業用IoT、検査から専用機器まで、Meikoが研究・開発した機器です。'],
+ fAuto:['Tự động hóa','Automation','自動化'],
+ roleIo:['Điều khiển I/O','I/O control','I/O制御'],
+ seeAll:['Xem tất cả sản phẩm','See all products','すべての製品を見る'],
 };
 
 export const copy = {...base,...added};

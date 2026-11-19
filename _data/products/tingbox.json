@@ -1,0 +1,210 @@
+{
+  "slug": "tingbox",
+  "name": "TingBox Pro",
+  "family": "special",
+  "status": "available",
+  "role": {
+    "vi": "Loa thông báo thanh toán",
+    "en": "Payment notification speaker",
+    "ja": "決済通知スピーカー"
+  },
+  "tagline": {
+    "vi": "Thông báo giao dịch bằng âm thanh và màn hình hiển thị.",
+    "en": "Audio and display notifications for payment transactions.",
+    "ja": "音声と表示で決済取引を通知します。"
+  },
+  "summary": {
+    "vi": "TingBox Pro là loa thông báo thanh toán do Meiko Automation sản xuất. Catalogue mô tả thiết bị có kết nối Wi‑Fi và 4G, màn hình hiển thị và các chức năng hỗ trợ giao dịch.",
+    "en": "TingBox Pro is a payment notification speaker produced by Meiko Automation. The catalogue describes Wi‑Fi and 4G connectivity, display functions, and features supporting payment transactions.",
+    "ja": "TingBox Pro は Meiko Automation が製造する決済通知スピーカーです。カタログでは、Wi‑Fi と 4G 接続、表示機能、決済取引を支援する機能が説明されています。"
+  },
+  "highlights": [
+    {
+      "title": {
+        "vi": "Thông báo giao dịch",
+        "en": "Transaction notifications",
+        "ja": "取引通知"
+      },
+      "text": {
+        "vi": "Phát thông báo ngay khi giao dịch thành công.",
+        "en": "Plays a notification when a transaction succeeds.",
+        "ja": "取引成功時に通知を再生します。"
+      },
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.2"
+    },
+    {
+      "title": {
+        "vi": "Màn hình hiển thị",
+        "en": "Display",
+        "ja": "表示画面"
+      },
+      "text": {
+        "vi": "Màn hình điện tử hiển thị rõ ràng và hỗ trợ hiển thị mã QR.",
+        "en": "An electronic display provides clear information and supports QR-code display.",
+        "ja": "電子ディスプレイで情報を表示し、QR コード表示にも対応します。"
+      },
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.2-3"
+    },
+    {
+      "title": {
+        "vi": "Kết nối mạng",
+        "en": "Network connectivity",
+        "ja": "ネットワーク接続"
+      },
+      "text": {
+        "vi": "Hỗ trợ kết nối Wi‑Fi hoặc 4G LTE.",
+        "en": "Supports Wi‑Fi or 4G LTE connectivity.",
+        "ja": "Wi‑Fi または 4G LTE 接続に対応します。"
+      },
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.2-3"
+    },
+    {
+      "title": {
+        "vi": "Giọng nói",
+        "en": "Voice options",
+        "ja": "音声オプション"
+      },
+      "text": {
+        "vi": "Hỗ trợ tùy chọn giọng nói Bắc và Nam cùng âm thanh cài sẵn.",
+        "en": "Supports Northern and Southern Vietnamese voice options with preset sounds.",
+        "ja": "ベトナム北部・南部の音声オプションとプリセット音声に対応します。"
+      },
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.2-3"
+    }
+  ],
+  "applications": [
+    {
+      "vi": "Điểm bán lẻ cần xác nhận giao dịch.",
+      "en": "Retail points that need transaction confirmation.",
+      "ja": "取引確認が必要な小売店舗。"
+    },
+    {
+      "vi": "Quầy POS và điểm thanh toán.",
+      "en": "POS counters and payment points.",
+      "ja": "POS カウンターおよび決済拠点。"
+    },
+    {
+      "vi": "Tích hợp với phần mềm bán hàng và đối soát giao dịch.",
+      "en": "Integration with sales software and transaction reconciliation.",
+      "ja": "販売ソフトウェアとの連携および取引照合。"
+    }
+  ],
+  "specs": [
+    {
+      "label": {
+        "vi": "Nguồn và pin",
+        "en": "Power and battery",
+        "ja": "電源とバッテリー"
+      },
+      "value": "Pin sạc 18650 Li-ion 2600 mAh; 5 V DC / 1 A; sạc Type-C",
+      "status": "verified",
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.3"
+    },
+    {
+      "label": {
+        "vi": "Màn hình khách hàng",
+        "en": "Customer display",
+        "ja": "顧客用ディスプレイ"
+      },
+      "value": "TFT 2.4 in, 240 × 320, SPI; hiển thị QR code",
+      "status": "verified",
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.3"
+    },
+    {
+      "label": {
+        "vi": "Màn hình người dùng",
+        "en": "User display",
+        "ja": "ユーザー用ディスプレイ"
+      },
+      "value": "Màn hình phân đoạn 8 chữ số, I2C",
+      "status": "verified",
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.3"
+    },
+    {
+      "label": {
+        "vi": "Loa",
+        "en": "Speaker",
+        "ja": "スピーカー"
+      },
+      "value": "3 W / 4 Ω",
+      "status": "verified",
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.3"
+    },
+    {
+      "label": {
+        "vi": "Kết nối",
+        "en": "Connectivity",
+        "ja": "接続"
+      },
+      "value": "Wi‑Fi 2.4 GHz 802.11 b/g/n (tùy chọn); 4G LTE; 1 Nano-SIM",
+      "status": "verified",
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.3"
+    },
+    {
+      "label": {
+        "vi": "Kích thước",
+        "en": "Dimensions",
+        "ja": "寸法"
+      },
+      "value": "125 × 102 × 160 mm",
+      "status": "verified",
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.3"
+    },
+    {
+      "label": {
+        "vi": "Khối lượng",
+        "en": "Weight",
+        "ja": "重量"
+      },
+      "value": "350 g",
+      "status": "verified",
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.3"
+    },
+    {
+      "label": {
+        "vi": "Môi trường hoạt động",
+        "en": "Operating environment",
+        "ja": "動作環境"
+      },
+      "value": "0–50 °C; độ ẩm 10–93% không ngưng tụ",
+      "status": "verified",
+      "source": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf p.3"
+    }
+  ],
+  "documents": [
+    {
+      "label": {
+        "vi": "Catalogue TingBox Pro",
+        "en": "TingBox Pro catalogue",
+        "ja": "TingBox Pro カタログ"
+      },
+      "path": "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf",
+      "type": "pdf"
+    }
+  ],
+  "images": [
+    {
+      "path": "assets/home/tingbox-body.jpg",
+      "kind": "photo",
+      "note": "Ảnh cận cảnh thân TingBox với mặt đỏ, màn hình QR và dòng chữ loa thông báo nhận tiền; không có logo mPOS/ngân hàng trong ảnh.",
+      "useAsHero": true
+    }
+  ],
+  "related": [
+    "tool-jig",
+    "iotplc-a02"
+  ],
+  "openQuestions": [
+    "Xác nhận tên thương mại và phạm vi tích hợp phần mềm trước khi xuất bản bản mở rộng."
+  ],
+  "sources": [
+    ".scratch/product-data/SCHEMA.md",
+    "GLOSSARY.md",
+    "PRODUCT.md",
+    "products/tingbox/index.html",
+    "products/tingbox/catalogue/Catalogue_TingBoxPro_2025July23.pdf",
+    "assets/home/tingbox-body.jpg",
+    "products/tingbox/images/tingboxpro_1.jpg",
+    "products/tingbox/images/tingboxpro_2.JPG"
+  ]
+}
