@@ -20,7 +20,7 @@ export const localeIndex={vi:0,en:1,ja:2};
 export function text(key,lang='vi'){return copy[key]?.[localeIndex[lang]??0]??key}
 export const productData=[
  {slug:'mesi-v1',name:'MESI-V1',category:'sensor',desc:'mesiDesc',image:'products/mesi-v1/images/MESI-V1_Studio.png',illustration:true},
- {slug:'mgaw-v1',name:'MGAW-V1',category:'alert',desc:'mgawDesc',image:'Product_Catalogue_MGAW-V1/Industrial%20IoT_1.png'},
+ {slug:'mgaw-v1',name:'MGAW-V1',category:'alert',desc:'mgawDesc',image:'products/mgaw-v1/images/Industrial_IoT_1.png'},
  {slug:'mgwi-v1',name:'MGWI-V1',category:'gateway',desc:'mgwiDesc',glyph:'gateway',title:'mgwiName',use:'mgwiUse',pending:'mgwiPending'},
  {slug:'mtsi-v1',name:'MTSI-V1',category:'sensor',desc:'mtsiDesc',glyph:'sensor',title:'mtsiName',use:'mtsiUse',pending:'mtsiPending'},
  {slug:'modbus-reader',name:'Modbus reader',category:'gateway',desc:'modbusDesc',glyph:'modbus',title:'modbusName',use:'modbusUse',pending:'modbusPending'}
