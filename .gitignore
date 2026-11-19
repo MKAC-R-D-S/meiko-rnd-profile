@@ -1,0 +1,58 @@
+# Large raw images (originals kept locally, webp served)
+assets/*.PNG
+assets/*.JPG
+assets/*.jpeg
+
+# Keep optimized formats
+!assets/*.webp
+!assets/*.png
+
+# Research data (875MB, not part of website)
+/research/
+TongHop_SanPham_IoT_RnD/
+
+# Node dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+.sass-cache/
+.cache
+
+# Environment
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Draft plan
+docs/PROJECT_IMPROVEMENT_PLAN.md
+
+# Working notes, screenshots and agent tooling (local only)
+.scratch/
+scratch/
+.agents/
+.codex/
+
+# Internal documents and unreleased products: never publish (this repo is public)
+docs/internal/
+docs/meiko-rnd-profile-handoff-*.md
+products/iotplc-a02/
+
+# Impeccable runtime and machine-local files
+.impeccable/config.local.json
+.impeccable/questions/
+.impeccable/mocks/
+.impeccable/review/

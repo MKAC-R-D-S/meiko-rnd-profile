@@ -40,3 +40,4 @@ if(form){
   });
 }
 applyLanguage(lang);setupRoad(tr);
+if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js').catch(()=>{});

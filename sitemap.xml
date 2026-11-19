@@ -2,40 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/bipap/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/mesi-v1/</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/mgaw-v1/</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/sensor-iot/</loc>
+    <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/mgwi-v1/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/mtsi-v1/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/modbus-reader/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/bipap/</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/tingbox/</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/tool-jig/</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url><loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/mgwi-v1/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/mtsi-v1/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/modbus-reader/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://mkac-r-d-s.github.io/meiko-rnd-profile/products/sensor-iot/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
