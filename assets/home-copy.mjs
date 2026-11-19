@@ -110,6 +110,26 @@ const added = {
  fAuto:['Tự động hóa','Automation','自動化'],
  roleIo:['Điều khiển I/O','I/O control','I/O制御'],
  seeAll:['Xem tất cả sản phẩm','See all products','すべての製品を見る'],
+ // ---- Product pages: optional advanced sections (A layout + scroll story) ----
+ pnArch:['Kiến trúc','Architecture','構成'],
+ pnIo:['Khối I/O','I/O blocks','I/Oブロック'],
+ pnDocsFaq:['Tài liệu · FAQ','Documents · FAQ','資料・FAQ'],
+ pnMore:['Hình ảnh khác','More images','その他の画像'],
+ pToc:['Mục lục trang','On this page','ページ内メニュー'],
+ pStatsAria:['Số liệu chính theo thiết kế, thông số dự kiến','Key design figures, provisional','主な設計数値（暫定）'],
+ pSeeSpecs:['Xem bảng thông số','See the specifications','仕様表を見る'],
+ pIoHead:['Mọi kênh I/O, <strong>một cái nhìn.</strong>','Every I/O channel, <strong>at a glance.</strong>','すべての I/O チャンネルを、<strong>ひと目で。</strong>'],
+ pStoryHead:['Từng lớp, <strong>từng góc nhìn.</strong>','Layer by layer, <strong>angle by angle.</strong>','レイヤーごと、<strong>アングルごと。</strong>'],
+ pStoryLead:['Cuộn để xem từng lớp của sản phẩm. Mỗi ảnh được gắn nhãn loại: render 3D, ảnh mẫu hoặc sơ đồ.','Scroll to see each layer of the product. Every image is labelled by type: 3D render, sample photo or diagram.','スクロールして製品のレイヤーを順に確認できます。各画像には種別（3D レンダリング、サンプル写真、図）を表示しています。'],
+ pStoryAria:['Câu chuyện sản phẩm: cuộn để xem từng lớp','Product story: scroll to see each layer','製品ストーリー：スクロールして各レイヤーを表示'],
+ pLayer:['Lớp','Layer','レイヤー'],
+ pLayerAria:['Chuyển lớp xem','Switch the viewed layer','表示レイヤーの切り替え'],
+ pFaq:['Câu hỏi thường gặp','Frequently asked questions','よくある質問'],
+ pPendingHead:['Chưa công bố, đang chờ xác nhận','Not published, awaiting confirmation','未公開・確認待ち'],
+ pDocsPending:['Các tài liệu này là bản nháp nội bộ, chưa phát hành nên chưa có liên kết tải.','These documents are internal drafts and are not released yet, so there is no download link.','これらの資料は社内ドラフトで未発行のため、ダウンロードリンクはありません。'],
+ pZoom:['Mở ảnh gốc để phóng to.','Open the original image to zoom in.','元画像を開いて拡大できます。'],
+ kDiagram:['Sơ đồ minh họa','Illustrative diagram','イメージ図'],
+ kSample:['Ảnh mẫu','Sample photo','サンプル写真'],
 };
 
 export const copy = {...base,...added};

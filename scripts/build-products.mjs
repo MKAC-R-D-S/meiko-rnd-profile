@@ -5,6 +5,7 @@ import {readdirSync,readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:
 import {fileURLToPath} from 'node:url';
 import {resolve,dirname} from 'node:path';
 import {text} from '../assets/home-copy.mjs';
+import {statsRail,architecture,ioBlocks,story,storySteps,scenario,docsFaq,pendingBox} from './product-sections.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const SITE = 'https://mkac-r-d-s.github.io/meiko-rnd-profile/';
@@ -15,7 +16,7 @@ const tri = o => LANGS.map(l => (o && (o[l] || o.vi)) || '');
 const arrow = '<svg class="arrow" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" focusable="false"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg>';
 
 const FAMILY = {iot:'fIot', test:'fTest', special:'fSpecial', automation:'fAuto', medical:'roleMed'};
-const KIND = {photo:'kPhoto', render3d:'k3d', cad:'kCad', installation:'kInstall'};
+const KIND = {photo:'kPhoto', render3d:'k3d', cad:'kCad', installation:'kInstall', diagram:'kDiagram', sample:'kSample'};
 const FAMILY_ORDER = ['iot','automation','test','special','medical'];
 
 /* ---------- data ---------- */
@@ -24,6 +25,8 @@ const products = readdirSync(dataDir).filter(f => f.endsWith('.json') && !f.star
 for (const p of products) {
   for (const img of p.images || []) if (!existsSync(resolve(root,img.path))) throw new Error(`${p.slug}: missing image ${img.path}`);
   for (const d of p.documents || []) if (!existsSync(resolve(root,d.path))) throw new Error(`${p.slug}: missing document ${d.path}`);
+  for (const path of [p.diagram?.path, p.scenario?.image?.path]) if (path && !existsSync(resolve(root,path))) throw new Error(`${p.slug}: missing image ${path}`);
+  for (const st of p.story || []) if (!(p.images || []).some(i => i.path === st.image)) throw new Error(`${p.slug}: story step uses an image not listed in images[]: ${st.image}`);
 }
 // Catalogue-only entries whose pages are not generated from data yet (kept as they are).
 const legacyFile = resolve(dataDir,'_legacy.json');
@@ -52,13 +55,14 @@ const illustration = family => family === 'automation'
   ? `<svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-opacity=".3"><rect x="40" y="50" width="120" height="100"/><path d="M40 80h120M40 120h120"/></g>${[0,1,2,3,4,5].map(i=>`<circle cx="${58+i*17}" cy="65" r="4" fill="${i===2?'#ef5a2a':'currentColor'}" fill-opacity="${i===2?1:.35}"/>`).join('')}${[0,1,2,3,4,5].map(i=>`<circle cx="${58+i*17}" cy="135" r="4" fill="currentColor" fill-opacity=".25"/>`).join('')}</svg>`
   : `<svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-opacity=".28"><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="52"/><circle cx="100" cy="100" r="76" stroke-dasharray="2 6"/></g><circle cx="100" cy="100" r="9" fill="#ef5a2a"/></svg>`;
 
+const disKey = img => 'dis_' + img.path.replace(/\W+/g,'_');
 const media = (p,img,prefix,{hero=false}={}) => img
-  ? `<figure class="pmedia k-${img.kind}${img.dark?' is-dark':''}"><img src="${prefix}${img.path}" alt="${esc(img.note || p.name)}" ${hero?'fetchpriority="high"':'loading="lazy"'} decoding="async"><figcaption class="mono" data-t="${KIND[img.kind]||'kPhoto'}">${text(KIND[img.kind]||'kPhoto')}</figcaption></figure>`
-  : `<figure class="pmedia k-ill"><div class="ill">${illustration(p.family)}</div><figcaption class="mono" data-t="noPhoto">${text('noPhoto')}</figcaption></figure>`;
+  ? `<figure class="pmedia k-${img.kind}${img.dark?' is-dark':''}${img.tone==='grey'?' is-grey':''}"><img src="${prefix}${img.path}" alt="${esc(img.note || p.name)}" ${hero?'fetchpriority="high"':'loading="lazy"'} decoding="async"><figcaption class="mono"><span class="kind-tag${img.kind==='sample'?' warn':''}" data-t="${KIND[img.kind]||'kPhoto'}">${text(KIND[img.kind]||'kPhoto')}</span>${img.disclaimer?`<span class="disclaimer" data-t="${disKey(img)}">${esc(tri(img.disclaimer)[0])}</span>`:''}</figcaption></figure>`
+  : `<figure class="pmedia k-ill"><div class="ill">${illustration(p.family)}</div><figcaption class="mono"><span data-t="noPhoto">${text('noPhoto')}</span></figcaption></figure>`;
 
 const tile = (p,prefix) => {
   const img = heroOf(p);
-  const cls = !img ? 'ill' : img.kind === 'installation' ? 'cover' : img.dark ? 'is-dark' : 'studio';
+  const cls = !img ? 'ill' : img.kind === 'installation' ? 'cover' : img.dark ? 'is-dark' : img.tone === 'grey' ? 'is-grey' : 'studio';
   const href = p.legacyHref ? `${prefix}${p.legacyHref}` : `${prefix}products/${p.slug}/`;
   return `<article class="tile ${cls}" data-category="${p.family}"><a class="tile-link" href="${href}" tabindex="-1" aria-hidden="true"></a>
 <span class="kind mono" data-t="${img?KIND[img.kind]||'kPhoto':'noPhoto'}">${text(img?KIND[img.kind]||'kPhoto':'noPhoto')}</span>
@@ -78,33 +82,57 @@ function productPage(p) {
   };
   (p.highlights||[]).forEach((h,i) => { copy[`h${i}t`] = tri(h.title); copy[`h${i}x`] = tri(h.text); });
   (p.applications||[]).forEach((a,i) => { copy[`a${i}`] = tri(a); });
-  (p.specs||[]).forEach((s,i) => { copy[`s${i}`] = tri(s.label); });
+  (p.specs||[]).forEach((s,i) => { copy[`s${i}`] = tri(s.label); if (s.value && typeof s.value === 'object') copy[`v${i}`] = tri(s.value); });
   (p.documents||[]).forEach((d,i) => { copy[`d${i}`] = tri(d.label); });
+  (p.images||[]).forEach(img => { if (img.disclaimer) copy[disKey(img)] = tri(img.disclaimer); });
   for (const q of all) copy[`r_${q.slug}`] = tri(q.role);
   const hero = heroOf(p);
-  const gallery = (p.images||[]).filter(i => i !== hero);
+  const steps = storySteps(p);
+  const inStory = new Set(steps.map(s => s.image));
+  const gallery = (p.images||[]).filter(i => i !== hero && !inStory.has(i.path));
   const related = (p.related||[]).map(s => bySlug[s]).filter(Boolean);
   const specs = p.specs || [];
+  const advanced = Boolean(p.stats || p.architecture || p.diagram || p.ioGroups || steps.length);
 
+  // Sections in page order. Non-dark sections alternate light/mist; dark ones keep their own tone.
+  const sections = [];
+  const add = (id,navKey,dark,render) => sections.push({id,navKey,dark,render});
+  if ((p.highlights||[]).length) add('hl','pHighlights',false,cls => `<section class="chapter ${cls}" id="hl" aria-labelledby="hl-title"><div class="wrap"><h2 id="hl-title" class="sec-title" data-t="pHighlights">${text('pHighlights')}</h2>
+<ul class="hl-list">${p.highlights.map((h,i)=>`<li><span class="ref mono">0${i+1}</span><h3 data-t="h${i}t">${esc(tri(h.title)[0])}</h3><p data-t="h${i}x">${esc(tri(h.text)[0])}</p></li>`).join('')}</ul></div></section>`);
+  if (p.architecture || p.diagram) add('kien-truc','pnArch',false,cls => architecture(p,copy,prefix,cls));
+  if ((p.ioGroups||[]).length) add('io','pnIo',true,() => ioBlocks(p,copy));
+  if (steps.length) add('hinh-anh','pGallery',true,() => story(p,copy,prefix,steps));
+  if (gallery.length) add(steps.length?'anh-khac':'hinh-anh',steps.length?'pnMore':'pGallery',false,cls => `<section class="chapter ${cls}" id="${steps.length?'anh-khac':'hinh-anh'}" aria-labelledby="gal-title"><div class="wrap"><h2 id="gal-title" class="sec-title" data-t="${steps.length?'pnMore':'pGallery'}">${text(steps.length?'pnMore':'pGallery')}</h2><div class="gallery">${gallery.map(img=>media(p,img,prefix)).join('')}</div></div></section>`);
+  add('thong-so','pSpecs',false,cls => `<section class="chapter ${cls}" id="thong-so" aria-labelledby="spec-title"><div class="wrap spec-grid">
+<div class="spec-side"><h2 id="spec-title" class="sec-title" data-t="pSpecs">${text('pSpecs')}</h2><p class="spec-legend" data-t="${specs.length?'specLegend':'specNone'}">${text(specs.length?'specLegend':'specNone')}</p>
+${(p.applications||[]).length?`<h3 class="side-title" data-t="pApplications">${text('pApplications')}</h3><ul class="apps-list">${p.applications.map((a,i)=>`<li data-t="a${i}">${esc(tri(a)[0])}</li>`).join('')}</ul>`:''}</div>
+${specs.length?`<div class="spec-main"><table class="specs"><tbody>${specs.map((s,i)=>`<tr><th scope="row" data-t="s${i}">${esc(tri(s.label)[0])}</th><td${typeof s.value==='object'?` data-t="v${i}"`:''}>${esc(typeof s.value==='object'?tri(s.value)[0]:s.value)}</td><td><span class="chip ${s.status==='verified'?'chip-v':'chip-p'}" data-t="${s.status==='verified'?'specVerified':'specProvisional'}">${text(s.status==='verified'?'specVerified':'specProvisional')}</span></td></tr>`).join('')}</tbody></table>${pendingBox(p,copy)}</div>`:''}
+</div></section>`);
+  if (p.scenario) add('ung-dung','pApplications',true,() => scenario(p,copy,prefix));
+  if ((p.documents||[]).length || (p.pendingDocs||[]).length || (p.faq||[]).length) add('tai-lieu','pnDocsFaq',false,cls => docsFaq(p,copy,prefix,cls,arrow));
+  if (related.length) add('lien-quan','pRelated',false,cls => `<section class="chapter ${cls}" id="lien-quan" aria-labelledby="rel-title"><div class="wrap"><h2 id="rel-title" class="sec-title" data-t="pRelated">${text('pRelated')}</h2><div class="catalog-grid">${related.map(q=>tile(q,prefix)).join('')}</div></div></section>`);
+
+  let prevTone = 'dark'; // the hero is dark
+  const rendered = sections.map(s => {
+    const tone = s.dark ? 'dark' : (prevTone === 'light' ? 'mist' : 'light');
+    prevTone = tone;
+    return s.render(tone);
+  });
+  const toc = advanced && sections.length >= 4
+    ? `<nav class="subnav" data-aria="pToc" aria-label="${esc(text('pToc'))}"><div class="wrap"><ul>${sections.filter(s=>s.id!=='lien-quan'&&s.id!=='anh-khac').map(s=>`<li><a href="#${s.id}" data-t="${s.navKey}">${text(s.navKey)}</a></li>`).join('')}</ul></div></nav>`
+    : '';
+
+  const doc0 = (p.documents||[])[0];
   const body = `<section class="phero" aria-labelledby="p-title"><div class="wrap phero-grid">
 <div class="phero-copy"><nav class="crumbs" aria-label="Breadcrumb"><a href="${prefix}products/" data-t="pProducts">${text('pProducts')}</a><span aria-hidden="true">/</span><span data-t="fam">${text(FAMILY[p.family])}</span></nav>
 <h1 id="p-title">${esc(p.name)} <strong data-t="pTag">${esc(tri(p.tagline)[0])}</strong></h1>
 <p class="lead" data-t="pSum">${esc(tri(p.summary)[0])}</p>
 ${p.status==='provisional'?`<p class="note-provisional" data-t="provisionalPage">${text('provisionalPage')}</p>`:''}
-<div class="actions"><a class="btn btn-signal" href="${consult(prefix,p.name)}"><span data-t="ctaConsult">${text('ctaConsult')}</span>${arrow}</a>${(p.documents||[])[0]?`<a class="btn btn-ghost" href="${prefix}${p.documents[0].path}" target="_blank" rel="noopener"><span data-t="d0">${esc(tri(p.documents[0].label)[0])}</span></a>`:''}</div></div>
+<div class="actions"><a class="btn btn-signal" href="${consult(prefix,p.name)}"><span data-t="ctaConsult">${text('ctaConsult')}</span>${arrow}</a>${doc0?`<a class="btn btn-ghost" href="${prefix}${doc0.path}" target="_blank" rel="noopener"><span data-t="d0">${esc(tri(doc0.label)[0])}</span></a>`:(p.stats?`<a class="btn btn-ghost" href="#thong-so"><span data-t="pSeeSpecs">${text('pSeeSpecs')}</span></a>`:'')}</div></div>
 <div class="phero-media">${media(p,hero,prefix,{hero:true})}</div>
-</div></section>
-${(p.highlights||[]).length?`<section class="chapter light" aria-labelledby="hl-title"><div class="wrap"><h2 id="hl-title" class="sec-title" data-t="pHighlights">${text('pHighlights')}</h2>
-<ul class="hl-list">${p.highlights.map((h,i)=>`<li><span class="ref mono">0${i+1}</span><h3 data-t="h${i}t">${esc(tri(h.title)[0])}</h3><p data-t="h${i}x">${esc(tri(h.text)[0])}</p></li>`).join('')}</ul></div></section>`:''}
-<section class="chapter mist" aria-labelledby="spec-title"><div class="wrap spec-grid">
-<div class="spec-side"><h2 id="spec-title" class="sec-title" data-t="pSpecs">${text('pSpecs')}</h2><p class="spec-legend" data-t="${specs.length?'specLegend':'specNone'}">${text(specs.length?'specLegend':'specNone')}</p>
-${(p.applications||[]).length?`<h3 class="side-title" data-t="pApplications">${text('pApplications')}</h3><ul class="apps-list">${p.applications.map((a,i)=>`<li data-t="a${i}">${esc(tri(a)[0])}</li>`).join('')}</ul>`:''}</div>
-${specs.length?`<table class="specs"><tbody>${specs.map((s,i)=>`<tr><th scope="row" data-t="s${i}">${esc(tri(s.label)[0])}</th><td>${esc(s.value)}</td><td><span class="chip ${s.status==='verified'?'chip-v':'chip-p'}" data-t="${s.status==='verified'?'specVerified':'specProvisional'}">${text(s.status==='verified'?'specVerified':'specProvisional')}</span></td></tr>`).join('')}</tbody></table>`:''}
-</div></section>
-${gallery.length?`<section class="chapter light" aria-labelledby="gal-title"><div class="wrap"><h2 id="gal-title" class="sec-title" data-t="pGallery">${text('pGallery')}</h2><div class="gallery">${gallery.map(img=>media(p,img,prefix)).join('')}</div></div></section>`:''}
-${(p.documents||[]).length?`<section class="chapter light docs-sec" aria-labelledby="doc-title"><div class="wrap"><h2 id="doc-title" class="sec-title" data-t="pDocs">${text('pDocs')}</h2><ul class="doc-list">${p.documents.map((d,i)=>`<li><a href="${prefix}${d.path}" target="_blank" rel="noopener"><span class="mono">${esc(String(d.type).toUpperCase())}</span><strong data-t="d${i}">${esc(tri(d.label)[0])}</strong>${arrow}</a></li>`).join('')}</ul></div></section>`:''}
-${related.length?`<section class="chapter mist" aria-labelledby="rel-title"><div class="wrap"><h2 id="rel-title" class="sec-title" data-t="pRelated">${text('pRelated')}</h2><div class="catalog-grid">${related.map(q=>tile(q,prefix)).join('')}</div></div></section>`:''}
-<section class="pcta darkest"><div class="wrap"><p data-t="pCtaHead">${text('pCtaHead')}</p><a class="btn btn-signal" href="${consult(prefix,p.name)}"><span data-t="ctaConsult">${text('ctaConsult')}</span>${arrow}</a></div></section>`;
+</div>${statsRail(p,copy)}</section>
+${toc}${rendered.join('\n')}
+<section class="pcta darkest"><div class="wrap"><p data-t="pCtaHead">${text('pCtaHead')}</p><a class="btn btn-signal" href="${consult(prefix,p.name)}"><span data-t="ctaConsult">${text('ctaConsult')}</span>${arrow}</a></div></section>${steps.length?`<script>document.documentElement.classList.add('js')</script><script type="module" src="${prefix}assets/product.js"></script>`:''}`;
 
   return page({prefix, path:`products/${p.slug}/`, title:copy.title[0], description:copy.description[0], pageCopy:copy, body, image: hero?.path,
     jsonLd:{'@context':'https://schema.org','@type':'Product',name:p.name,description:copy.description[0],brand:{'@type':'Brand',name:'Meiko Automation'},url:`${SITE}products/${p.slug}/`,...(hero?{image:`${SITE}${hero.path}`}:{})}});
