@@ -1,0 +1,101 @@
+// Homepage copy. Extends site-copy.mjs (reused keys keep their approved wording) with new keys only.
+// Order in every array: [vi, en, ja]. Nothing here states an unverified specification.
+import {copy as base,localeIndex} from './site-copy.mjs';
+
+const added = {
+ title:['Meiko Automation R&D | Nghiên cứu, thiết kế và phát triển sản phẩm công nghệ','Meiko Automation R&D | Technology product research, design and development','Meiko Automation R&D | 技術製品の研究・設計・開発'],
+ description:['Meiko Automation R&D nghiên cứu, thiết kế và phát triển phần cứng nhúng, firmware, IoT công nghiệp, tự động hóa và sản phẩm ODM/OEM.','Meiko Automation R&D researches, designs and develops embedded hardware, firmware, industrial IoT, automation and ODM/OEM products.','Meiko Automation R&Dは、組込みハードウェア、ファームウェア、産業用IoT、自動化、ODM/OEM製品の研究・設計・開発を行います。'],
+ navCap:['Năng lực','Capabilities','技術力'],navSol:['Giải pháp','Solutions','ソリューション'],navProd:['Sản phẩm','Products','製品'],navApp:['Ứng dụng','Applications','活用事例'],navContact:['Liên hệ','Contact','お問い合わせ'],
+ brandSub:['Trung tâm R&D','R&D Center','R&Dセンター'],
+ // Hero A: engineering excellence
+ heroAKicker:['Nghiên cứu · Thiết kế · Phát triển','Research · Design · Development','研究・設計・開発'],
+ heroAHead:['Từ ý tưởng<br>đến thiết bị chạy thật.','From idea<br>to a device that really runs.','アイデアから、<br>現場で動く製品まで。'],
+ heroALead:['Meiko Automation R&D nghiên cứu, thiết kế và phát triển phần cứng nhúng, firmware, IoT công nghiệp và tự động hóa, đến sản phẩm ODM/OEM.','Meiko Automation R&D researches, designs and develops embedded hardware, firmware, industrial IoT and automation, through to ODM/OEM products.','Meiko Automation R&Dは、組込みハードウェア、ファームウェア、産業用IoT、自動化からODM/OEM製品まで、研究・設計・開発を行います。'],
+ heroAFig:['Mô hình 3D thiết kế PCB MGWI-V1','3D model of the MGWI-V1 PCB design','MGWI-V1 基板設計の3Dモデル'],
+ heroAPart1:['Mô-đun LoRa','LoRa module','LoRaモジュール'],heroAPart2:['Vi điều khiển ESP32','ESP32 microcontroller','ESP32マイコン'],heroAPart3:['Cổng Ethernet','Ethernet port','Ethernetポート'],heroAPart4:['Cổng USB-C','USB-C port','USB-Cポート'],
+ // Hero B: technology in action
+ heroBKicker:['Giải pháp · Sản phẩm · Ứng dụng','Solutions · Products · Applications','ソリューション・製品・活用'],
+ heroBHead:['Từ thiết bị đo<br>đến cảnh báo tại hiện trường.','From measurement<br>to alerts on the floor.','計測から、<br>現場への通知まで。'],
+ heroBLead:['Giải pháp IoT do Meiko thiết kế và phát triển: thu thập tín hiệu tại thiết bị, kết nối về hệ thống và phản hồi tại nơi vận hành.','IoT solutions designed and developed by Meiko: sense signals at the equipment, connect them to a system and respond where work happens.','Meikoが設計・開発するIoTソリューション。設備で信号を収集し、システムへ接続し、現場で通知します。'],
+ heroBFig:['Ảnh thiết bị đo năng lượng IoT kèm cảm biến CT','Photo of an IoT energy monitoring device with CT sensors','CTセンサー付きIoTエネルギー計測機器の写真'],
+ heroBFig2:['Ảnh lắp đặt loa và đèn cảnh báo','Installed alert speaker and signal tower','設置された警報スピーカーと表示灯'],
+ ctaConsult:['Yêu cầu tư vấn / báo giá','Request consultation / quote','相談・見積依頼'],ctaCap:['Xem năng lực R&D','See R&D capabilities','研究開発力を見る'],ctaProd:['Xem sản phẩm','See products','製品を見る'],
+ // 01 capabilities
+ capHead:['Một đội ngũ,<br>từ thiết kế đến sản xuất.','One team,<br>from design to production.','一つのチームで、<br>設計から生産まで。'],
+ capLead:['Phần cứng, firmware và kiểm thử được phát triển cùng nhau, từ thiết kế đến sản xuất.','Hardware, firmware and testing are developed together, from design to production.','ハードウェア、ファームウェア、検査を一体で開発し、設計から生産までつなげます。'],
+ c1:['Phần cứng nhúng','Embedded hardware','組込みハードウェア'],c1d:['Thiết kế mạch, bố trí PCB và chọn linh kiện theo yêu cầu vận hành.','Circuit design, PCB layout and component selection for the operating requirements.','運用要件に合わせた回路設計、基板レイアウト、部品選定。'],
+ c2:['Firmware & kết nối','Firmware & connectivity','ファームウェア・接続'],c2d:['Firmware cho thiết bị và các kết nối không dây, có dây theo từng giải pháp.','Device firmware and wireless or wired connectivity for each solution.','ソリューションごとの機器ファームウェアと無線・有線接続。'],
+ c3:['IoT công nghiệp','Industrial IoT','産業用IoT'],c3d:['Thiết bị đo, gateway và cảnh báo hiện trường cho nhóm giải pháp Smart Factory.','Measurement devices, gateways and on-site alerts for Smart Factory solutions.','スマートファクトリー向けの計測機器、ゲートウェイ、現場警報。'],
+ c4:['Kiểm thử & JIG','Testing & fixtures','検査・治具'],c4d:['Thiết kế JIG ICT/FCT để kiểm tra chức năng và nạp firmware trên line.','ICT/FCT fixtures for functional testing and firmware flashing on the line.','ラインでの機能検査とファームウェア書込みのためのICT/FCT治具。'],
+ c5:['ODM/OEM','ODM/OEM','ODM/OEM'],c5d:['Phát triển sản phẩm theo yêu cầu của đối tác, từ thiết kế, prototype đến sản xuất loạt.','Partner-specific product development from design and prototype to series production.','パートナーの要望に応じた、設計・試作から量産までの製品開発。'],
+ flow1:['Làm rõ yêu cầu','Define requirements','要件整理'],flow1d:['Môi trường vận hành, dữ liệu cần thiết và phạm vi triển khai.','Operating environment, required data and project scope.','使用環境、必要なデータ、導入範囲。'],
+ flow2:['Thiết kế & prototype','Design & prototype','設計・試作'],flow2d:['Thiết kế mạch, firmware và kết nối theo bài toán thực tế.','Circuit, firmware and connectivity designed around the real problem.','実際の課題に合わせた回路・ファームウェア・接続の設計。'],
+ flow3:['Kiểm thử','Testing','検査'],flow3d:['Đánh giá mẫu và phối hợp JIG ICT/FCT.','Sample evaluation with ICT/FCT fixtures.','試作品の評価とICT/FCT治具の活用。'],
+ flow4:['Sản xuất','Production','生産'],flow4d:['Hỗ trợ sản xuất hàng loạt.','Support for series production.','量産の支援。'],
+ factYear:['Năm thành lập','Year founded','設立'],factStaff:['Nhân sự toàn công ty (đến 3/2026)','Company-wide employees (as of 3/2026)','全社の従業員数（2026年3月時点）'],factSmt:['Line SMT (năng lực sản xuất EMS)','SMT lines (EMS manufacturing capacity)','SMTライン（EMS生産能力）'],
+ factSource:['Nguồn: Company Profile Meiko Automation, tháng 3/2026.','Source: Meiko Automation Company Profile, March 2026.','出典：Meiko Automation 会社案内（2026年3月）。'],
+ // 02 solutions
+ solHead:['Bắt đầu từ<br>bài toán của bạn.','Start from<br>your problem.','お客様の課題から<br>始めます。'],
+ solLead:['Smart Factory là một nhóm giải pháp trọng tâm. Meiko còn phát triển công cụ kiểm thử, thiết bị chuyên dụng và sản phẩm theo yêu cầu.','Smart Factory is one focus group of solutions. Meiko also develops test tooling, specialised devices and made-to-order products.','スマートファクトリーは重点ソリューションの一つです。Meikoは検査ツール、専用機器、受託製品も開発しています。'],
+ g1:['Smart Factory / IoT','Smart Factory / IoT','スマートファクトリー / IoT'],g1d:['Thu thập tín hiệu, kết nối hệ thống và cảnh báo tại hiện trường.','Sense signals, connect systems and alert on the factory floor.','信号の収集、システム接続、現場での通知。'],
+ g2:['Kiểm thử & JIG','Testing & fixtures','検査・治具'],g2d:['JIG ICT/FCT cho kiểm tra chức năng và nạp firmware trên line.','ICT/FCT fixtures for functional testing and firmware flashing on the line.','ラインでの機能検査とファームウェア書込みのためのICT/FCT治具。'],
+ g3:['Thiết bị chuyên dụng','Specialised devices','専用機器'],g3d:['Thiết bị thanh toán và thiết bị y tế trong danh mục sản phẩm của Meiko.','Payment and medical devices in the Meiko product portfolio.','Meikoの製品ラインアップに含まれる決済機器と医療機器。'],
+ g4:['ODM/OEM','ODM/OEM','ODM/OEM'],g4d:['Phát triển thiết bị theo yêu cầu: phần cứng, firmware, prototype và sản xuất loạt.','Made-to-order devices: hardware, firmware, prototype and series production.','受託開発：ハードウェア、ファームウェア、試作、量産。'],
+ g4p:['Dự án theo yêu cầu','Project-based','プロジェクト単位'],
+ // 03 products
+ prodHead:['Thiết bị do Meiko<br>phát triển.','Devices developed<br>by Meiko.','Meikoが開発する<br>機器。'],
+ prodLead:['Chọn theo nhóm để xem từng thiết bị. Thông số chi tiết nằm ở trang sản phẩm và cần được xác nhận cùng đội kỹ thuật.','Filter by group to see each device. Detailed specifications are on each product page and should be confirmed with our engineers.','グループで絞り込んで各機器をご覧ください。詳細仕様は各製品ページにあり、技術チームとの確認が必要です。'],
+ fAll:['Tất cả','All','すべて'],fIot:['Smart Factory','Smart Factory','スマートファクトリー'],fTest:['Kiểm thử','Testing','検査'],fSpecial:['Chuyên dụng','Specialised','専用機器'],
+ roleEnergy:['Đo năng lượng','Energy measurement','エネルギー計測'],roleGateway:['Kết nối','Connectivity','接続'],roleAlert:['Cảnh báo','Alerts','警報'],roleTemp:['Đo nhiệt độ','Temperature sensing','温度計測'],rolePay:['Thanh toán','Payments','決済'],roleTest:['Kiểm thử','Testing','検査'],roleMed:['Y tế','Medical','医療'],
+ mtsiHome:['Thiết bị đo nhiệt độ phục vụ giám sát trong môi trường sản xuất. Nội dung tạm, đang chờ tài liệu kỹ thuật.','Temperature device for production monitoring. Provisional content, pending technical documents.','生産現場の監視に向けた温度計測機器。暫定内容で、技術資料を準備中です。'],
+ tingDesc:['Loa thông báo thanh toán cho bán lẻ, FinTech và POS.','Payment notification speaker for retail, FinTech and POS.','小売・FinTech・POS向けの決済通知スピーカー。'],
+ jigDesc:['JIG kiểm thử ICT và FCT, phục vụ kiểm tra chức năng trên line sản xuất.','ICT and FCT test fixtures for functional testing on the production line.','生産ラインでの機能検査に使うICT・FCT検査治具。'],
+ bipapDesc:['Thiết bị hô hấp không xâm nhập trong danh mục sản phẩm của Meiko.','Non-invasive respiratory device in the Meiko product portfolio.','Meikoの製品ラインアップに含まれる非侵襲的呼吸補助装置。'],
+ figPcb:['Mô hình 3D PCB','3D PCB model','基板3Dモデル'],figCad:['Mô hình CAD','CAD model','CADモデル'],
+ placeholderNote:['Ảnh sẽ được bổ sung','Photo to be added','写真は準備中です'],
+ phTitle:['Chưa có ảnh sản phẩm','No product photo yet','製品写真なし'],
+ contactTitle:['Cùng mở đường<br>cho dự án tiếp theo.',"Let's open the road<br>to your next project, together.",'次のプロジェクトへ。<br>ともに道を開く。'],
+ address:['Tầng 1, Nhà EMS2, Lô CN9, KCN Thạch Thất – Quốc Oai, Hà Nội','Floor 1, EMS2 Building, CN9, Thach That – Quoc Oai Industrial Park, Hanoi','ハノイ市 Thach That – Quoc Oai工業団地 CN9区画 EMS2棟1階'],
+ backTop:['Về đầu trang','Back to top','ページ上部へ'],
+ formInvalid:['Vui lòng điền đủ các trường bắt buộc (họ tên, công ty, nhu cầu).','Please complete the required fields (name, company, requirements).','必須項目（氏名、会社名、ご相談内容）をご入力ください。'],
+ ariaMain:['Điều hướng chính','Main navigation','メインナビゲーション'],ariaLang:['Ngôn ngữ','Language','言語'],ariaGroups:['Nhóm sản phẩm','Product groups','製品グループ'],ariaTags:['Lĩnh vực R&D của Meiko','Meiko R&D fields','Meiko の研究開発分野'],
+ // 04 applications
+ appHead:['Giải pháp đi vào<br>hiện trường.','Solutions that<br>reach the floor.','ソリューションを<br>現場へ。'],
+ appLead:['Ba tình huống ứng dụng tiêu biểu của giải pháp Meiko. Hãy trao đổi với đội kỹ thuật để xác nhận cấu hình phù hợp.','Three representative scenarios for Meiko solutions. Talk to our engineers to confirm the right configuration.','Meikoのソリューションの代表的な3つの活用場面です。最適な構成は技術チームとご確認ください。'],
+ appPhoto:['Ảnh sản phẩm','Product photo','製品写真'],appInstall:['Ảnh lắp đặt','Installation photo','設置写真'],
+ // 05 contact + footer
+ footNote:['© 2026 Meiko Automation R&D Center','© 2026 Meiko Automation R&D Center','© 2026 Meiko Automation R&D Center'],
+ // ---- Advanced Engineering Showcase (v2) ----
+ heroTitle:['Kỹ thuật phần cứng <strong>cho công nghiệp.</strong>','Hardware engineering <strong>for industry.</strong>','産業のための <strong>ハードウェア技術。</strong>'],
+ r1v:['Mạch, PCB, linh kiện','Circuits, PCB, components','回路・基板・部品'],
+ r2v:['Thiết bị và kết nối','Devices and connectivity','機器と接続'],
+ r3v:['Đo, gateway, cảnh báo','Sensing, gateways, alerts','計測・ゲートウェイ・警報'],
+ r4v:['Tự động hóa kiểm thử, JIG ICT/FCT','Automated testing, ICT/FCT fixtures','自動検査・ICT/FCT治具'],
+ r5v:['Thiết kế đến sản xuất loạt','Design to series production','設計から量産まで'],
+ capHead2:['Một đội ngũ, <br><strong>từ thiết kế đến sản xuất.</strong>','One team, <br><strong>from design to production.</strong>','一つのチームで、 <br><strong>設計から生産まで。</strong>'],
+ figJig:['Mô hình CAD JIG kiểm thử','CAD model of a test fixture','検査治具のCADモデル'],
+ figPcbDetail:['Chi tiết thiết kế PCB MGWI-V1','MGWI-V1 PCB design detail','MGWI-V1 基板設計の詳細'],
+ solHead2:['Từ tín hiệu tại máy <br><strong>đến quyết định vận hành.</strong>','From signals at the machine <br><strong>to operating decisions.</strong>','設備の信号から <br><strong>運用の判断へ。</strong>'],
+ solLead2:['Smart Factory là một nhóm giải pháp trọng tâm. Meiko thiết kế phần cứng, firmware và kết nối để dữ liệu hiện trường trở thành thông tin và cảnh báo cho người vận hành.','Smart Factory is one focus area. Meiko designs the hardware, firmware and connectivity that turn field data into information and alerts for operators.','スマートファクトリーは重点分野の一つです。Meikoはハードウェア、ファームウェア、接続を設計し、現場のデータを作業者向けの情報と警報に変えます。'],
+ n1:['01 Thu thập','01 Sense','01 収集'],n1t:['Thiết bị đo năng lượng','Energy monitoring device','エネルギー計測機器'],
+ n2:['02 Kết nối','02 Connect','02 接続'],n2t:['Gateway MGWI-V1','Gateway MGWI-V1','ゲートウェイ MGWI-V1'],
+ n3:['03 Giám sát','03 Monitor','03 監視'],n3t:['Hệ thống giám sát','Monitoring system','監視システム'],
+ n4:['04 Phản hồi','04 Respond','04 通知'],n4t:['Cảnh báo tại hiện trường','On-site alerts','現場での警報'],
+ kPhoto:['Ảnh thật','Photo','写真'],k3d:['Mô hình 3D','3D model','3Dモデル'],kIll:['Minh họa','Illustration','イメージ'],kInstall:['Ảnh lắp đặt','Installation photo','設置写真'],kCad:['Mô hình CAD','CAD model','CADモデル'],
+ archCap:['Sơ đồ minh họa luồng giải pháp Smart Factory','Illustrative flow of the Smart Factory solution','スマートファクトリーソリューションの流れ（イメージ図）'],
+ prodHead2:['Thiết bị do Meiko <br><strong>nghiên cứu và phát triển.</strong>','Devices researched <br><strong>and developed by Meiko.</strong>','Meikoが研究・開発した <br><strong>機器。</strong>'],
+ noPhoto:['Hình minh họa · chưa có ảnh','Illustration · no photo yet','イメージ · 写真なし'],
+ odmCta:['Chưa thấy thiết bị bạn cần? <strong>Meiko phát triển theo yêu cầu, từ thiết kế đến sản xuất loạt.</strong>','Not seeing the device you need? <strong>Meiko develops to order, from design to series production.</strong>','必要な機器が見つかりませんか？ <strong>Meikoは設計から量産まで受託開発します。</strong>'],
+ odmBtn:['Trao đổi dự án ODM/OEM','Discuss an ODM/OEM project','ODM/OEMのご相談'],
+ appHead2:['Giải pháp <br><strong>đi vào hiện trường.</strong>','Solutions <br><strong>on the factory floor.</strong>','ソリューションを <br><strong>現場へ。</strong>'],
+ contactHead2:['Cùng bắt đầu <br><strong>dự án tiếp theo.</strong>','Let’s start <br><strong>your next project.</strong>','次のプロジェクトを <br><strong>ともに始めましょう。</strong>'],
+};
+
+export const copy = {...base,...added};
+export {localeIndex};
+export const text = (key,lang='vi') => {
+ const row = copy[key];
+ if (!row) return key;
+ const index = localeIndex[lang] ?? 0;
+ return row[index] ?? row[1] ?? row[0] ?? key;
+};
