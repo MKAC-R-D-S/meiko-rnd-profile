@@ -6,3 +6,11 @@ exclude:
   - AGENTS.md
   - GLOSSARY.md
   - TongHop_SanPham_IoT_RnD
+  - research
+  - meiko-rnd-profile-handoff-*.md
+  - PROJECT_IMPROVEMENT_PLAN.md
+  - .agents
+  - .scratch
+  - node_modules
+  - PRODUCT.md
+  - DESIGN.md
