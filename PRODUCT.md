@@ -45,7 +45,7 @@ Ràng buộc thị giác do người dùng chỉ định (ghi nhận nguyên vă
 ## Evidence on Hand
 
 - Ảnh và render sản phẩm: `products/*/images`, `research/assets_Meiko_Automation/`.
-- Catalogue và tài liệu: `products/_shared/catalogue/`, `research/assets_Meiko_Automation/` (Company Profile, Smart Factory, IoT System).
+- Catalogue và tài liệu: `products/shared/catalogue/`, `research/assets_Meiko_Automation/` (Company Profile, Smart Factory, IoT System).
 - Ảnh hiện trường triển khai (ví dụ `Real_Application_Images`): người dùng xác nhận dùng được, cần kiểm tra từng ảnh là ảnh thật trước khi gắn nhãn là triển khai thực tế.
 - Chưa có trong repo: số dự án, số năm, khách hàng, chứng nhận. Không được tự thêm; người dùng sẽ cung cấp.
 
