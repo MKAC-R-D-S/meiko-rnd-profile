@@ -188,7 +188,7 @@ Square corners everywhere except buttons (2px) and the PCB board (6px, its real 
 
 ### Don't:
 - **Don't** show grey empty frames; use a labelled abstract composition for devices without photos.
-- **Don't** draw or generate a product shape, or use AI renders that carry invented specifications.
+- **Don't** present an AI-generated image as a real photo, or let it carry invented specifications, labels or logos. AI images are allowed for products without photos, or to illustrate ideas, architecture and functions for marketing, if labelled as illustrations.
 - **Don't** paste photos as visible rectangles on a mismatched ground.
 - **Don't** animate every section; the hero entrance and the diagram pulses are the motion.
 - **Don't** publish a number, customer or certification without a source.

@@ -146,6 +146,66 @@
       "value": "DIN rail",
       "status": "provisional",
       "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Khoảng cách truyền",
+        "en": "Transmission distance",
+        "ja": "通信距離"
+      },
+      "value": "~1 km (open area)",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Dải dòng đo trực tiếp",
+        "en": "Direct current range",
+        "ja": "直接測定電流範囲"
+      },
+      "value": "20 mA – 1 A",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Dải dòng mở rộng (gián tiếp)",
+        "en": "Extended range (indirect)",
+        "ja": "拡張範囲（間接）"
+      },
+      "value": "0 – 1000 A",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Kích thước",
+        "en": "Dimensions",
+        "ja": "寸法"
+      },
+      "value": "90 × 90 × 30 mm",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Khối lượng",
+        "en": "Weight",
+        "ja": "質量"
+      },
+      "value": "150 g",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
+    },
+    {
+      "label": {
+        "vi": "Độ ẩm",
+        "en": "Humidity",
+        "ja": "湿度"
+      },
+      "value": "10 – 93 % RH",
+      "status": "provisional",
+      "source": "products/mesi-v1/docs/mesi-v1.md mục 5"
     }
   ],
   "documents": [],
@@ -153,8 +213,28 @@
     {
       "path": "assets/home/mesi-studio.jpg",
       "kind": "photo",
-      "note": "Thiết bị MESI-V1 với ba cảm biến CT",
-      "useAsHero": true
+      "useAsHero": true,
+      "note": "Ảnh studio MESI-V1: thiết bị DIN rail có anten LoRa và ba cảm biến CT Clamp kèm dây đỏ-đen."
+    },
+    {
+      "path": "assets/products/mesi-v1-cad.jpg",
+      "kind": "cad",
+      "note": "Mô hình CAD dạng nổ: vỏ DIN rail, bo mạch và vỏ đáy."
+    },
+    {
+      "path": "assets/products/ai-mesi-v1-cabinet.jpg",
+      "kind": "ai",
+      "note": "Minh họa AI: MESI-V1 và ba cảm biến CT Clamp trong tủ điện.",
+      "disclaimer": {
+        "vi": "Ảnh minh họa do AI tạo, không phải ảnh sản phẩm thật.",
+        "en": "AI-generated illustration, not a photo of the real product.",
+        "ja": "AI で生成したイメージであり、実際の製品写真ではありません。"
+      }
+    },
+    {
+      "path": "assets/products/mesi-v1-install.jpg",
+      "kind": "installation",
+      "note": "MESI-V1 lắp trong tủ điện nhà máy."
     }
   ],
   "related": [
@@ -172,6 +252,173 @@
     ".scratch/homepage-premium/claims-verification.md",
     ".scratch/homepage-premium/asset-inventory.md",
     "products/mesi-v1/docs/mesi-v1.md",
-    "products/mesi-v1/index.html"
+    "products/mesi-v1/index.html",
+    "products/mesi-v1/images/MESI-V1_Studio.png",
+    "products/mesi-v1/images/mesi-v1_1.png",
+    "products/mesi-v1/images/MESI-V1_setup_factory_1.JPG"
+  ],
+  "stats": [
+    {
+      "value": "4",
+      "unit": "× 12 bit",
+      "label": {
+        "vi": "kênh ADC",
+        "en": "ADC channels",
+        "ja": "ADC チャンネル"
+      }
+    },
+    {
+      "value": "~1",
+      "unit": "km",
+      "label": {
+        "vi": "LoRa, môi trường mở",
+        "en": "LoRa, open area",
+        "ja": "LoRa・見通し環境"
+      }
+    },
+    {
+      "value": "100–242",
+      "unit": "VAC",
+      "label": {
+        "vi": "nguồn cấp",
+        "en": "supply input",
+        "ja": "電源入力"
+      }
+    },
+    {
+      "value": "DIN",
+      "label": {
+        "vi": "lắp thanh ray",
+        "en": "rail mounting",
+        "ja": "レール取付"
+      }
+    }
+  ],
+  "statsNote": {
+    "vi": "Số liệu theo tài liệu nội dung catalogue MESI-V1; chưa có biên bản test kèm theo.",
+    "en": "Figures follow the MESI-V1 catalogue content; no test records are attached yet.",
+    "ja": "数値は MESI-V1 カタログ原稿に基づきます。試験記録はまだありません。"
+  },
+  "diagram": {
+    "path": "assets/products/mesi-v1-system.svg",
+    "kind": "diagram",
+    "alt": {
+      "vi": "Sơ đồ hệ thống: cảm biến CT, MESI-V1, LoRa, IoT Gateway, MQTT/TCP-IP, máy chủ cloud hoặc dashboard, rồi PC hoặc ứng dụng di động.",
+      "en": "System diagram: CT sensors, MESI-V1, LoRa, IoT gateway, MQTT/TCP-IP, cloud server or dashboard, then PC or mobile app.",
+      "ja": "システム図：CT センサー、MESI-V1、LoRa、IoT ゲートウェイ、MQTT/TCP-IP、クラウドまたはダッシュボード、PC／モバイルアプリ。"
+    },
+    "caption": {
+      "vi": "Kiến trúc hệ thống theo tài liệu mục 3.",
+      "en": "System architecture from section 3 of the document.",
+      "ja": "資料の第 3 章に基づくシステム構成。"
+    }
+  },
+  "scenario": {
+    "title": {
+      "vi": "Từ dòng điện đến <strong>dashboard.</strong>",
+      "en": "From current to <strong>dashboard.</strong>",
+      "ja": "電流から<strong>ダッシュボード</strong>まで。"
+    },
+    "lead": {
+      "vi": "Luồng dữ liệu mô tả trong tài liệu; cấu hình cụ thể cần được xác nhận khi triển khai.",
+      "en": "The data flow described in the document; the specific configuration must be confirmed at deployment.",
+      "ja": "資料に記載のデータの流れです。具体的な構成は導入時に確認が必要です。"
+    },
+    "steps": [
+      {
+        "vi": "Cảm biến CT Clamp đo dòng điện của tải hoặc máy.",
+        "en": "CT clamp sensors measure the current of a load or machine.",
+        "ja": "CT クランプセンサーが負荷または設備の電流を測定します。"
+      },
+      {
+        "vi": "MESI-V1 đọc tín hiệu qua 4 kênh ADC 12-bit.",
+        "en": "MESI-V1 reads the signals through 4 ADC channels, 12-bit.",
+        "ja": "MESI-V1 が 4 ch・12 bit の ADC で信号を読み取ります。"
+      },
+      {
+        "vi": "Dữ liệu truyền qua LoRa tới IoT Gateway.",
+        "en": "Data is sent over LoRa to an IoT gateway.",
+        "ja": "データは LoRa で IoT ゲートウェイへ送られます。"
+      },
+      {
+        "vi": "Gateway chuyển dữ liệu qua MQTT / TCP-IP lên máy chủ và dashboard.",
+        "en": "The gateway forwards data over MQTT / TCP-IP to a server and dashboard.",
+        "ja": "ゲートウェイが MQTT / TCP-IP でサーバーとダッシュボードへ転送します。"
+      }
+    ],
+    "caveat": {
+      "vi": "Ảnh lắp đặt thực tế tại tủ điện nhà máy, đã cắt bỏ phần nhãn thời gian và vị trí.",
+      "en": "A real cabinet installation; the timestamp and location overlay has been cropped out.",
+      "ja": "工場の制御盤での実際の設置写真です。日時・場所の表示は切り取っています。"
+    },
+    "image": {
+      "path": "assets/products/mesi-v1-install.jpg",
+      "kind": "installation",
+      "alt": {
+        "vi": "MESI-V1 gắn trên thanh ray trong tủ điện, có anten và cầu dao bên cạnh.",
+        "en": "MESI-V1 on a rail inside an electrical cabinet, with its antenna and a circuit breaker beside it.",
+        "ja": "制御盤内のレールに取り付けられた MESI-V1。アンテナと隣にブレーカーがあります。"
+      },
+      "caption": {
+        "vi": "Lắp đặt trong tủ điện",
+        "en": "Installed in a cabinet",
+        "ja": "制御盤への設置"
+      }
+    }
+  },
+  "faq": [
+    {
+      "q": {
+        "vi": "MESI-V1 đo dòng điện bằng gì?",
+        "en": "How does MESI-V1 measure current?",
+        "ja": "MESI-V1 は何で電流を測定しますか？"
+      },
+      "a": {
+        "vi": "Bằng cảm biến CT Clamp nối vào 4 kênh ADC. Tài liệu chưa nêu model và tỉ số CT cụ thể.",
+        "en": "With CT clamp sensors connected to 4 ADC channels. The document does not name a specific CT model or ratio.",
+        "ja": "CT クランプセンサーを 4 ch の ADC に接続します。資料には具体的な CT 型式と変流比の記載がありません。"
+      }
+    },
+    {
+      "q": {
+        "vi": "Truyền được bao xa?",
+        "en": "How far can it transmit?",
+        "ja": "通信距離はどのくらいですか？"
+      },
+      "a": {
+        "vi": "Tài liệu nêu tới khoảng 1 km trong môi trường mở. Trong nhà máy, khoảng cách thực tế cần khảo sát.",
+        "en": "The document states up to about 1 km in open areas. Actual range inside a factory must be surveyed.",
+        "ja": "資料では見通し環境で最大約 1 km とされています。工場内の実際の距離は現地確認が必要です。"
+      }
+    },
+    {
+      "q": {
+        "vi": "Tích hợp được với hệ thống nào?",
+        "en": "Which systems can it integrate with?",
+        "ja": "どのシステムと連携できますか？"
+      },
+      "a": {
+        "vi": "Tài liệu mô tả khả năng tích hợp với SCADA, MES, EMS, BMS và nền tảng Cloud IoT thông qua IoT Gateway.",
+        "en": "The document describes integration with SCADA, MES, EMS, BMS and cloud IoT platforms through an IoT gateway.",
+        "ja": "資料では、IoT ゲートウェイを介した SCADA、MES、EMS、BMS、クラウド IoT との連携が説明されています。"
+      }
+    }
+  ],
+  "pending": [
+    {
+      "vi": "Model và tỉ số CT đi kèm",
+      "en": "Bundled CT model and ratio",
+      "ja": "付属 CT の型式と変流比"
+    },
+    {
+      "vi": "Biên bản test khoảng cách LoRa trong nhà máy",
+      "en": "LoRa range test record inside a factory",
+      "ja": "工場内での LoRa 通信距離の試験記録"
+    },
+    {
+      "vi": "Độ chính xác đo dòng",
+      "en": "Current measurement accuracy",
+      "ja": "電流測定精度"
+    }
   ]
 }

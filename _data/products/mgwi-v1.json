@@ -186,28 +186,41 @@
     {
       "path": "assets/products/mgwi-v1-1.jpg",
       "kind": "photo",
-      "note": "IoT Gateway MGWI-V1, vỏ nhôm",
-      "useAsHero": true
+      "useAsHero": true,
+      "tone": "grey",
+      "note": "Ảnh vỏ nhôm MGWI-V1 nhìn từ trên, hàng đầu nối terminal xanh ở một cạnh."
     },
     {
       "path": "assets/products/mgwi-v1-3.jpg",
       "kind": "photo",
-      "note": "Mặt cổng kết nối của MGWI-V1"
+      "tone": "grey",
+      "note": "MGWI-V1 nhìn từ phía đầu nối: hai đầu nối anten và cổng RJ45."
     },
     {
       "path": "assets/products/mgwi-v1-2.jpg",
       "kind": "photo",
-      "note": "MGWI-V1 với ăng-ten và bộ cấp nguồn PoE"
+      "tone": "grey",
+      "note": "MGWI-V1 cùng anten và bộ cấp nguồn PoE."
     },
     {
-      "path": "assets/home/pcb-board.jpg",
+      "path": "assets/products/mgwi-v1-pcba.jpg",
       "kind": "render3d",
-      "note": "Mô hình 3D thiết kế PCB MGWI-V1"
+      "note": "Render thiết kế bo mạch P_MGWI-V1.1 nhìn từ trên."
+    },
+    {
+      "path": "assets/products/ai-mgwi-v1-gateway.jpg",
+      "kind": "ai",
+      "note": "Minh họa AI: gateway gắn tường trong nhà máy thông minh.",
+      "disclaimer": {
+        "vi": "Ảnh minh họa do AI tạo, không phải ảnh sản phẩm thật.",
+        "en": "AI-generated illustration, not a photo of the real product.",
+        "ja": "AI で生成したイメージであり、実際の製品写真ではありません。"
+      }
     },
     {
       "path": "assets/home/site-gateway.jpg",
       "kind": "installation",
-      "note": "IoT Gateway Meiko lắp trên tường"
+      "note": "MGWI-V1 gắn tại hiện trường (địa chỉ IP đã làm mờ)."
     }
   ],
   "related": [
@@ -230,5 +243,258 @@
     "products/mgwi-v1/images/MGWI-V1_3.png",
     "products/mgwi-v1/images/Setup_in_factory.jpg",
     "products/mgwi-v1/images/MGWI-V1_PCBA.png"
+  ],
+  "stats": [
+    {
+      "value": "25",
+      "unit": "W",
+      "label": {
+        "vi": "công suất tiêu thụ",
+        "en": "consumption",
+        "ja": "消費電力"
+      }
+    },
+    {
+      "value": "27",
+      "unit": "V",
+      "label": {
+        "vi": "ngưỡng bảo vệ cao áp",
+        "en": "over-voltage threshold",
+        "ja": "過電圧しきい値"
+      }
+    },
+    {
+      "value": "7",
+      "unit": "V",
+      "label": {
+        "vi": "ngưỡng bảo vệ thấp áp",
+        "en": "under-voltage threshold",
+        "ja": "低電圧しきい値"
+      }
+    },
+    {
+      "value": "3.8",
+      "unit": "A",
+      "label": {
+        "vi": "ngưỡng quá tải",
+        "en": "overload threshold",
+        "ja": "過負荷しきい値"
+      }
+    },
+    {
+      "value": "120×88×38",
+      "unit": "mm",
+      "label": {
+        "vi": "kích thước",
+        "en": "dimensions",
+        "ja": "寸法"
+      }
+    }
+  ],
+  "statsNote": {
+    "vi": "Số liệu theo Technical_Spec.pdf, chưa xác nhận công bố chính thức.",
+    "en": "Figures follow Technical_Spec.pdf and are not yet confirmed for official release.",
+    "ja": "数値は Technical_Spec.pdf に基づき、正式公開は未確認です。"
+  },
+  "diagram": {
+    "path": "assets/products/mgwi-v1-system.svg",
+    "kind": "diagram",
+    "alt": {
+      "vi": "Sơ đồ: máy chủ AI, MQTT broker và thiết bị Modbus kết nối vào MGWI-V1, rồi tới thiết bị cảnh báo IP MGSP-V1 và MGLB-V1.",
+      "en": "Diagram: an AI server, an MQTT broker and Modbus devices connect to MGWI-V1, which reaches the IP alert devices MGSP-V1 and MGLB-V1.",
+      "ja": "図：AI サーバー、MQTT ブローカー、Modbus 機器が MGWI-V1 に接続し、IP 警報機器 MGSP-V1 と MGLB-V1 につながります。"
+    },
+    "caption": {
+      "vi": "Vai trò gateway trong hệ cảnh báo (catalogue hệ thống, tr.6).",
+      "en": "The gateway in the alert system (system overview, p.6).",
+      "ja": "警報システムにおけるゲートウェイの役割（システム概要 p.6）。"
+    }
+  },
+  "story": [
+    {
+      "image": "assets/products/mgwi-v1-1.jpg",
+      "cap": {
+        "vi": "Mặt trên",
+        "en": "Top face",
+        "ja": "上面"
+      },
+      "title": {
+        "vi": "Vỏ nhôm, đầu nối ở cạnh.",
+        "en": "Aluminium case, terminals on the edge.",
+        "ja": "アルミ筐体、端子は側面。"
+      },
+      "text": {
+        "vi": "Hàng terminal xanh nằm dọc cạnh vỏ, dành cho cấp nguồn và đấu nối hiện trường.",
+        "en": "A row of green terminal blocks runs along the edge for power and field wiring.",
+        "ja": "緑色の端子台が筐体の縁に並び、電源と現場配線に使います。"
+      }
+    },
+    {
+      "image": "assets/products/mgwi-v1-3.jpg",
+      "cap": {
+        "vi": "Phía đầu nối",
+        "en": "Connector side",
+        "ja": "コネクタ側"
+      },
+      "title": {
+        "vi": "Mạng và anten.",
+        "en": "Network and antennas.",
+        "ja": "ネットワークとアンテナ。"
+      },
+      "text": {
+        "vi": "Cổng RJ45 và hai đầu nối anten ở một đầu vỏ. Tài liệu nêu Ethernet và WiFi.",
+        "en": "An RJ45 port and two antenna connectors sit at one end. The document specifies Ethernet and WiFi.",
+        "ja": "筐体の一端に RJ45 ポートとアンテナコネクタ 2 個があります。資料では Ethernet と WiFi が示されています。"
+      }
+    },
+    {
+      "image": "assets/products/mgwi-v1-2.jpg",
+      "cap": {
+        "vi": "Nguồn PoE",
+        "en": "PoE power",
+        "ja": "PoE 電源"
+      },
+      "title": {
+        "vi": "Cấp nguồn qua PoE.",
+        "en": "Powered over PoE.",
+        "ja": "PoE で給電。"
+      },
+      "text": {
+        "vi": "Nguồn PoE 802.3af/at, kèm nguồn dự phòng 12 V theo tài liệu.",
+        "en": "PoE 802.3af/at power, with 12 V backup, per the document.",
+        "ja": "資料では PoE 802.3af/at 給電と 12 V バックアップが示されています。"
+      }
+    },
+    {
+      "image": "assets/products/mgwi-v1-pcba.jpg",
+      "cap": {
+        "vi": "Bo mạch",
+        "en": "Circuit board",
+        "ja": "基板"
+      },
+      "title": {
+        "vi": "Bo mạch P_MGWI-V1.1.",
+        "en": "Board P_MGWI-V1.1.",
+        "ja": "基板 P_MGWI-V1.1。"
+      },
+      "text": {
+        "vi": "Render thiết kế bo mạch, không phải ảnh chụp sản phẩm.",
+        "en": "A design render of the board, not a product photograph.",
+        "ja": "基板の設計レンダリングであり、製品写真ではありません。"
+      },
+      "note": {
+        "vi": "Thông số dự kiến — cần xác nhận.",
+        "en": "Provisional specification — confirmation required.",
+        "ja": "仕様は暫定です — 確認が必要です。"
+      }
+    }
+  ],
+  "scenario": {
+    "title": {
+      "vi": "Cầu nối giữa AI và <strong>thiết bị cảnh báo.</strong>",
+      "en": "The bridge between AI and <strong>alert devices.</strong>",
+      "ja": "AI と<strong>警報機器</strong>をつなぐ橋渡し。"
+    },
+    "lead": {
+      "vi": "Mô tả theo catalogue hệ thống Meiko; cấu hình cụ thể cần xác nhận.",
+      "en": "As described in the Meiko system overview; the specific configuration must be confirmed.",
+      "ja": "Meiko システム概要に基づく説明です。具体的な構成は確認が必要です。"
+    },
+    "steps": [
+      {
+        "vi": "Máy chủ AI phát hiện sự kiện và gửi thông điệp qua MQTT broker.",
+        "en": "An AI server detects an event and sends a message through the MQTT broker.",
+        "ja": "AI サーバーがイベントを検知し、MQTT ブローカー経由でメッセージを送ります。"
+      },
+      {
+        "vi": "MGWI-V1 nhận thông điệp và điều khiển thiết bị cảnh báo IP qua Ethernet.",
+        "en": "MGWI-V1 receives the message and controls the IP alert devices over Ethernet.",
+        "ja": "MGWI-V1 がメッセージを受信し、Ethernet 経由で IP 警報機器を制御します。"
+      },
+      {
+        "vi": "Thiết bị Modbus RS485 tại hiện trường có thể được tích hợp vào cùng gateway.",
+        "en": "Field Modbus RS485 devices can be integrated into the same gateway.",
+        "ja": "現場の Modbus RS485 機器を同じゲートウェイに統合できます。"
+      }
+    ],
+    "image": {
+      "path": "assets/home/site-gateway.jpg",
+      "kind": "installation",
+      "alt": {
+        "vi": "MGWI-V1 gắn trên tường tại hiện trường, có anten.",
+        "en": "MGWI-V1 mounted on a wall on site, with its antenna.",
+        "ja": "現場の壁に取り付けられたアンテナ付き MGWI-V1。"
+      },
+      "caption": {
+        "vi": "Lắp đặt tại hiện trường",
+        "en": "Installed on site",
+        "ja": "現場への設置"
+      }
+    }
+  },
+  "faq": [
+    {
+      "q": {
+        "vi": "MGWI-V1 kết nối bằng những cách nào?",
+        "en": "How does MGWI-V1 connect?",
+        "ja": "MGWI-V1 の接続方法は？"
+      },
+      "a": {
+        "vi": "Ethernet RJ45, WiFi và Modbus RS485, theo Technical_Spec.pdf.",
+        "en": "Ethernet RJ45, WiFi and Modbus RS485, per Technical_Spec.pdf.",
+        "ja": "Technical_Spec.pdf によると、Ethernet RJ45、WiFi、Modbus RS485 です。"
+      }
+    },
+    {
+      "q": {
+        "vi": "Cấp nguồn thế nào?",
+        "en": "How is it powered?",
+        "ja": "電源は？"
+      },
+      "a": {
+        "vi": "PoE 802.3af/at, có nguồn dự phòng 12 V; công suất tiêu thụ 25 W theo tài liệu.",
+        "en": "PoE 802.3af/at with 12 V backup; the document lists 25 W consumption.",
+        "ja": "PoE 802.3af/at と 12 V バックアップ。資料では消費電力 25 W です。"
+      }
+    },
+    {
+      "q": {
+        "vi": "Có những bảo vệ đầu vào nào?",
+        "en": "What input protections are listed?",
+        "ja": "入力保護は？"
+      },
+      "a": {
+        "vi": "Cao áp 27 V, thấp áp 7 V, quá tải 3,8 A và chống ngược áp.",
+        "en": "27 V over-voltage, 7 V under-voltage, 3.8 A overload and reverse-polarity protection.",
+        "ja": "過電圧 27 V、低電圧 7 V、過負荷 3.8 A、逆極性保護です。"
+      }
+    }
+  ],
+  "pendingDocs": [
+    {
+      "label": {
+        "vi": "Technical_Spec.pdf",
+        "en": "Technical_Spec.pdf",
+        "ja": "Technical_Spec.pdf"
+      },
+      "badge": "CHỜ DUYỆT"
+    }
+  ],
+  "pending": [
+    {
+      "vi": "Trạng thái cung cấp",
+      "en": "Availability status",
+      "ja": "提供状況"
+    },
+    {
+      "vi": "Revision phần cứng phát hành",
+      "en": "Released hardware revision",
+      "ja": "正式なハードウェアリビジョン"
+    },
+    {
+      "vi": "Dải nhiệt độ và độ ẩm vận hành",
+      "en": "Operating temperature and humidity",
+      "ja": "動作温度・湿度範囲"
+    }
   ]
 }
