@@ -77,13 +77,28 @@
     {
       "path": "assets/products/mtsi-v1-cad.jpg",
       "kind": "cad",
-      "note": "Mô hình CAD vỏ MTSI-V1",
-      "useAsHero": true
+      "useAsHero": true,
+      "note": "Mô hình CAD vỏ MTSI-V1, màu xám."
+    },
+    {
+      "path": "assets/products/mtsi-v1-cad-dark.jpg",
+      "kind": "cad",
+      "note": "Mô hình CAD vỏ MTSI-V1, tông màu tối."
     },
     {
       "path": "assets/products/mtsi-v1-photo.jpg",
       "kind": "photo",
-      "note": "Ảnh thiết bị thật, vỏ khớp mô hình CAD MTSI-V1"
+      "note": "Ảnh thiết bị thật, vỏ khớp mô hình CAD MTSI-V1."
+    },
+    {
+      "path": "assets/products/ai-mtsi-v1-line.jpg",
+      "kind": "ai",
+      "note": "Minh họa AI: cảm biến nhiệt độ không tiếp xúc đặt phía trên dây chuyền sản xuất.",
+      "disclaimer": {
+        "vi": "Ảnh minh họa do AI tạo, không phải ảnh sản phẩm thật.",
+        "en": "AI-generated illustration, not a photo of the real product.",
+        "ja": "AI で生成したイメージであり、実際の製品写真ではありません。"
+      }
     }
   ],
   "related": [
@@ -102,5 +117,61 @@
     ".scratch/homepage-premium/claims-verification.md",
     ".scratch/homepage-premium/asset-inventory.md",
     "products/mtsi-v1/index.html"
+  ],
+  "faq": [
+    {
+      "q": {
+        "vi": "MTSI-V1 dùng để làm gì?",
+        "en": "What is MTSI-V1 for?",
+        "ja": "MTSI-V1 の用途は？"
+      },
+      "a": {
+        "vi": "Là cảm biến nhiệt độ không tiếp xúc cho các vị trí cần giám sát trong sản xuất.",
+        "en": "A non-contact temperature sensor for monitored locations in production.",
+        "ja": "生産現場の監視対象箇所向けの非接触温度センサーです。"
+      }
+    },
+    {
+      "q": {
+        "vi": "Dải đo và độ chính xác là bao nhiêu?",
+        "en": "What are the range and accuracy?",
+        "ja": "測定範囲と精度は？"
+      },
+      "a": {
+        "vi": "Chưa có tài liệu riêng của model này. Meiko sẽ công bố khi có datasheet hoặc kết quả test.",
+        "en": "No model-specific document exists yet. Meiko will publish them once a datasheet or test result is available.",
+        "ja": "この型式専用の資料はまだありません。データシートまたは試験結果が揃い次第公開します。"
+      }
+    },
+    {
+      "q": {
+        "vi": "Làm sao biết có phù hợp vị trí của tôi?",
+        "en": "How do I know it suits my location?",
+        "ja": "設置場所に適しているかは？"
+      },
+      "a": {
+        "vi": "Vị trí và bề mặt đo cần được khảo sát trước. Hãy liên hệ để được tư vấn.",
+        "en": "The measurement location and surface need a survey first. Contact us for advice.",
+        "ja": "測定位置と対象表面を事前に確認する必要があります。ご相談ください。"
+      }
+    }
+  ],
+  "pendingDocs": [
+    {
+      "label": {
+        "vi": "Datasheet MTSI-V1",
+        "en": "MTSI-V1 datasheet",
+        "ja": "MTSI-V1 データシート"
+      },
+      "badge": "CHƯA CÓ"
+    },
+    {
+      "label": {
+        "vi": "Kết quả test dải đo và độ chính xác",
+        "en": "Range and accuracy test results",
+        "ja": "測定範囲・精度の試験結果"
+      },
+      "badge": "CHƯA CÓ"
+    }
   ]
 }

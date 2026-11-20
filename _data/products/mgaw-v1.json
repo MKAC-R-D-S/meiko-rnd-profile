@@ -239,9 +239,31 @@
   ],
   "images": [
     {
+      "path": "assets/products/mgaw-v1-kits.jpg",
+      "kind": "photo",
+      "dark": true,
+      "useAsHero": true,
+      "note": "Ảnh hai bộ liên quan: đèn tháp MGLB-V1 và loa MGSP-V1, mỗi bộ kèm gateway và bộ cấp PoE.",
+      "disclaimer": {
+        "vi": "Ảnh hai bộ thành phần MGLB-V1 (đèn) và MGSP-V1 (loa).",
+        "en": "Photo of the two component kits: MGLB-V1 (beacon) and MGSP-V1 (speaker).",
+        "ja": "構成要素 2 キットの写真：MGLB-V1（表示灯）と MGSP-V1（スピーカー）。"
+      }
+    },
+    {
+      "path": "assets/products/ai-mgaw-v1-alert.jpg",
+      "kind": "ai",
+      "note": "Minh họa AI: loa treo tường, đèn tháp và hộp thiết bị trong nhà máy.",
+      "disclaimer": {
+        "vi": "Ảnh minh họa do AI tạo, không phải ảnh sản phẩm thật.",
+        "en": "AI-generated illustration, not a photo of the real product.",
+        "ja": "AI で生成したイメージであり、実際の製品写真ではありません。"
+      }
+    },
+    {
       "path": "assets/home/site-alert-tower.jpg",
       "kind": "installation",
-      "note": "Loa và đèn cảnh báo lắp tại nhà xưởng"
+      "note": "Lắp đặt tại hiện trường: loa, đèn tháp và hộp thiết bị trên tường."
     }
   ],
   "related": [
@@ -259,6 +281,158 @@
     "PRODUCT.md",
     "products/mgaw-v1/catalogue/MEIKO_MGAW-V1_Catalogue_VI.pdf",
     "products/shared/catalogue/MEIKO-AUTOMATION_system_overview.pdf",
-    "products/mgaw-v1/images/Real_Application_Images.jpg"
+    "products/mgaw-v1/images/Real_Application_Images.jpg",
+    "products/mgaw-v1/mglb-v1/images/Product_Images_MGLB-V1.png",
+    "products/mgaw-v1/mgsp-v1/images/Product_Images_MGSP-V1.png"
+  ],
+  "stats": [
+    {
+      "value": "8",
+      "unit": "W",
+      "label": {
+        "vi": "loa Class D",
+        "en": "Class D speaker",
+        "ja": "Class D スピーカー"
+      }
+    },
+    {
+      "value": "~90",
+      "unit": "dB @1 m",
+      "label": {
+        "vi": "áp suất âm",
+        "en": "sound pressure",
+        "ja": "音圧"
+      }
+    },
+    {
+      "value": "≤1–2",
+      "unit": "s",
+      "label": {
+        "vi": "độ trễ từ sự kiện AI",
+        "en": "latency from an AI event",
+        "ja": "AI イベントからの遅延"
+      }
+    },
+    {
+      "value": "3",
+      "label": {
+        "vi": "màu đèn báo",
+        "en": "beacon colours",
+        "ja": "表示灯の色数"
+      }
+    },
+    {
+      "value": "PoE",
+      "label": {
+        "vi": "802.3af/at + 12 V dự phòng",
+        "en": "802.3af/at + 12 V backup",
+        "ja": "802.3af/at＋12 V バックアップ"
+      }
+    }
+  ],
+  "statsNote": {
+    "vi": "Số liệu theo Catalogue MGAW-V1 v1.0.",
+    "en": "Figures follow the MGAW-V1 catalogue v1.0.",
+    "ja": "数値は MGAW-V1 カタログ v1.0 に基づきます。"
+  },
+  "diagram": {
+    "path": "assets/products/mgaw-v1-system.svg",
+    "kind": "diagram",
+    "alt": {
+      "vi": "Sơ đồ: sự kiện AI gửi qua MQTT hoặc HTTP tới MGAW-V1, phát âm thanh từ loa 8 W và đèn báo đỏ, vàng, xanh.",
+      "en": "Diagram: an AI event reaches MGAW-V1 over MQTT or HTTP, which plays audio on an 8 W speaker and lights a red, yellow or green beacon.",
+      "ja": "図：AI イベントが MQTT または HTTP で MGAW-V1 に届き、8 W スピーカーの音声と赤・黄・緑の表示灯で警報します。"
+    },
+    "caption": {
+      "vi": "Luồng cảnh báo theo catalogue.",
+      "en": "Alert flow from the catalogue.",
+      "ja": "カタログに基づく警報の流れ。"
+    }
+  },
+  "scenario": {
+    "title": {
+      "vi": "Một thiết bị, <strong>hai kênh cảnh báo.</strong>",
+      "en": "One device, <strong>two alert channels.</strong>",
+      "ja": "1 台で、<strong>2 つの警報チャネル。</strong>"
+    },
+    "lead": {
+      "vi": "Theo catalogue: gộp âm thanh và đèn báo, kích hoạt từ AI và giám sát tập trung.",
+      "en": "Per the catalogue: audio and beacon in one device, triggered by AI and monitored centrally.",
+      "ja": "カタログによると、音声と表示灯を 1 台に統合し、AI で起動し、集中監視します。"
+    },
+    "steps": [
+      {
+        "vi": "Hệ thống AI gửi sự kiện qua MQTT hoặc HTTP API.",
+        "en": "The AI system sends an event over MQTT or the HTTP API.",
+        "ja": "AI システムが MQTT または HTTP API でイベントを送ります。"
+      },
+      {
+        "vi": "MGAW-V1 phát âm thanh và bật đèn báo đồng bộ, độ trễ ≤ 1–2 giây.",
+        "en": "MGAW-V1 plays audio and lights the beacon together, with latency of 1–2 seconds or less.",
+        "ja": "MGAW-V1 が音声と表示灯を同期して出力します。遅延は 1〜2 秒以内です。"
+      },
+      {
+        "vi": "Khi mất kết nối, thiết bị phát âm thanh offline đã lưu sẵn.",
+        "en": "If the connection is lost, the device plays stored offline audio.",
+        "ja": "接続が切れた場合は、保存済みのオフライン音声を再生します。"
+      }
+    ],
+    "caveat": {
+      "vi": "Ảnh lắp đặt bên cạnh chưa xác nhận là cấu hình MGAW-V1.",
+      "en": "The installation photo has not been confirmed as an MGAW-V1 configuration.",
+      "ja": "設置写真が MGAW-V1 構成であるかは未確認です。"
+    },
+    "image": {
+      "path": "assets/home/site-alert-tower.jpg",
+      "kind": "installation",
+      "alt": {
+        "vi": "Loa treo tường và đèn tháp gắn trên tường cạnh hộp thiết bị.",
+        "en": "A wall speaker and a signal tower mounted beside an equipment box.",
+        "ja": "壁掛けスピーカーと積層表示灯、機器ボックス。"
+      },
+      "caption": {
+        "vi": "Lắp đặt tại hiện trường",
+        "en": "Installed on site",
+        "ja": "現場への設置"
+      }
+    }
+  },
+  "faq": [
+    {
+      "q": {
+        "vi": "MGAW-V1 gồm những gì?",
+        "en": "What does MGAW-V1 combine?",
+        "ja": "MGAW-V1 は何を統合していますか？"
+      },
+      "a": {
+        "vi": "Loa 8 W Class D và đèn báo ba màu trong một thiết bị, kết nối MQTT/HTTP, cấp nguồn PoE.",
+        "en": "An 8 W Class D speaker and a three-colour beacon in one device, with MQTT/HTTP and PoE power.",
+        "ja": "8 W Class D スピーカーと 3 色表示灯を 1 台に統合し、MQTT/HTTP と PoE 給電に対応します。"
+      }
+    },
+    {
+      "q": {
+        "vi": "Có phát được khi mất mạng?",
+        "en": "Does it still alert if the network drops?",
+        "ja": "ネットワーク断でも警報できますか？"
+      },
+      "a": {
+        "vi": "Catalogue nêu có phát âm thanh offline và watchdog phần cứng.",
+        "en": "The catalogue lists offline audio playback and a hardware watchdog.",
+        "ja": "カタログにはオフライン音声再生とハードウェアウォッチドッグが記載されています。"
+      }
+    },
+    {
+      "q": {
+        "vi": "Có bảo vệ điện nào?",
+        "en": "What electrical protections exist?",
+        "ja": "電気的な保護は？"
+      },
+      "a": {
+        "vi": "Bảo vệ OVP / UVP / OCP; nguồn PoE kèm 12 V dự phòng.",
+        "en": "OVP / UVP / OCP protection; PoE power with 12 V backup.",
+        "ja": "OVP / UVP / OCP 保護。PoE 給電と 12 V バックアップです。"
+      }
+    }
   ]
 }

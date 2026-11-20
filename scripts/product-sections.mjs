@@ -8,7 +8,7 @@ const LANGS = ['vi','en','ja'];
 export const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 export const tri = o => LANGS.map(l => (o && (o[l] || o.vi)) || '');
 const pad = n => String(n).padStart(2,'0');
-const KIND_KEY = {photo:'kPhoto', render3d:'k3d', cad:'kCad', installation:'kInstall', diagram:'kDiagram', sample:'kSample'};
+const KIND_KEY = {photo:'kPhoto', render3d:'k3d', cad:'kCad', installation:'kInstall', diagram:'kDiagram', sample:'kSample', ai:'kAi'};
 const kindKey = k => KIND_KEY[k] || 'kPhoto';
 
 /** Registers a trilingual value and returns the element markup. */

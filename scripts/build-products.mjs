@@ -16,7 +16,7 @@ const tri = o => LANGS.map(l => (o && (o[l] || o.vi)) || '');
 const arrow = '<svg class="arrow" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" focusable="false"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg>';
 
 const FAMILY = {iot:'fIot', test:'fTest', special:'fSpecial', automation:'fAuto', medical:'roleMed'};
-const KIND = {photo:'kPhoto', render3d:'k3d', cad:'kCad', installation:'kInstall', diagram:'kDiagram', sample:'kSample'};
+const KIND = {photo:'kPhoto', render3d:'k3d', cad:'kCad', installation:'kInstall', diagram:'kDiagram', sample:'kSample', ai:'kAi'};
 const FAMILY_ORDER = ['iot','automation','test','special','medical'];
 
 /* ---------- data ---------- */

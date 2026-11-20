@@ -130,6 +130,7 @@ const added = {
  pZoom:['Mở ảnh gốc để phóng to.','Open the original image to zoom in.','元画像を開いて拡大できます。'],
  kDiagram:['Sơ đồ minh họa','Illustrative diagram','イメージ図'],
  kSample:['Ảnh mẫu','Sample photo','サンプル写真'],
+ kAi:['Minh họa AI','AI illustration','AI イメージ'],
 };
 
 export const copy = {...base,...added};
